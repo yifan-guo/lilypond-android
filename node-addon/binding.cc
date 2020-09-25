@@ -4,16 +4,16 @@
 
 
 
-void Test(const v8::FunctionCallbackInfo<v8::Value>& args) {
+void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	static int c = 0;
 
 	args.GetReturnValue().Set(c++);
 }
 
 
-void Initialize(v8::Local<v8::Object> target) {
-	NODE_SET_METHOD(target, "test", Test);
+void initialize(v8::Local<v8::Object> target) {
+	NODE_SET_METHOD(target, "test", test);
 }
 
 
-NODE_MODULE(NODE_GYP_MODULE_NAME, Initialize)
+NODE_MODULE(NODE_GYP_MODULE_NAME, initialize)
