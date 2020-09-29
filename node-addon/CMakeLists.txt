@@ -4,7 +4,8 @@ cmake_minimum_required(VERSION 3.17)
 project(lilypond-node-addon)
 
 SET(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
-#include(${LILYPOND_DIR}/cmake/lilypond.cmake)
+
+include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
 
 add_library(
@@ -21,6 +22,12 @@ target_include_directories(
 	PRIVATE "~/sdk/nodejs-mobile/deps/v8/include"
 	PRIVATE "~/sdk/nodejs-mobile/deps/uv/include"
 	PRIVATE "~/sdk/nan"
+)
+
+target_link_libraries(
+	${PROJECT_NAME}
+
+	lilypond.a
 )
 
 
