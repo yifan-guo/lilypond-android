@@ -4,6 +4,9 @@
 
 file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
 
+file(GLOB FLOWER_SOURCE_FILES ${LILYPOND_DIR}/flower/*.cc)
+list(FILTER FLOWER_SOURCE_FILES EXCLUDE REGEX test-.*)
+
 
 find_package(BISON)
 find_package(FLEX)
@@ -20,6 +23,7 @@ add_library(
 	SHARED
 
 	${SOURCE_FILES}
+	${FLOWER_SOURCE_FILES}
 	${BISON_MyParser_OUTPUTS}
 	${FLEX_MyScanner_OUTPUTS}
 )
