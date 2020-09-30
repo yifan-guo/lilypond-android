@@ -27,12 +27,14 @@ target_include_directories(
 target_link_libraries(
 	${PROJECT_NAME}
 
-	lilypond.a
+	lilypond
 )
 
 
 # Nodejs native addaon bianry file name format
-set_target_properties(${PROJECT_NAME}
+set_target_properties(
+	${PROJECT_NAME}
+
 	PROPERTIES PREFIX ""
 	OUTPUT_NAME "lilypond"
 	SUFFIX ".node"

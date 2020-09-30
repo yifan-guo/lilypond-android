@@ -2,7 +2,7 @@
 file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
 
 add_library(
-	lilypond.a
+	lilypond
 
 	STATIC
 
@@ -11,7 +11,7 @@ add_library(
 
 
 target_include_directories(
-	lilypond.a
+	lilypond
 
 	PRIVATE ${LILYPOND_DIR}/build
 	PRIVATE ${LILYPOND_DIR}/build/lily/out
