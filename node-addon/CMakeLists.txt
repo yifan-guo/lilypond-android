@@ -10,6 +10,7 @@ include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
 add_library(
 	${PROJECT_NAME}
+
 	SHARED
 
 	binding.cc
