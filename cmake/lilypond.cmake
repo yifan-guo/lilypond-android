@@ -1,4 +1,7 @@
 
+include(${CMAKE_CURRENT_LIST_DIR}/dependencies.cmake)
+
+
 file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
 
 file(GLOB FLOWER_SOURCE_FILES ${LILYPOND_DIR}/flower/*.cc)
@@ -38,4 +41,11 @@ target_include_directories(
 	PUBLIC /usr/include/pango-1.0
 	PUBLIC /usr/include/glib-2.0
 	PUBLIC /usr/lib/x86_64-linux-gnu/glib-2.0/include
+)
+
+
+target_link_libraries(
+	lilypond
+
+	PUBLIC guile
 )

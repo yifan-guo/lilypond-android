@@ -35,26 +35,10 @@ target_include_directories(
 )
 
 
-add_library(
-	guile
-
-	SHARED
-	IMPORTED
-)
-
-set_target_properties(
-	guile
-
-	PROPERTIES IMPORTED_LOCATION
-	/usr/lib/x86_64-linux-gnu/libguile-2.2.so.1
-)
-
-
 target_link_libraries(
 	${PROJECT_NAME}
 
-	PUBLIC lilypond
-	PUBLIC guile
+	PRIVATE lilypond
 )
 
 
