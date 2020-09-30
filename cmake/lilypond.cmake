@@ -7,6 +7,8 @@ file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
 file(GLOB FLOWER_SOURCE_FILES ${LILYPOND_DIR}/flower/*.cc)
 list(FILTER FLOWER_SOURCE_FILES EXCLUDE REGEX test-.*)
 
+file(GLOB NODEADDON_SOURCE_FILES ${LILYPOND_DIR}/node-addon/source/*.cc)
+
 
 find_package(BISON)
 find_package(FLEX)
@@ -24,6 +26,7 @@ add_library(
 
 	${SOURCE_FILES}
 	${FLOWER_SOURCE_FILES}
+	${NODEADDON_SOURCE_FILES}
 	${BISON_MyParser_OUTPUTS}
 	${FLEX_MyScanner_OUTPUTS}
 )
@@ -36,6 +39,7 @@ target_include_directories(
 	PUBLIC ${LILYPOND_DIR}/build/lily/out
 	PUBLIC ${LILYPOND_DIR}/lily/include
 	PUBLIC ${LILYPOND_DIR}/flower/include
+	PUBLIC ${LILYPOND_DIR}/node-addon/include
 	PUBLIC /usr/include/guile/2.2
 	PUBLIC /usr/include/freetype2
 	PUBLIC /usr/include/pango-1.0

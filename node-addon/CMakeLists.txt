@@ -17,14 +17,12 @@ SET(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
 
-file(GLOB SOURCE_FILES ${PROJECT_SOURCE_DIR}/source/*.cc)
-
 add_library(
 	${PROJECT_NAME}
 
 	SHARED
 
-	${SOURCE_FILES}
+	binding.cc
 )
 
 target_include_directories(

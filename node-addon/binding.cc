@@ -2,7 +2,7 @@
 #include <v8.h>
 #include <node.h>
 
-#include "../lily/include/lily-imports.hh"
+#include "apis.hh"
 
 
 
@@ -11,7 +11,7 @@ void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 	args.GetReturnValue().Set(c++);
 
-	//Lily::lilypond_main();
+	callMain("test");
 }
 
 
