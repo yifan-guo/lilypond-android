@@ -25,10 +25,27 @@ target_include_directories(
 	PRIVATE "~/sdk/nan"
 )
 
+
+add_library(
+	guile
+
+	SHARED
+	IMPORTED
+)
+
+set_target_properties(
+	guile
+
+	PROPERTIES IMPORTED_LOCATION
+	/usr/lib/x86_64-linux-gnu/libguile-2.2.so.1
+)
+
+
 target_link_libraries(
 	${PROJECT_NAME}
 
-	lilypond
+	PUBLIC lilypond
+	PUBLIC guile
 )
 
 
