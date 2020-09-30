@@ -1,6 +1,15 @@
 
 cmake_minimum_required(VERSION 3.17)
 
+
+# dump variables
+#get_cmake_property(_variableNames VARIABLES)
+#list (SORT _variableNames)
+#foreach (_variableName ${_variableNames})
+#	message(STATUS "${_variableName}=${${_variableName}}")
+#endforeach()
+
+
 project(lilypond-node-addon)
 
 SET(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
@@ -56,4 +65,17 @@ set_target_properties(
 	PROPERTIES PREFIX ""
 	OUTPUT_NAME "lilypond"
 	SUFFIX ".node"
+)
+
+
+add_custom_command(
+	TARGET ${PROJECT_NAME}
+	POST_BUILD 
+	COMMAND "${CMAKE_COMMAND}" -E copy 
+		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lilypond.node
+		${CMAKE_HOME_DIRECTORY}/output/
+	COMMAND "${CMAKE_COMMAND}" -E copy 
+		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
+		${CMAKE_HOME_DIRECTORY}/output/
+	COMMENT "Copying to output directory."
 )

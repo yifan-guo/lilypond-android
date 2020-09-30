@@ -2,12 +2,16 @@
 #include <v8.h>
 #include <node.h>
 
+#include "../lily/include/lily-imports.hh"
+
 
 
 void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	static int c = 0;
 
 	args.GetReturnValue().Set(c++);
+
+	//Lily::lilypond_main();
 }
 
 

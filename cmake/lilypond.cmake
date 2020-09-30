@@ -1,7 +1,4 @@
 
-#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
-
-
 file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
 
 file(GLOB FLOWER_SOURCE_FILES ${LILYPOND_DIR}/flower/*.cc)
