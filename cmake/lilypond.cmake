@@ -51,5 +51,7 @@ target_include_directories(
 target_link_libraries(
 	lilypond
 
-	PUBLIC guile
+	PRIVATE guile
+	PRIVATE fontconfig
+	PRIVATE pangoft2
 )
