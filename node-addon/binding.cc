@@ -1,17 +1,17 @@
 
 #include <v8.h>
 #include <node.h>
+#include <nan.h>
 
 #include "apis.hh"
 
 
 
 void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	static int c = 0;
+	//args.GetReturnValue().Set(c++);
+	const std::string filename = *Nan::Utf8String(args[0].As<v8::Object>());
 
-	args.GetReturnValue().Set(c++);
-
-	callMain("test");
+	callMain(filename);
 }
 
 
