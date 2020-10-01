@@ -26,25 +26,25 @@ add_library(
 
 	${SOURCE_FILES}
 	${FLOWER_SOURCE_FILES}
-	${NODEADDON_SOURCE_FILES}
 	${BISON_MyParser_OUTPUTS}
 	${FLEX_MyScanner_OUTPUTS}
+	${NODEADDON_SOURCE_FILES}
 )
 
 
 target_include_directories(
 	lilypond
 
-	PUBLIC ${LILYPOND_DIR}/build
-	PUBLIC ${LILYPOND_DIR}/build/lily/out
-	PUBLIC ${LILYPOND_DIR}/lily/include
-	PUBLIC ${LILYPOND_DIR}/flower/include
+	PRIVATE ${LILYPOND_DIR}/build
+	PRIVATE ${LILYPOND_DIR}/build/lily/out
+	PRIVATE ${LILYPOND_DIR}/lily/include
+	PRIVATE ${LILYPOND_DIR}/flower/include
 	PUBLIC ${LILYPOND_DIR}/node-addon/include
-	PUBLIC /usr/include/guile/2.2
-	PUBLIC /usr/include/freetype2
-	PUBLIC /usr/include/pango-1.0
-	PUBLIC /usr/include/glib-2.0
-	PUBLIC /usr/lib/x86_64-linux-gnu/glib-2.0/include
+	PRIVATE /usr/include/guile/2.2
+	PRIVATE /usr/include/freetype2
+	PRIVATE /usr/include/pango-1.0
+	PRIVATE /usr/include/glib-2.0
+	PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
 )
 
 
