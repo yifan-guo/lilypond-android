@@ -208,10 +208,10 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	2, 0, 0, (SCM filename, SCM port),
 	"Output result file via memory buffer.")
 {
-	const char* name = scm_to_utf8_string(filename);
+	std::string name = ly_scm2string(filename);
 
 	SCM str = scm_get_output_string(port);
-	const char* buffer = scm_to_utf8_string(str);
+	std::string buffer = ly_scm2string(str);
 
 	std::cout << "lyx:output-port: " << name << std::endl;
 	std::cout << buffer << std::endl;
@@ -279,6 +279,9 @@ namespace LilyEx
 	{
 		sources.reset ();
 
+		std::stringstream buffer_cerr;
+		std::streambuf* origin = std::cerr.rdbuf(buffer_cerr.rdbuf());
+
 		static std::hash<std::string> hash;
 		std::stringstream stream;
 		stream << "data:" << std::hex << hash(ly_code);
@@ -300,6 +303,11 @@ namespace LilyEx
 
 		parser->clear ();
 		parser->unprotect ();
+
+		std::cerr.rdbuf(origin);
+
+		const std::string log = buffer_cerr.str();
+		std::cerr << log << std::endl;
 
 		return error;
 	}

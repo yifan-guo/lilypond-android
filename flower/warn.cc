@@ -19,8 +19,9 @@
 
 #include "warn.hh"
 
-#include <cstdlib>
-#include <cstdio>
+//#include <cstdlib>
+//#include <cstdio>
+#include <iostream>
 
 #include "std-vector.hh"
 #include "international.hh"
@@ -158,7 +159,8 @@ print_message (int level, const string &location, string s, bool newline)
   if (!is_loglevel (level))
     return;
   if (newline && !message_newline)
-    fputc ('\n', stderr);
+    //fputc ('\n', stderr);
+    std::cerr << std::endl;
 
   /* Test if all silly progress_indication ("\n") can be dropped now.  */
   if (s == "\n")
@@ -166,8 +168,9 @@ print_message (int level, const string &location, string s, bool newline)
 
   if (!location.empty ())
     s = location + ": " + s;
-  fputs (s.c_str (), stderr);
-  fflush (stderr);
+  //fputs (s.c_str (), stderr);
+  //fflush (stderr);
+  std::cerr << s << std::flush;
   if (s.length ())
     message_newline = s[s.length () - 1] == '\n';
 }
