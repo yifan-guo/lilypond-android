@@ -398,6 +398,8 @@ previews.")
     (warning-as-error #f
      "Change all warning and programming_error
 messages into errors.")
+	(memory-output #f
+	 "Output result files by string ports, against file ports.")
     ))
 
 ;; Need to do this in the beginning.  Other parts of the Scheme

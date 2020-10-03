@@ -210,6 +210,8 @@ void callMain (const std::string& filename)
 
 	//parse_argv (argc, argv);
 	init_scheme_variables_global += "(backend . svg)\n";
+	init_scheme_variables_global += "(memory-output . #t)\n";
+	//init_scheme_variables_global += "(svg-woff . #t)\n";
 
 	if (isatty (STDIN_FILENO) && (is_loglevel (LOG_BASIC)))
 		identify (stderr);

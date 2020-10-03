@@ -119,8 +119,12 @@ src: url('~a');
 (define (dump-page paper filename page page-number page-count)
   (let* ((outport (cond-expand
                        (guile-2 (open-output-file filename #:encoding "UTF-8"))
-                       (else (open-file filename "wb"))))
+                       (else (open-file filename "wb")))))
 
+    (dump-page-with-port outport paper filename page page-number page-count)))
+
+(define (dump-page-with-port outport paper filename page page-number page-count)
+  (let* (
          (outputter (ly:make-paper-outputter outport stencil-dispatch-alist))
          (dump (lambda (str) (display str (ly:outputter-port outputter))))
          (lookup (lambda (x) (ly:output-def-lookup paper x)))
