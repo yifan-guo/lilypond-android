@@ -212,12 +212,16 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	const char* buffer = scm_to_utf8_string(str);
 
 	std::cout << "lyx:output-port: " << name << std::endl;
+	std::cout << buffer << std::endl;
 }
 
 
 namespace LilyEx
 {
-	void callMain (const std::string& filename)
+	Sources sources;
+
+
+	void initialize ()
 	{
 		for (char **p = environ; *p; p++)
 			start_environment_global.push_back (*p);
@@ -265,29 +269,23 @@ namespace LilyEx
 		init_freetype ();
 		ly_reset_all_fonts ();
 
-		/*SCM files = SCM_EOL;
-		SCM *tail = &files;
+		sources.set_path (&global_path);
+	}
 
-		*tail = scm_cons (scm_from_locale_string (filename.c_str()), SCM_EOL);
-		tail = SCM_CDRLOC (*tail);
 
-		Lily::lilypond_main (files);*/
-		{
-			Sources sources;
-			sources.set_path (&global_path);
+	void engrave (const std::string& filename)
+	{
+		std::string mapped_fn = map_file_name (filename);
+		basic_progress (_f ("Processing `%s'", mapped_fn.c_str ()));
 
-			std::string mapped_fn = map_file_name (filename);
-			basic_progress (_f ("Processing `%s'", mapped_fn.c_str ()));
+		Lily_parser *parser = new Lily_parser (&sources);
 
-			Lily_parser *parser = new Lily_parser (&sources);
+		std::string init = init_name_global.empty () ? "init.ly" : init_name_global;
+		parser->parse_file (init, filename, "test-out");
 
-			std::string init = init_name_global.empty () ? "init.ly" : init_name_global;
-			parser->parse_file (init, filename, "test-out");
+		bool error = parser->error_level_;
 
-			bool error = parser->error_level_;
-
-			parser->clear ();
-			parser->unprotect ();
-		}
+		parser->clear ();
+		parser->unprotect ();
 	}
 }

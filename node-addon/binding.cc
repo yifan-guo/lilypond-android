@@ -7,11 +7,20 @@
 
 
 
-void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	//args.GetReturnValue().Set(c++);
-	const std::string filename = *Nan::Utf8String(args[0].As<v8::Object>());
+struct Initializer
+{
+	Initializer ()
+	{
+		LilyEx::initialize();
+	}
+};
 
-	LilyEx::callMain(filename);
+
+void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
+	static Initializer init;
+
+	const std::string filename = *Nan::Utf8String(args[0].As<v8::Object>());
+	LilyEx::engrave(filename);
 }
 
 

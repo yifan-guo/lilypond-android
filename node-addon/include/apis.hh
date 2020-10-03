@@ -13,7 +13,7 @@
 
 namespace LilyEx
 {
-	//LILYPOND_API void initialize ();
+	LILYPOND_API void initialize ();
 
-	LILYPOND_API void callMain (const std::string& filename);
+	LILYPOND_API void engrave (const std::string& filename);
 }
