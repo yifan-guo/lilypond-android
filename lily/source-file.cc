@@ -145,6 +145,16 @@ Source_file::get_istream ()
   return istream_;
 }
 
+void Source_file::reset_istream ()
+{
+  if (istream_)
+  {
+    //delete istream_;
+    //istream_ = nullptr;
+    istream_->seekg(0);
+  }
+}
+
 string
 Source_file::file_line_column_string (char const *context_str0) const
 {

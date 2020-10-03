@@ -35,6 +35,8 @@ class Sources
   const File_path *path_;
   std::string find_full_path (std::string file_string, const std::string &dir) const;
 
+  Source_file* find_file (const std::string& name) const;
+
 public:
   Sources ();
   ~Sources ();
@@ -43,6 +45,7 @@ public:
   void add (Source_file *sourcefile);
   std::string search_path () const;
   void set_path (File_path *);
+  void reset ();
 };
 
 #endif /* SOURCE_HH */

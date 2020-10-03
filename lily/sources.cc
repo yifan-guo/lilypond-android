@@ -38,6 +38,14 @@ Sources::set_path (File_path *f)
   path_ = f;
 }
 
+Source_file* Sources::find_file (const std::string& name) const
+{
+	auto it = std::find_if(sourcefiles_.cbegin(), sourcefiles_.cend(),
+		[&name](Source_file* const file) {return file->name_ == name;});
+
+	return it != sourcefiles_.cend() ? *it : nullptr;
+}
+
 /**
    Open a file. If the name is not absolute, look in CURRENT_DIR first.
    Afterwards, check the rest of the path_.
@@ -58,6 +66,11 @@ Sources::get_file (string file_string, string const &current_dir)
     {
       return nullptr;
     }
+
+  // use loaded files as cache
+  Source_file* found = find_file (file_string);
+  if (found)
+    return found;
 
   Source_file *f = new Source_file (file_string);
   add (f);
@@ -92,6 +105,12 @@ void
 Sources::add (Source_file *sourcefile)
 {
   sourcefiles_.push_back (sourcefile);
+}
+
+void Sources::reset ()
+{
+  for (auto it = sourcefiles_.begin (); it != sourcefiles_.end (); ++it)
+    (*it)->reset_istream ();
 }
 
 Sources::~Sources ()

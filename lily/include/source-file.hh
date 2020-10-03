@@ -53,6 +53,7 @@ public:
   char const *c_str () const;
   std::string quote_input (char const *pos_str0) const;
   std::istream *get_istream ();
+  void reset_istream ();
   bool contains (char const *pos_str0) const;
   size_t length () const;
   ssize_t get_line (char const *pos_str0) const;

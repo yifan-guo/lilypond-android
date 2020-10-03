@@ -275,6 +275,8 @@ namespace LilyEx
 
 	void engrave (const std::string& filename)
 	{
+		sources.reset ();
+
 		std::string mapped_fn = map_file_name (filename);
 		basic_progress (_f ("Processing `%s'", mapped_fn.c_str ()));
 
