@@ -1,11 +1,19 @@
 
+const fs = require("fs");
 const lilypond = require("../output/lilypond");
 
-const main = async () => {
-	const result1 = await lilypond.test("./tests/assets/simple.ly");
-	const result2 = await lilypond.test("./tests/assets/little-star.ly");
 
-	console.log("results:", /*result1,*/ result2);
+
+const engraveFile = async filename => {
+	const content = fs.readFileSync(filename);
+	const result = await lilypond.test(content);
+
+	console.log("result:", result);
+};
+
+const main = async () => {
+	await engraveFile("./tests/assets/simple.ly");
+	await engraveFile("./tests/assets/little-star.ly");
 };
 
 

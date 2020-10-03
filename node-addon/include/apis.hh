@@ -15,5 +15,5 @@ namespace LilyEx
 {
 	LILYPOND_API void initialize ();
 
-	LILYPOND_API void engrave (const std::string& filename);
+	LILYPOND_API int engrave (const std::string& ly_code);
 }

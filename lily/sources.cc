@@ -80,6 +80,9 @@ Sources::get_file (string file_string, string const &current_dir)
 string
 Sources::find_full_path (string file_string, string const &current_dir) const
 {
+  if (file_string.substr(0, 5) == "data:")
+    return file_string;
+
   // First, check for a path relative to the directory of the
   // file currently being parsed.
   if (current_dir.length ()

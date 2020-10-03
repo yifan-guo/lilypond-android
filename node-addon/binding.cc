@@ -19,8 +19,10 @@ struct Initializer
 void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	static Initializer init;
 
-	const std::string filename = *Nan::Utf8String(args[0].As<v8::Object>());
-	LilyEx::engrave(filename);
+	const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
+	const auto error = LilyEx::engrave(ly_code);
+
+	args.GetReturnValue().Set(error);
 }
 
 
