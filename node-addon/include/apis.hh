@@ -11,4 +11,9 @@
 
 
 
-LILYPOND_API void callMain (const std::string& filename);
+namespace LilyEx
+{
+	//LILYPOND_API void initialize ();
+
+	LILYPOND_API void callMain (const std::string& filename);
+}

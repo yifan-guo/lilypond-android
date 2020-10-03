@@ -32,6 +32,13 @@ add_library(
 )
 
 
+target_compile_definitions(
+	lilypond
+
+	PRIVATE BUILDING_LILYPOND
+)
+
+
 target_include_directories(
 	lilypond
 

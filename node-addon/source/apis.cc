@@ -215,76 +215,79 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 }
 
 
-void callMain (const std::string& filename)
+namespace LilyEx
 {
-	for (char **p = environ; *p; p++)
-		start_environment_global.push_back (*p);
-
-	if (getenv ("LILYPOND_VERBOSE"))
-		set_loglevel (LOGLEVEL_DEBUG);
-	if (getenv ("LILYPOND_LOGLEVEL"))
-		set_loglevel (getenv ("LILYPOND_LOGLEVEL"));
-
-	setup_localisation ();
-
-	//parse_argv (argc, argv);
-	init_scheme_variables_global += "(backend . svg)\n";
-	init_scheme_variables_global += "(memory-output . #t)\n";
-	//init_scheme_variables_global += "(svg-woff . #t)\n";
-
-	if (isatty (STDIN_FILENO) && (is_loglevel (LOG_BASIC)))
-		identify (stderr);
-
-	//setup_paths (getenv("PWD"));
-	setup_paths ("/home/xunan/work/lilypond/build/out/bin/lilypond");
-	setup_guile_env ();	// set up environment variables to pass into Guile API
-
-	// Let Guile know whether the Ghostscript API is not available.
-	init_scheme_variables_global += "(gs-api . #f)\n";
-
-	scm_init_guile();
-
-	std::string scm_pct_load_path = "%load-path";
-	std::string scm_pct_load_compiled_path = "%load-compiled-path";
-
-	prepend_scheme_list (lilypond_datadir, scm_pct_load_path);
-	prepend_scheme_list (lilypond_datadir + "/scm", scm_pct_load_path);
-
-	if (is_loglevel (LOG_DEBUG))
-		dir_info (stderr);
-
-	init_scheme_variables_global = "(" + init_scheme_variables_global + ")";
-	init_scheme_code_global = "(begin " + init_scheme_code_global + ")";
-
-	ly_c_init_guile ();
-	call_constructors ();
-	init_fontconfig ();
-
-	init_freetype ();
-	ly_reset_all_fonts ();
-
-	/*SCM files = SCM_EOL;
-	SCM *tail = &files;
-
-	*tail = scm_cons (scm_from_locale_string (filename.c_str()), SCM_EOL);
-	tail = SCM_CDRLOC (*tail);
-
-	Lily::lilypond_main (files);*/
+	void callMain (const std::string& filename)
 	{
-		Sources sources;
-		sources.set_path (&global_path);
+		for (char **p = environ; *p; p++)
+			start_environment_global.push_back (*p);
 
-		std::string mapped_fn = map_file_name (filename);
-		basic_progress (_f ("Processing `%s'", mapped_fn.c_str ()));
+		if (getenv ("LILYPOND_VERBOSE"))
+			set_loglevel (LOGLEVEL_DEBUG);
+		if (getenv ("LILYPOND_LOGLEVEL"))
+			set_loglevel (getenv ("LILYPOND_LOGLEVEL"));
 
-		Lily_parser *parser = new Lily_parser (&sources);
+		setup_localisation ();
 
-		std::string init = init_name_global.empty () ? "init.ly" : init_name_global;
-		parser->parse_file (init, filename, "test-out");
+		//parse_argv (argc, argv);
+		init_scheme_variables_global += "(backend . svg)\n";
+		init_scheme_variables_global += "(memory-output . #t)\n";
+		//init_scheme_variables_global += "(svg-woff . #t)\n";
 
-		bool error = parser->error_level_;
+		if (isatty (STDIN_FILENO) && (is_loglevel (LOG_BASIC)))
+			identify (stderr);
 
-		parser->clear ();
-		parser->unprotect ();
+		//setup_paths (getenv("PWD"));
+		setup_paths ("/home/xunan/work/lilypond/build/out/bin/lilypond");
+		setup_guile_env ();	// set up environment variables to pass into Guile API
+
+		// Let Guile know whether the Ghostscript API is not available.
+		init_scheme_variables_global += "(gs-api . #f)\n";
+
+		scm_init_guile();
+
+		std::string scm_pct_load_path = "%load-path";
+		std::string scm_pct_load_compiled_path = "%load-compiled-path";
+
+		prepend_scheme_list (lilypond_datadir, scm_pct_load_path);
+		prepend_scheme_list (lilypond_datadir + "/scm", scm_pct_load_path);
+
+		if (is_loglevel (LOG_DEBUG))
+			dir_info (stderr);
+
+		init_scheme_variables_global = "(" + init_scheme_variables_global + ")";
+		init_scheme_code_global = "(begin " + init_scheme_code_global + ")";
+
+		ly_c_init_guile ();
+		call_constructors ();
+		init_fontconfig ();
+
+		init_freetype ();
+		ly_reset_all_fonts ();
+
+		/*SCM files = SCM_EOL;
+		SCM *tail = &files;
+
+		*tail = scm_cons (scm_from_locale_string (filename.c_str()), SCM_EOL);
+		tail = SCM_CDRLOC (*tail);
+
+		Lily::lilypond_main (files);*/
+		{
+			Sources sources;
+			sources.set_path (&global_path);
+
+			std::string mapped_fn = map_file_name (filename);
+			basic_progress (_f ("Processing `%s'", mapped_fn.c_str ()));
+
+			Lily_parser *parser = new Lily_parser (&sources);
+
+			std::string init = init_name_global.empty () ? "init.ly" : init_name_global;
+			parser->parse_file (init, filename, "test-out");
+
+			bool error = parser->error_level_;
+
+			parser->clear ();
+			parser->unprotect ();
+		}
 	}
 }
