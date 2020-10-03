@@ -15,12 +15,18 @@
 #include "lily-version.hh"
 #include "relocate.hh"
 
+#include "sources.hh"
+#include "file-name-map.hh"
+#include "lily-parser.hh"
+
 
 
 extern std::string lilypond_datadir;
 extern std::vector<std::string> start_environment_global;
 extern std::string init_scheme_variables_global;
 extern std::string init_scheme_code_global;
+extern File_path global_path;
+extern std::string init_name_global;
 
 
 void init_fontconfig ();
@@ -257,11 +263,28 @@ void callMain (const std::string& filename)
 	init_freetype ();
 	ly_reset_all_fonts ();
 
-	SCM files = SCM_EOL;
+	/*SCM files = SCM_EOL;
 	SCM *tail = &files;
 
 	*tail = scm_cons (scm_from_locale_string (filename.c_str()), SCM_EOL);
 	tail = SCM_CDRLOC (*tail);
 
-	Lily::lilypond_main (files);
+	Lily::lilypond_main (files);*/
+	{
+		Sources sources;
+		sources.set_path (&global_path);
+
+		std::string mapped_fn = map_file_name (filename);
+		basic_progress (_f ("Processing `%s'", mapped_fn.c_str ()));
+
+		Lily_parser *parser = new Lily_parser (&sources);
+
+		std::string init = init_name_global.empty () ? "init.ly" : init_name_global;
+		parser->parse_file (init, filename, "test-out");
+
+		bool error = parser->error_level_;
+
+		parser->clear ();
+		parser->unprotect ();
+	}
 }
