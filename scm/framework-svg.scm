@@ -117,11 +117,29 @@ src: url('~a');
   (define-fonts paper svg-define-font svg-define-font))
 
 (define (dump-page paper filename page page-number page-count)
-  (let* ((outport (cond-expand
-                       (guile-2 (open-output-file filename #:encoding "UTF-8"))
-                       (else (open-file filename "wb")))))
+	(cond ( (ly:get-option 'memory-output)
+			(let* (
+					(outport (open-output-string))
+					(outputter (dump-page-with-port outport paper filename page page-number page-count))
+				)
 
-    (dump-page-with-port outport paper filename page page-number page-count)))
+				(lyx:output-port filename outport)
+				(ly:outputter-close outputter)
+			)
+		)
+		(else
+			(let* (
+					(outport (cond-expand
+						(guile-2 (open-output-file filename #:encoding "UTF-8"))
+						(else (open-file filename "wb"))))
+					(outputter (dump-page-with-port outport paper filename page page-number page-count))
+				)
+
+				(ly:outputter-close outputter)
+			)
+		)
+	)
+)
 
 (define (dump-page-with-port outport paper filename page page-number page-count)
   (let* (
@@ -150,7 +168,7 @@ src: url('~a');
     (eval-svg `(set-unit-length ,unit-length))
     (ly:outputter-dump-stencil outputter page)
     (dump (svg-end))
-    (ly:outputter-close outputter)))
+	outputter))
 
 (define (dump-preview paper stencil filename)
   (let* ((outputter (ly:make-paper-outputter

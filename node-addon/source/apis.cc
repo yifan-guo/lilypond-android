@@ -23,6 +23,9 @@ extern std::string init_scheme_variables_global;
 extern std::string init_scheme_code_global;
 
 
+void init_fontconfig ();
+
+
 static void prepend_scheme_list (const std::string &dir, const std::string &scmlist)
 /*
  *	Inserts an item at the front of a Scheme list, e.g. %load-path
@@ -193,7 +196,17 @@ static void setup_guile_env ()
 
 
 
-void init_fontconfig ();
+LY_DEFINE (lyx_output_port, "lyx:output-port",
+	2, 0, 0, (SCM filename, SCM port),
+	"Output result file via memory buffer.")
+{
+	const char* name = scm_to_utf8_string(filename);
+
+	SCM str = scm_get_output_string(port);
+	const char* buffer = scm_to_utf8_string(str);
+
+	std::cout << "lyx:output-port: " << name << std::endl;
+}
 
 
 void callMain (const std::string& filename)
