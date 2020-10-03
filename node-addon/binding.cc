@@ -4,6 +4,7 @@
 #include <nan.h>
 
 #include "apis.hh"
+#include "async-solver.hh"
 
 
 
@@ -17,12 +18,32 @@ struct Initializer
 
 
 void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	static Initializer init;
+	//const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
+	//const auto error = LilyEx::engrave(ly_code);
+
+	//args.GetReturnValue().Set(error);
 
 	const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
-	const auto error = LilyEx::engrave(ly_code);
+	auto context = args.GetIsolate()->GetCurrentContext();
 
-	args.GetReturnValue().Set(error);
+	auto maybe_resolver = v8::Promise::Resolver::New(context);
+	v8::Local<v8::Promise::Resolver> resolver;
+	if (maybe_resolver.ToLocal(&resolver)) {
+		AsyncSolver<int>::queue(context, resolver, [ly_code]() {
+			static Initializer init;
+
+			return LilyEx::engrave(ly_code);
+		});
+
+		args.GetReturnValue().Set(resolver->GetPromise());
+	}
+	else {
+		auto isolate = args.GetIsolate();
+		isolate->ThrowException(
+			v8::Exception::Error( v8::String::NewFromUtf8(isolate, "Failed to get resolver.") )
+		);
+	}
+		
 }
 
 
