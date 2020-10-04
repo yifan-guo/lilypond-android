@@ -23,6 +23,7 @@ add_library(
 
 	SHARED
 
+	async-engraver.cc
 	binding.cc
 )
 

@@ -52,8 +52,7 @@ private:
 
 		auto resolver = Nan::New(*resolver_);
 		auto context = Nan::New(*context_);
-		auto success = resolver->Resolve(context, Nan::New(result_));
-		(void)success;
+		resolver->Resolve(context, Nan::New(result_)).ToChecked();
 	};
 
 	Nan::Persistent<v8::Context>* context_;
