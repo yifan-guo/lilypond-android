@@ -60,10 +60,25 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 	if (args.Length() >= 2)
 	{
 		auto options = args[1].As<v8::Object>();
+		auto maybeLog = options->Get(v8str("log"));
 		auto maybeSvg = options->Get(v8str("onSVG"));
 		auto maybeMidi = options->Get(v8str("onMIDI"));
 
-		if (!maybeSvg.IsEmpty())
+		if (!maybeLog.IsEmpty() && maybeLog->IsFunction())
+		{
+			auto pLog = persist(maybeLog);
+			task->log = [pLog, pcontext](const std::string& messages) {
+				Nan::HandleScope scope;
+
+				auto context = Nan::New(*pcontext);
+
+				auto log = v8::Local<v8::Function>::Cast(Nan::New(*pLog));
+				v8::Local<v8::Value> args[] = {v8str(messages)};
+				log->CallAsFunction(context, context->Global(), 1, args).ToLocalChecked();
+			};
+		}
+
+		if (!maybeSvg.IsEmpty() && maybeSvg->IsFunction())
 		{
 			auto pSvg = persist(maybeSvg);
 			task->onSVG = [pSvg, pcontext](const std::string& filename, const std::string& content) {
@@ -77,7 +92,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 			};
 		}
 
-		if (!maybeMidi.IsEmpty())
+		if (!maybeMidi.IsEmpty() && maybeMidi->IsFunction())
 		{
 			auto pMidi = persist(maybeMidi);
 			task->onMIDI = [pMidi, pcontext](const std::string& filename, const std::vector<uint8_t>& data) {

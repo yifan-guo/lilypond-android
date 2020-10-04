@@ -34,8 +34,9 @@ public:
 
 		TaskFinish		onFinish;
 
-		typename OutputFunc<std::string>::type			onSVG;
-		typename OutputFunc<std::vector<uint8_t>>::type	onMIDI;
+		std::optional<std::function<void (std::string)>>	log;
+		typename OutputFunc<std::string>::type				onSVG;
+		typename OutputFunc<std::vector<uint8_t>>::type		onMIDI;
 	};
 	typedef std::shared_ptr<const Task>				TaskPtr;
 

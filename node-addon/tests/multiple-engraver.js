@@ -5,8 +5,12 @@ const lilypond = require("../output/lilypond");
 
 
 const engraveFile = async filename => {
-	const content = fs.readFileSync(filename);
-	const result = await lilypond.engrave(content);
+	const code = fs.readFileSync(filename);
+	const result = await lilypond.engrave(code, {
+		log (messages) {
+			console.log(`log[${filename}]:`, messages);
+		}
+	});
 
 	console.log("result:", result);
 };
