@@ -6,7 +6,7 @@ const lilypond = require("../output/lilypond");
 
 const engraveFile = async filename => {
 	const content = fs.readFileSync(filename);
-	const result = await lilypond.test(content);
+	const result = await lilypond.engrave(content);
 
 	console.log("result:", result);
 };

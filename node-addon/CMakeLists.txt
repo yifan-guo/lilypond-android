@@ -18,13 +18,14 @@ set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
 
+file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/source/*.cc)
+
 add_library(
 	${PROJECT_NAME}
 
 	SHARED
 
-	async-engraver.cc
-	binding.cc
+	${ADDON_SOURCE_FILES}
 )
 
 target_include_directories(

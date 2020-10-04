@@ -15,7 +15,7 @@
 AsyncEngraver engraver;
 
 
-void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
+void engrave(const v8::FunctionCallbackInfo<v8::Value>& args) {
 	const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
 	auto context = args.GetIsolate()->GetCurrentContext();
 
@@ -49,7 +49,7 @@ void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
 
 
 void initialize(v8::Local<v8::Object> target) {
-	NODE_SET_METHOD(target, "test", test);
+	NODE_SET_METHOD(target, "engrave", engrave);
 
 	AsyncProgressQueueWorker::queue(
 		std::bind(&AsyncEngraver::engrave, &engraver, std::placeholders::_1),
