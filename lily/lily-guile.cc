@@ -455,6 +455,8 @@ mangle_cxx_identifier (string cxx_id)
 {
   if (cxx_id.substr (0, 3) == "ly_")
     cxx_id = cxx_id.replace (0, 3, "ly:");
+  else if (cxx_id.substr (0, 4) == "lyx_")
+    cxx_id = cxx_id.replace (0, 4, "lyx:");
   else
     {
       cxx_id = String_convert::to_lower (cxx_id);
