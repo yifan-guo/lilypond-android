@@ -297,12 +297,12 @@ namespace LilyEx
 
 		static std::hash<std::string> hash;
 		std::stringstream stream;
-		stream << "data:" << std::hex << hash(ly_code);
+		stream << std::hex << hash(ly_code);
 
 		static const std::string init = init_name_global.empty () ? "init.ly" : init_name_global;
 
 		const std::string source_name = stream.str();
-		const std::string source_name_ly = source_name + ".ly";
+		const std::string source_name_ly = "data:" + source_name + ".ly";
 
 		Source_file *file = new Source_file (source_name_ly, ly_code);
 		sources_.add (file);
@@ -310,7 +310,8 @@ namespace LilyEx
 		basic_progress (_f ("Processing `%s'", source_name_ly.c_str ()));
 
 		Lily_parser *parser = new Lily_parser (&sources_);
-		parser->parse_file (init, source_name_ly, "test-out");
+		parser->parse_file (init, source_name_ly, "data");
+		//parser->parse_file (init, source_name_ly, "data-" + source_name);
 
 		int error = parser->error_level_;
 
