@@ -46,7 +46,23 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 
 		static Initializer init;
 
-		const int error = LilyEx::engrave(task->ly_code);
+		const int error = LilyEx::engrave(task->ly_code, LilyEx::EngraveOptions {
+			// onSvg
+			[=](const std::string& filename, const std::string& content) {
+				if (task->onSVG)
+					sender(Functor0([=] {
+						(*task->onSVG)(filename, content);
+					}));
+			},
+
+			// onMIDI
+			[=](const std::string& filename, const std::vector<uint8_t>& data) {
+				if (task->onMIDI)
+					sender(Functor0([=] {
+						(*task->onMIDI)(filename, data);
+					}));
+			},
+		});
 
 		sender(Functor0([=] {
 			task->onFinish(error);

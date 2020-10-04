@@ -1,5 +1,7 @@
 
 #include <string>
+#include <vector>
+#include <functional>
 
 
 
@@ -15,5 +17,12 @@ namespace LilyEx
 {
 	LILYPOND_API void initialize ();
 
-	LILYPOND_API int engrave (const std::string& ly_code);
+
+	struct EngraveOptions
+	{
+		std::function<void (const std::string&, const std::string&)>			onSVG;
+		std::function<void (const std::string&, const std::vector<uint8_t>&)>	onMIDI;
+	};
+
+	LILYPOND_API int engrave (const std::string& ly_code, const EngraveOptions& options);
 }

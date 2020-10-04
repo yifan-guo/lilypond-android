@@ -204,6 +204,14 @@ static void setup_guile_env ()
 
 
 
+namespace LilyEx
+{
+	Sources sources_;
+
+	EngraveOptions options_;
+}
+
+
 LY_DEFINE (lyx_output_port, "lyx:output-port",
 	2, 0, 0, (SCM filename, SCM port),
 	"Output result file via memory buffer.")
@@ -213,16 +221,15 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	SCM str = scm_get_output_string(port);
 	std::string buffer = ly_scm2string(str);
 
-	std::cout << "lyx:output-port: " << name << std::endl;
-	std::cout << buffer << std::endl;
+	//std::cout << "lyx:output-port: " << name << std::endl;
+	//std::cout << buffer << std::endl;
+
+	LilyEx::options_.onSVG(name, buffer);
 }
 
 
 namespace LilyEx
 {
-	Sources sources;
-
-
 	void initialize ()
 	{
 		for (char **p = environ; *p; p++)
@@ -271,13 +278,14 @@ namespace LilyEx
 		init_freetype ();
 		ly_reset_all_fonts ();
 
-		sources.set_path (&global_path);
+		sources_.set_path (&global_path);
 	}
 
 
-	int engrave (const std::string& ly_code)
+	int engrave (const std::string& ly_code, const EngraveOptions& options)
 	{
-		sources.reset ();
+		options_ = options;
+		sources_.reset ();
 
 		std::stringstream buffer_cerr;
 		std::streambuf* origin = std::cerr.rdbuf(buffer_cerr.rdbuf());
@@ -292,11 +300,11 @@ namespace LilyEx
 		const std::string source_name_ly = source_name + ".ly";
 
 		Source_file *file = new Source_file (source_name_ly, ly_code);
-		sources.add (file);
+		sources_.add (file);
 
 		basic_progress (_f ("Processing `%s'", source_name_ly.c_str ()));
 
-		Lily_parser *parser = new Lily_parser (&sources);
+		Lily_parser *parser = new Lily_parser (&sources_);
 		parser->parse_file (init, source_name_ly, "test-out");
 
 		int error = parser->error_level_;

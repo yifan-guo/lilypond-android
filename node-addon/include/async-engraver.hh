@@ -10,6 +10,7 @@
 #include <functional>
 #include <any>
 #include <condition_variable>
+#include <optional>
 
 
 
@@ -19,12 +20,22 @@ class AsyncEngraver
 	typedef std::function<void ()>					Functor0;
 
 
+	template <typename T>
+	struct OutputFunc
+	{
+		typedef std::optional<std::function<void (const std::string&, const T&)>>	type;
+	};
+
+
 public:
 	struct Task
 	{
 		std::string		ly_code;
 
 		TaskFinish		onFinish;
+
+		typename OutputFunc<std::string>::type			onSVG;
+		typename OutputFunc<std::vector<uint8_t>>::type	onMIDI;
 	};
 	typedef std::shared_ptr<const Task>				TaskPtr;
 
