@@ -12,7 +12,8 @@ cmake_minimum_required(VERSION 3.17)
 
 project(lilypond-node-addon)
 
-SET(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
+set(CMAKE_CXX_STANDARD 17)
+set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
 
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
