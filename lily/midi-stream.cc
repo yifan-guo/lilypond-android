@@ -30,6 +30,7 @@
 
 #include <cerrno>
 #include <fcntl.h>
+#include <sstream>
 
 using std::string;
 
@@ -51,9 +52,50 @@ private:
 };
 
 
-std::shared_ptr<Midi_stream> Midi_stream::create (const std::string &file_name)
+void on_midi_output (const std::string &filename, const std::vector<uint8_t> &data);
+
+
+class Midi_stream_memory
+	: public Midi_stream
 {
-  return std::shared_ptr<Midi_stream>(new Midi_stream_file(file_name));
+public:
+  Midi_stream_memory (const std::string &file_name)
+    : file_name_(file_name)
+  {
+  }
+
+  ~Midi_stream_memory ()
+  {
+    const std::string &s = stream_.str();
+
+    std::vector<uint8_t> data;
+    data.reserve(s.size());
+    data.assign(s.begin(), s.end());
+
+    on_midi_output(file_name_, data);
+  }
+
+private:
+  virtual void write (const std::string &data)
+  {
+    stream_ << data;
+  }
+
+private:
+  std::string file_name_;
+  std::stringstream stream_;
+};
+
+
+typedef std::shared_ptr<Midi_stream> Midi_stream_ptr;
+
+Midi_stream_ptr
+Midi_stream::create (const std::string &file_name)
+{
+  if (from_scm<bool> (ly_get_option (ly_symbol2scm ("memory-output"))))
+    return Midi_stream_ptr(new Midi_stream_memory(file_name));
+
+  return Midi_stream_ptr(new Midi_stream_file(file_name));
 }
 
 

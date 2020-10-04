@@ -228,6 +228,12 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 }
 
 
+void on_midi_output (const std::string& filename, const std::vector<uint8_t>& data)
+{
+	LilyEx::options_.onMIDI(filename, data);
+}
+
+
 namespace LilyEx
 {
 	void initialize (const std::string& init_path)
