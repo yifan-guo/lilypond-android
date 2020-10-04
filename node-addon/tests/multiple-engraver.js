@@ -14,6 +14,8 @@ const engraveFile = async filename => {
 const main = async () => {
 	await engraveFile("./tests/assets/simple.ly");
 	await engraveFile("./tests/assets/little-star.ly");
+
+	console.log("Done.");
 };
 
 

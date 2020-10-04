@@ -16,20 +16,14 @@ AsyncEngraver engraver;
 
 
 void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
-	//const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
-	//const auto error = LilyEx::engrave(ly_code);
-
-	//args.GetReturnValue().Set(error);
-
 	const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
 	auto context = args.GetIsolate()->GetCurrentContext();
 
-	auto resolver = v8::Promise::Resolver::New(context).ToLocalChecked();
-	/*AsyncSolver<int>::queue(context, resolver, [ly_code]() {
-		static Initializer init;
+	// workaround promise resolving problem
+	auto code = v8::String::NewFromUtf8(args.GetIsolate(), "console.log('');", v8::String::kNormalString);
+	v8::Script::Compile(context, code).ToLocalChecked()->Run(context).ToLocalChecked();
 
-		return LilyEx::engrave(ly_code);
-	});*/
+	auto resolver = v8::Promise::Resolver::New(context).ToLocalChecked();
 
 	auto presolver = persist(resolver);
 	auto pcontext = persist(context);
@@ -45,6 +39,7 @@ void test(const v8::FunctionCallbackInfo<v8::Value>& args) {
 			auto context = Nan::New(*pcontext);
 
 			resolver->Resolve(context, Nan::New(error)).ToChecked();
+			//std::cout << "resolved." << std::endl;
 		},
 	};
 	engraver.appendTask(task);
