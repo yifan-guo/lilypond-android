@@ -277,6 +277,8 @@ namespace LilyEx
 
 	int engrave (const std::string& ly_code)
 	{
+		//scm_init_guile();
+
 		sources.reset ();
 
 		std::stringstream buffer_cerr;

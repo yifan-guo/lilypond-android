@@ -7,7 +7,7 @@ file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
 file(GLOB FLOWER_SOURCE_FILES ${LILYPOND_DIR}/flower/*.cc)
 list(FILTER FLOWER_SOURCE_FILES EXCLUDE REGEX test-.*)
 
-file(GLOB NODEADDON_SOURCE_FILES ${LILYPOND_DIR}/node-addon/source/*.cc)
+file(GLOB NODEADDON_SOURCE_FILES ${LILYPOND_DIR}/node-addon/lily/*.cc)
 
 
 find_package(BISON)
