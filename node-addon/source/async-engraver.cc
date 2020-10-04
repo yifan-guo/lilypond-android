@@ -56,7 +56,7 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 					}));
 			},
 
-			// onSvg
+			// onSVG
 			[=](const std::string& filename, const std::string& content) {
 				if (task->onSVG)
 					sender(Functor0([=] {
