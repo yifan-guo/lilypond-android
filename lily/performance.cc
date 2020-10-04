@@ -112,10 +112,11 @@ Performance::write_output (string out, const string &performance_name) const
   File_name file_name (out);
   out = file_name.to_string ();
 
-  Midi_stream midi_stream (out);
+  //Midi_stream midi_stream (out);
+  auto midi_stream = Midi_stream::create(out);
   message (_f ("MIDI output to `%s'...", out));
 
-  output (midi_stream, performance_name);
+  output (*midi_stream, performance_name);
   progress_indication ("\n");
 
   SCM after_writing = midi_->c_variable ("after-writing");

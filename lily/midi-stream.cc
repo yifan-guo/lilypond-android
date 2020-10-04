@@ -33,7 +33,31 @@
 
 using std::string;
 
-Midi_stream::Midi_stream (const string &file_name)
+
+class Midi_stream_file
+	: public Midi_stream
+{
+public:
+  Midi_stream_file (const std::string &file_name_string);
+  ~Midi_stream_file ();
+
+private:
+  virtual void write (const std::string &);
+
+private:
+  int out_file_;
+  std::string tmp_file_name_;
+  std::string dest_file_name_;
+};
+
+
+std::shared_ptr<Midi_stream> Midi_stream::create (const std::string &file_name)
+{
+  return std::shared_ptr<Midi_stream>(new Midi_stream_file(file_name));
+}
+
+
+Midi_stream_file::Midi_stream_file (const string &file_name)
 {
   dest_file_name_ = file_name;
   int tries = 10;
@@ -58,7 +82,7 @@ Midi_stream::Midi_stream (const string &file_name)
              strerror (errno)));
 }
 
-Midi_stream::~Midi_stream ()
+Midi_stream_file::~Midi_stream_file ()
 {
   close (out_file_);
 
@@ -70,7 +94,7 @@ Midi_stream::~Midi_stream ()
 }
 
 void
-Midi_stream::write (const string &str)
+Midi_stream_file::write (const string &str)
 {
   size_t count = str.length ();
   size_t written = ::write (out_file_, str.data (), count);

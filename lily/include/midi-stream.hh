@@ -21,24 +21,21 @@
 #define MIDI_STREAM_HH
 
 #include <cstdio>
+#include <memory>
 
-#include <string.h>
-#include "std-string.hh"
+//#include <string.h>
+//#include "std-string.hh"
 #include "lily-proto.hh"
 
 class Midi_stream
 {
 public:
-  Midi_stream (const std::string &file_name_string);
-  ~Midi_stream ();
+  static std::shared_ptr<Midi_stream> create (const std::string &file_name);
 
-  void write (const std::string &);
   void write (Midi_chunk const &);
 
 private:
-  int out_file_;
-  std::string tmp_file_name_;
-  std::string dest_file_name_;
+  virtual void write (const std::string &) = 0;
 };
 
 #endif // MIDI_STREAM_HH
