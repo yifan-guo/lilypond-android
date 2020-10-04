@@ -10,7 +10,8 @@ struct Initializer
 {
 	Initializer ()
 	{
-		LilyEx::initialize();
+		std::string init_path = std::string(getenv("PWD")) + "/../build/out/bin/lilypond"; // TODO: refine this location
+		LilyEx::initialize(init_path);
 	}
 };
 

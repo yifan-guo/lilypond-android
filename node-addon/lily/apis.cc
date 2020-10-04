@@ -230,7 +230,7 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 
 namespace LilyEx
 {
-	void initialize ()
+	void initialize (const std::string& init_path)
 	{
 		for (char **p = environ; *p; p++)
 			start_environment_global.push_back (*p);
@@ -250,8 +250,7 @@ namespace LilyEx
 		if (isatty (STDIN_FILENO) && (is_loglevel (LOG_BASIC)))
 			identify (stderr);
 
-		//setup_paths (getenv("PWD"));
-		setup_paths ("/home/xunan/work/lilypond/build/out/bin/lilypond");
+		setup_paths (init_path.c_str ());
 		setup_guile_env ();	// set up environment variables to pass into Guile API
 
 		// Let Guile know whether the Ghostscript API is not available.

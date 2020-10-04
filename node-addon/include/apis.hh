@@ -15,7 +15,7 @@
 
 namespace LilyEx
 {
-	LILYPOND_API void initialize ();
+	LILYPOND_API void initialize (const std::string& init_path);
 
 
 	struct EngraveOptions
