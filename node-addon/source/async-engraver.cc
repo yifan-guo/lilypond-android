@@ -57,15 +57,15 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 			},
 
 			// onSVG
-			[=](const std::string& filename, const std::string& content) {
+			[=](const std::string& filename, const ByteBuffer& data) {
 				if (task->onSVG)
 					sender(Functor0([=] {
-						(*task->onSVG)(filename, content);
+						(*task->onSVG)(filename, data);
 					}));
 			},
 
 			// onMIDI
-			[=](const std::string& filename, const std::vector<uint8_t>& data) {
+			[=](const std::string& filename, const ByteBuffer& data) {
 				if (task->onMIDI)
 					sender(Functor0([=] {
 						(*task->onMIDI)(filename, data);

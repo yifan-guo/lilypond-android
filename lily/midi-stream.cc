@@ -28,6 +28,8 @@
 #include "string-convert.hh"
 #include "warn.hh"
 
+#include "buffer.hh"
+
 #include <cerrno>
 #include <fcntl.h>
 #include <sstream>
@@ -52,7 +54,7 @@ private:
 };
 
 
-void on_midi_output (const std::string &filename, const std::vector<uint8_t> &data);
+void on_midi_output (const std::string &filename, const ByteBuffer &data);
 
 
 class Midi_stream_memory
@@ -68,11 +70,12 @@ public:
   {
     const std::string &s = stream_.str();
 
-    std::vector<uint8_t> data;
+    /*std::vector<uint8_t> data;
     data.reserve(s.size());
-    data.assign(s.begin(), s.end());
+    data.assign(s.begin(), s.end());*/
+	ByteBuffer buffer(s);
 
-    on_midi_output(file_name_, data);
+    on_midi_output(file_name_, buffer);
   }
 
 private:

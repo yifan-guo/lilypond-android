@@ -12,6 +12,8 @@
 #include <condition_variable>
 #include <optional>
 
+#include "buffer.hh"
+
 
 
 class AsyncEngraver
@@ -35,8 +37,8 @@ public:
 		TaskFinish		onFinish;
 
 		std::optional<std::function<void (std::string)>>	log;
-		typename OutputFunc<std::string>::type				onSVG;
-		typename OutputFunc<std::vector<uint8_t>>::type		onMIDI;
+		typename OutputFunc<ByteBuffer>::type				onSVG;
+		typename OutputFunc<ByteBuffer>::type				onMIDI;
 	};
 	typedef std::shared_ptr<const Task>				TaskPtr;
 

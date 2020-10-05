@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <cstdio>
+#include <ctime>
 #include <libintl.h>
 
 #include "apis.hh"
@@ -216,10 +217,11 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	2, 0, 0, (SCM filename, SCM port),
 	"Output result file via memory buffer.")
 {
+	//std::cout << "t4:" << std::clock() << std::endl;
 	std::string name = ly_scm2string(filename);
 
 	SCM str = scm_get_output_string(port);
-	std::string buffer = ly_scm2string(str);
+	ByteBuffer buffer(ly_scm2string(str));
 
 	//std::cout << "lyx:output-port: " << name << std::endl;
 	//std::cout << buffer << std::endl;
@@ -230,8 +232,9 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 }
 
 
-void on_midi_output (const std::string& filename, const std::vector<uint8_t>& data)
+void on_midi_output (const std::string& filename, const ByteBuffer& data)
 {
+	//std::cout << "t3:" << std::clock() << std::endl;
 	LilyEx::options_.onMIDI(filename, data);
 }
 
@@ -240,6 +243,8 @@ namespace LilyEx
 {
 	void initialize (const std::string& init_path)
 	{
+		//std::cout << "t0:" << std::clock() << std::endl;
+
 		for (char **p = environ; *p; p++)
 			start_environment_global.push_back (*p);
 
@@ -286,11 +291,15 @@ namespace LilyEx
 		ly_reset_all_fonts ();
 
 		sources_.set_path (&global_path);
+
+		//std::cout << "t1:" << std::clock() << std::endl;
 	}
 
 
 	int engrave (const std::string& ly_code, const EngraveOptions& options)
 	{
+		//std::cout << "t2:" << std::clock() << std::endl;
+
 		options_ = options;
 		sources_.reset ();
 
@@ -326,6 +335,7 @@ namespace LilyEx
 		std::cerr << log << std::endl;
 
 		options.log(log);
+		//std::cout << "t5:" << std::clock() << std::endl;
 
 		return error;
 	}

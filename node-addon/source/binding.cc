@@ -32,12 +32,24 @@ v8::Local<v8::String> v8str (const std::string& str)
 }
 
 
+v8::Local<v8::String> v8str (const ByteBuffer& buffer)
+{
+	return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(), buffer.copy<char> (), v8::String::kNormalString);
+}
+
+
 v8::Local<v8::ArrayBuffer> v8arraybuffer (const std::vector<uint8_t>& data)
 {
 	uint8_t* buffer = new uint8_t[data.size()];
 	std::memcpy(buffer, data.data(), data.size());
 
 	return v8::ArrayBuffer::New(v8::Isolate::GetCurrent(), (void*)buffer, data.size(), v8::ArrayBufferCreationMode::kInternalized);
+}
+
+
+v8::Local<v8::ArrayBuffer> v8arraybuffer (const ByteBuffer& buffer)
+{
+	return v8::ArrayBuffer::New(v8::Isolate::GetCurrent(), (void*)buffer.copy(), buffer.size(), v8::ArrayBufferCreationMode::kInternalized);
 }
 
 
@@ -93,7 +105,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 		if (!maybeSvg.IsEmpty() && maybeSvg->IsFunction())
 		{
 			auto pSvg = persist(maybeSvg);
-			task->onSVG = [pSvg, pcontext](const std::string& filename, const std::string& content) {
+			task->onSVG = [pSvg, pcontext](const std::string& filename, const ByteBuffer& content) {
 				Nan::HandleScope scope;
 
 				auto context = Nan::New(*pcontext);
@@ -107,7 +119,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 		if (!maybeMidi.IsEmpty() && maybeMidi->IsFunction())
 		{
 			auto pMidi = persist(maybeMidi);
-			task->onMIDI = [pMidi, pcontext](const std::string& filename, const std::vector<uint8_t>& data) {
+			task->onMIDI = [pMidi, pcontext](const std::string& filename, const ByteBuffer& data) {
 				Nan::HandleScope scope;
 
 				auto context = Nan::New(*pcontext);
