@@ -16,15 +16,28 @@
 AsyncEngraver engraver;
 
 
+v8::Local<v8::String> v8str (const char* str)
+{
+	return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(), str, v8::String::kNormalString);
+}
+
+
 v8::Local<v8::String> v8str (const std::string& str)
 {
-	return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(), str.c_str(), v8::String::kNormalString);
+	// maybe not necessary?
+	//char* buffer = new char[str.size() + 1];
+	//std::memcpy(buffer, str.c_str(), str.size() + 1);
+
+	return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(), str.c_str (), v8::String::kNormalString);
 }
 
 
 v8::Local<v8::ArrayBuffer> v8arraybuffer (const std::vector<uint8_t>& data)
 {
-	return v8::ArrayBuffer::New(v8::Isolate::GetCurrent(), (void*)data.data(), data.size(), v8::ArrayBufferCreationMode::kInternalized);
+	uint8_t* buffer = new uint8_t[data.size()];
+	std::memcpy(buffer, data.data(), data.size());
+
+	return v8::ArrayBuffer::New(v8::Isolate::GetCurrent(), (void*)buffer, data.size(), v8::ArrayBufferCreationMode::kInternalized);
 }
 
 
