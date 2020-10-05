@@ -1,5 +1,6 @@
 
 #include <functional>
+//#include <iostream>
 
 #include <v8.h>
 #include <node.h>
@@ -31,10 +32,6 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 {
 	auto context = args.GetIsolate()->GetCurrentContext();
 
-	// workaround promise resolving problem
-	v8::Script::Compile(context, v8str("console.log('');"))
-		.ToLocalChecked()->Run(context).ToLocalChecked();
-
 	const std::string ly_code = *Nan::Utf8String(args[0].As<v8::Object>());
 
 	auto resolver = v8::Promise::Resolver::New(context).ToLocalChecked();
@@ -53,7 +50,9 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 			auto context = Nan::New(*pcontext);
 
 			resolver->Resolve(context, Nan::New(error)).ToChecked();
-			//std::cout << "resolved." << std::endl;
+
+			// make sure resolve executed
+			v8::Isolate::GetCurrent()->RunMicrotasks();
 		},
 	};
 
