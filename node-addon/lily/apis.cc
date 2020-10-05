@@ -221,7 +221,12 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	std::string name = ly_scm2string(filename);
 
 	SCM str = scm_get_output_string(port);
-	ByteBuffer buffer(ly_scm2string(str));
+	//ByteBuffer buffer(ly_scm2string(str));
+
+	size_t len;
+	char *c_string = scm_to_utf8_stringn (str, &len);
+	ByteBuffer buffer;
+	buffer.assign(c_string, len + 1);	// include the terminal \0
 
 	//std::cout << "lyx:output-port: " << name << std::endl;
 	//std::cout << buffer << std::endl;

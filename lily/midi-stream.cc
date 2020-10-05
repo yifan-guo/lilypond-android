@@ -68,12 +68,9 @@ public:
 
   ~Midi_stream_memory ()
   {
-    const std::string &s = stream_.str();
+    //const std::string &s = stream_.str();
 
-    /*std::vector<uint8_t> data;
-    data.reserve(s.size());
-    data.assign(s.begin(), s.end());*/
-	ByteBuffer buffer(s);
+	ByteBuffer buffer(stream_);
 
     on_midi_output(file_name_, buffer);
   }

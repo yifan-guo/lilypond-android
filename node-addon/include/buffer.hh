@@ -7,6 +7,8 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <cstring>
+#include <iostream>
 
 
 
@@ -14,11 +16,22 @@ template <typename Byte>
 class Buffer
 {
 public:
+	Buffer ()
+	{
+		init();
+	};
+
 	template <typename Char>
 	Buffer (const std::basic_string<Char>& str)
 	{
 		static_assert(sizeof(Char) == sizeof(Byte), "char type size must be the same with Buffer Byte.");
 
+		init();
+		assign(str);
+	};
+
+	Buffer (const char* str)
+	{
 		init();
 		assign(str);
 	};
@@ -32,6 +45,15 @@ public:
 		assign(vec);
 	};
 
+	template <typename Char>
+	Buffer (std::basic_istream<Char>& stream)
+	{
+		static_assert(sizeof(Char) == sizeof(Byte), "char type size must be the same with Buffer Byte.");
+
+		init();
+		assign(stream);
+	};
+
 
 	template <typename T>
 	void assign (const T& container)
@@ -40,6 +62,17 @@ public:
 		data_ptr_->assign(container.begin(), container.end());
 	};
 
+	template <typename Char>
+	void assign (std::basic_istream<Char>& stream)
+	{
+		std::streampos beg = stream.tellg();
+		stream.seekg(0, std::ios_base::end);
+		std::streampos end = stream.tellg();
+		stream.seekg(0, std::ios_base::beg);
+		reserve(end - beg);
+
+		data_ptr_->assign(std::istreambuf_iterator<Char>(stream), std::istreambuf_iterator<Char>());
+	};
 
 	template <typename Char>
 	void assign (const std::basic_string<Char>& str)
@@ -48,6 +81,18 @@ public:
 		const Char* begin = str.c_str();
 		const char* end = begin + str.size() + 1;
 		data_ptr_->assign(begin, end);
+	};
+
+	void assign (const char* str)
+	{
+		size_t size = strlen(str) + 1;
+		const char* end = str + size;
+		data_ptr_->assign(str, end);
+	};
+
+	void assign (const char* str, size_t len)
+	{
+		data_ptr_->assign(str, str + len);
 	};
 
 
