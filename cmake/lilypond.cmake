@@ -42,12 +42,12 @@ target_compile_definitions(
 target_include_directories(
 	lilypond
 
-	PRIVATE ${LILYPOND_DIR}/build
+	#PRIVATE ${LILYPOND_DIR}/build
 	PRIVATE ${LILYPOND_DIR}/build/lily/out
 	PRIVATE ${LILYPOND_DIR}/lily/include
 	PRIVATE ${LILYPOND_DIR}/flower/include
 	PUBLIC ${LILYPOND_DIR}/node-addon/include
-	PRIVATE /usr/include/guile/2.2
+	PRIVATE /usr/include/guile/1.8
 	PRIVATE /usr/include/freetype2
 	PRIVATE /usr/include/pango-1.0
 	PRIVATE /usr/include/glib-2.0

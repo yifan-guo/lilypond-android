@@ -156,37 +156,61 @@ static void setup_guile_v2_env ()
  * Scheme files for Guile V2.
  */
 {
-  sane_putenv ("GUILE_AUTO_COMPILE", "0", false); // disable auto-compile
-  sane_putenv ("GUILE_WARN_DEPRECATED", "detailed",
-               "true"); // set Guile to info re deprecation
-  /*
-        Set root for Guile %compile-fallback to
-        Lilypond root for its data.
-      */
-  sane_putenv ("XDG_CACHE_HOME", lilypond_datadir, true);
+	sane_putenv ("GUILE_AUTO_COMPILE", "0", false); // disable auto-compile
+	sane_putenv ("GUILE_WARN_DEPRECATED", "detailed",
+							 "true"); // set Guile to info re deprecation
+	/*
+				Set root for Guile %compile-fallback to
+				Lilypond root for its data.
+			*/
+	sane_putenv ("XDG_CACHE_HOME", lilypond_datadir, true);
 
-  // This reduces the GC overhead during parsing and
-  // initialization. To see if this is a good value, run #(display
-  // (gc-stats)) just before \maininput in init.ly, and check that
-  // it's roughly this value.
-  sane_putenv ("GC_INITIAL_HEAP_SIZE", "40M", false);
+	// This reduces the GC overhead during parsing and
+	// initialization. To see if this is a good value, run #(display
+	// (gc-stats)) just before \maininput in init.ly, and check that
+	// it's roughly this value.
+	sane_putenv ("GC_INITIAL_HEAP_SIZE", "40M", false);
 
-  /*
-    Empirically, multithreaded GC doesn't change wall time. It just
-    adds another thread that burns 30% of the time.
+	/*
+		Empirically, multithreaded GC doesn't change wall time. It just
+		adds another thread that burns 30% of the time.
 
-    David K mentions: "I think that this may be due to both/either our
-    use of mark hooks and of finalisers for calling destructors.
-    Either may cause serialisation.  Another serialisation is because
-    Guile itself switches BGC to Java mode where finalised objects can
-    no longer be marked (or something like that: the exact semantics I
-    do not remember).  And of course the C++ free store still has to
-    do its full job.
-  */
-  sane_putenv ("GC_NPROCS", "1", false);
+		David K mentions: "I think that this may be due to both/either our
+		use of mark hooks and of finalisers for calling destructors.
+		Either may cause serialisation.	Another serialisation is because
+		Guile itself switches BGC to Java mode where finalised objects can
+		no longer be marked (or something like that: the exact semantics I
+		do not remember).	And of course the C++ free store still has to
+		do its full job.
+	*/
+	sane_putenv ("GC_NPROCS", "1", false);
 
-  // Use less CPU for GC, at the expense of memory.
-  sane_putenv ("GC_FREE_SPACE_DIVISOR", "1", false);
+	// Use less CPU for GC, at the expense of memory.
+	sane_putenv ("GC_FREE_SPACE_DIVISOR", "1", false);
+}
+#else
+static void setup_guile_gc_env ()
+/*
+ * Set up environment variables relevant to the
+ * Garbage Collector
+ */
+{
+	char const *yield = getenv ("LILYPOND_GC_YIELD");
+	bool overwrite = true;
+	if (!yield)
+		{
+			yield = "65";
+			overwrite = false;
+		}
+
+	sane_putenv ("GUILE_MIN_YIELD_1", yield, overwrite);
+	sane_putenv ("GUILE_MIN_YIELD_2", yield, overwrite);
+	sane_putenv ("GUILE_MIN_YIELD_MALLOC", yield, overwrite);
+
+	sane_putenv ("GUILE_INIT_SEGMENT_SIZE_1",
+							 "10485760", overwrite);
+	sane_putenv ("GUILE_MAX_SEGMENT_SIZE",
+							 "104857600", overwrite);
 }
 #endif
 

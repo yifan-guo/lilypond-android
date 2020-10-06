@@ -15,6 +15,7 @@ project(lilypond-node-addon)
 
 set(CMAKE_CXX_STANDARD 17)
 set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
+#set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
