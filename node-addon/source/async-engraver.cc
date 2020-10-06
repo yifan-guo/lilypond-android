@@ -1,17 +1,41 @@
 
 #include <iostream>
+#include <experimental/filesystem>
+#include <dlfcn.h>
 
 #include "apis.hh"
 #include "async-engraver.hh"
 
 
 
+namespace fs = std::experimental::filesystem;
+
+
 struct Initializer
 {
 	Initializer ()
 	{
-		std::string init_path = std::string(getenv("PWD")) + "/../build/out/bin/lilypond"; // TODO: refine this location
-		LilyEx::initialize(init_path);
+		Dl_info info;
+		dladdr((void*)&LilyEx::initialize, &info);
+
+		std::string ly_path;
+		if (getenv("LILYPOND_PATH"))
+			ly_path = getenv("LILYPOND_PATH");
+		else {
+			fs::path liblily_path = info.dli_fname;
+			auto dir = liblily_path.parent_path();
+			if (!fs::exists(dir / "share"))
+				dir = dir.parent_path().parent_path() / "output";
+			if (!fs::exists(dir / "share"))
+				dir = fs::path(getenv("HOME")) / "lilypond/usr";
+
+			if (!fs::exists(dir / "share"))
+				std::cerr << "Cannot find lilypond path." << std::endl;
+
+			ly_path = (dir / "bin/lilypond").u8string();
+		}
+
+		LilyEx::initialize(ly_path);
 	}
 };
 

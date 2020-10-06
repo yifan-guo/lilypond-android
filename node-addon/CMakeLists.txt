@@ -14,8 +14,8 @@ endfunction()
 project(lilypond-node-addon)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_FLAGS "-std=c++17 -lstdc++fs")
 set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
-#set(CMAKE_CXX_FLAGS "-Wall -Wextra")
 
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
@@ -44,6 +44,7 @@ target_link_libraries(
 	${PROJECT_NAME}
 
 	PRIVATE lilypond
+	PRIVATE stdc++fs
 )
 
 
@@ -66,5 +67,8 @@ add_custom_command(
 	COMMAND "${CMAKE_COMMAND}" -E copy 
 		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
 		${CMAKE_HOME_DIRECTORY}/output/
+	COMMAND "${CMAKE_COMMAND}" -E create_symlink
+		${LILYPOND_DIR}/build/out/share
+		${CMAKE_HOME_DIRECTORY}/output/share
 	COMMENT "Copying to output directory."
 )
