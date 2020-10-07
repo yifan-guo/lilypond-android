@@ -117,14 +117,6 @@ public:
 	};
 
 
-private:
-	void init ()
-	{
-		if (!data_ptr_)
-			data_ptr_.reset(new std::vector<Byte>());
-	};
-
-
 	std::vector<Byte>& data ()
 	{
 		return *data_ptr_;
@@ -133,6 +125,14 @@ private:
 	const std::vector<Byte>& data () const
 	{
 		return *data_ptr_;
+	};
+
+
+private:
+	void init ()
+	{
+		if (!data_ptr_)
+			data_ptr_.reset(new std::vector<Byte>());
 	};
 
 

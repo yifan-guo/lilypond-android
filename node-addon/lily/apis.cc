@@ -250,7 +250,8 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	size_t len;
 	char *c_string = scm_to_utf8_stringn (str, &len);
 	ByteBuffer buffer;
-	buffer.assign(c_string, len + 1);	// include the terminal \0
+	buffer.assign(c_string, len + 1);
+	buffer.data()[len] = 0;	// set the terminal \0
 
 	//std::cout << "lyx:output-port: " << name << std::endl;
 	//std::cout << buffer << std::endl;
