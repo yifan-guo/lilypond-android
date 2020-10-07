@@ -36,6 +36,7 @@ public:
 
 		TaskFinish		onFinish;
 
+		std::vector<std::string>							includeFolders;
 		std::optional<std::function<void (std::string)>>	log;
 		typename OutputFunc<ByteBuffer>::type				onSVG;
 		typename OutputFunc<ByteBuffer>::type				onMIDI;

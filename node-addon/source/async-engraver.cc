@@ -72,6 +72,9 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 		static Initializer init;
 
 		const int error = LilyEx::engrave(task->ly_code, LilyEx::EngraveOptions {
+			// includeFolders
+			task->includeFolders,
+
 			// log
 			[=](const std::string& messages) {
 				if (task->log)

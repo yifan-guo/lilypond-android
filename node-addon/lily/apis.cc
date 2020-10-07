@@ -333,6 +333,17 @@ namespace LilyEx
 		options_ = options;
 		sources_.reset ();
 
+		if (!options.includeFolders.empty ())
+		{
+			auto dirs = global_path.directories ();
+			for (size_t i = 0; i < options.includeFolders.size (); ++i)
+			{
+				auto folder = options.includeFolders[i];
+				if (std::find (dirs.begin (), dirs.end (), folder) == dirs.end ())
+					global_path.append (folder);
+			}
+		}
+
 		std::stringstream buffer_cerr;
 		std::streambuf* origin = std::cerr.rdbuf(buffer_cerr.rdbuf());
 

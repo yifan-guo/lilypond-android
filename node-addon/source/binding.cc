@@ -84,9 +84,18 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 	if (args.Length() >= 2)
 	{
 		auto options = args[1].As<v8::Object>();
+		auto maybeIncludeFolders = options->Get(v8str("includeFolders"));
 		auto maybeLog = options->Get(v8str("log"));
 		auto maybeSvg = options->Get(v8str("onSVG"));
 		auto maybeMidi = options->Get(v8str("onMIDI"));
+
+		if (!maybeIncludeFolders.IsEmpty() && maybeIncludeFolders->IsArray())
+		{
+			auto folders = v8::Local<v8::Array>::Cast(maybeIncludeFolders);
+
+			for (int i = 0; i < folders->Length(); ++i)
+				task->includeFolders.push_back(*Nan::Utf8String(folders->Get(i)));
+		}
 
 		if (!maybeLog.IsEmpty() && maybeLog->IsFunction())
 		{

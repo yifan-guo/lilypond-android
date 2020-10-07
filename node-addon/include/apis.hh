@@ -22,6 +22,7 @@ namespace LilyEx
 
 	struct EngraveOptions
 	{
+		std::vector<std::string>										includeFolders;
 		std::function<void (const std::string&)>						log;
 		std::function<void (const std::string&, const ByteBuffer&)>		onSVG;
 		std::function<void (const std::string&, const ByteBuffer&)>		onMIDI;
