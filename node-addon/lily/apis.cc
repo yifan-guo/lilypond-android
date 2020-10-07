@@ -361,9 +361,8 @@ namespace LilyEx
 		std::cerr.rdbuf(origin);
 
 		const std::string log = buffer_cerr.str();
-		std::cerr << log << std::endl;
-
 		options.log(log);
+
 		//std::cout << "t5:" << std::clock() << std::endl;
 
 		return error;
