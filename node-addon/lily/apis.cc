@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <ctime>
 #include <libintl.h>
+#include <regex>
 
 #include "apis.hh"
 
@@ -21,6 +22,7 @@
 #include "file-name-map.hh"
 #include "lily-parser.hh"
 #include "source-file.hh"
+#include "string-convert.hh"
 
 
 
@@ -276,7 +278,23 @@ namespace LilyEx
 		//std::cout << "t0:" << std::clock() << std::endl;
 
 		for (char **p = environ; *p; p++)
-			start_environment_global.push_back (*p);
+		{
+			std::string env = *p;
+			start_environment_global.push_back (env);
+
+			auto eqpos = env.find ('=');
+			if (eqpos != std::string::npos)
+			{
+				auto envkey = env.substr (0, eqpos);
+				if (envkey.substr (0, 14) == "LILYPOND_INIT_")
+				{
+					std::string var = String_convert::to_lower (std::regex_replace (envkey.substr (14), std::regex("_"), "-"));
+					std::string value = getenv (envkey.c_str ());
+
+					init_scheme_variables_global += "(" + var + " . " + value + ")\n";
+				}
+			}
+		}
 
 		if (getenv ("LILYPOND_VERBOSE"))
 			set_loglevel (LOGLEVEL_DEBUG);
