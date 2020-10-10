@@ -19,6 +19,12 @@ set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/..)
 
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
+target_include_directories(
+	lilypond
+
+	PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
+)
+
 
 file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/source/*.cc)
 

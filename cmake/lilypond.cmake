@@ -51,7 +51,6 @@ target_include_directories(
 	PRIVATE /usr/include/freetype2
 	PRIVATE /usr/include/pango-1.0
 	PRIVATE /usr/include/glib-2.0
-	PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
 )
 
 
