@@ -1,0 +1,3 @@
+include ':lilypond'
+include ':app'
+rootProject.name = "Lilypond"
