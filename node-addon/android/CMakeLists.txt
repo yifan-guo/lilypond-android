@@ -98,11 +98,6 @@ set_target_properties(
 	PROPERTIES
 
 	LINKER_LANGUAGE CXX
-
-	# Nodejs native addaon bianry file name format
-	#PREFIX ""
-	#OUTPUT_NAME "lilypond"
-	#SUFFIX ".node"
 )
 
 

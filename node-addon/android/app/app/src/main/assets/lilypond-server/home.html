@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Lilypond Playground
+		</title>
+		<style>
+			body
+			{
+				width: 30em;
+				margin: 0 auto;
+				font-size: 20px;
+			}
+
+			body > *
+			{
+				width: 100%;
+				font-size: inherit;
+			}
+
+			#code
+			{
+				height: 6em;
+			}
+
+			#result
+			{
+				margin: 1em 0;
+				background-color: #eee;
+			}
+		</style>
+		<script>
+			window.addEventListener("load", () => {
+				const $ = document.querySelector.bind(document);
+
+				$("#engrave").onclick = async () => {
+					const code = $("#code").value;
+
+					const response = await fetch("/", {
+						method: "POST",
+						body: code,
+					});
+					const svg = await response.text();
+
+					$("#result").innerHTML = svg;
+				};
+			});
+		</script>
+	</head>
+	<body>
+		<textarea id="code">\version "2.20.0"
+\relative c' {c1}
+		</textarea>
+		<button id="engrave">Engrave</button>
+		<div id="result"></div>
+	</body>
+</html>
