@@ -44,7 +44,6 @@ add_library(
 
 	${ADDON_SOURCE_FILES}
 )
-message(WARNING "the project is ${PROJECT_NAME}")
 
 target_include_directories(
 	${PROJECT_NAME}
@@ -84,7 +83,7 @@ target_link_libraries(
 	#PRIVATE lilypond
 	#PRIVATE stdc++fs
 	PRIVATE node
-	PRIVATE ${log-lib}
+	#PRIVATE ${log-lib}
 )
 
 
