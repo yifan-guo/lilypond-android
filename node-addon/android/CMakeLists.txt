@@ -18,6 +18,12 @@ set(CMAKE_CXX_FLAGS "-std=c++17")
 set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/../..)
 set(SDK_DIR $ENV{HOME}/sdk)
 
+# for android emulator
+set(TARGET_ABI x86)
+
+# for physical android device
+set(TARGET_ABI arm64-v8a)
+
 
 #[[include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
@@ -100,17 +106,15 @@ set_target_properties(
 )
 
 
-#[[add_custom_command(
-	TARGET ${PROJECT_NAME}
-	POST_BUILD 
-	COMMAND "${CMAKE_COMMAND}" -E copy 
-		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lilypond.node
-		${CMAKE_HOME_DIRECTORY}/output/
-	COMMAND "${CMAKE_COMMAND}" -E copy 
-		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
-		${CMAKE_HOME_DIRECTORY}/output/
-	COMMAND "${CMAKE_COMMAND}" -E create_symlink
-		${LILYPOND_DIR}/build/out/share
-		${CMAKE_HOME_DIRECTORY}/output/share
-	COMMENT "Copying to output directory."
-)]]
+# copy target library files
+if (${ANDROID_ABI} STREQUAL ${TARGET_ABI})
+	#message (WARNING "copy: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lib${PROJECT_NAME}.so, ${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/lilypond.node")
+	add_custom_command(
+		TARGET ${PROJECT_NAME}
+		POST_BUILD
+		COMMAND "${CMAKE_COMMAND}" -E copy 
+			${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lib${PROJECT_NAME}.so
+			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/lilypond.node
+		COMMENT "Copying to app assets directory."
+	)
+endif ()
