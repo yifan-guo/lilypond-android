@@ -109,7 +109,7 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 			}));
 		if (task->onSVG)
 		{
-			static const char* const svg = R"""(<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" width="210.00mm" height="297.00mm" viewBox="0 0 119.5016 169.0094">
+			static const char* const SVG_TEMPLATE = R"""(<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" width="210.00mm" height="297.00mm" viewBox="0 0 119.5016 169.0094">
 <style type="text/css">
 
 tspan { white-space: pre; }
@@ -167,6 +167,15 @@ c38 -21 72 -53 72 -96z" fill="currentColor"></path>
 </svg>)""";
 
 			sender(Functor0([=] {
+				std::string svg = SVG_TEMPLATE;
+
+				int pos = task->ly_code.find_last_of('%');
+				if (pos != std::string::npos)
+				{
+					std::string mark = task->ly_code.substr(pos + 1);
+					svg.replace(svg.end() - 44, svg.end() - 28, mark);
+				}
+
 				(*task->onSVG)("test.ly", svg);
 			}));
 		}

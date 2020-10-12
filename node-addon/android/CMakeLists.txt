@@ -22,7 +22,7 @@ set(SDK_DIR $ENV{HOME}/sdk)
 set(TARGET_ABI x86)
 
 # for physical android device
-set(TARGET_ABI arm64-v8a)
+#set(TARGET_ABI arm64-v8a)
 
 
 #[[include(${LILYPOND_DIR}/cmake/lilypond.cmake)
