@@ -14,11 +14,12 @@ endfunction()
 project(lilypond-node-addon-android)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "-std=c++17 -lstdc++fs")
+set(CMAKE_CXX_FLAGS "-std=c++17")
 set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/../..)
-set(SDK_DIR ~/sdk)
+set(SDK_DIR $ENV{HOME}/sdk)
 
-include(${LILYPOND_DIR}/cmake/lilypond.cmake)
+
+#[[include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
 target_compile_definitions(
 	lilypond
@@ -31,10 +32,10 @@ target_include_directories(
 
 	#PUBLIC /usr/include
 	PUBLIC ${SDK_DIR}/gmp-Rupan/${ANDROID_ABI}
-)
+)]]
 
 
-file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/source/*.cc)
+file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/../source/*.cc)
 
 add_library(
 	${PROJECT_NAME}
@@ -43,6 +44,7 @@ add_library(
 
 	${ADDON_SOURCE_FILES}
 )
+message(WARNING "the project is ${PROJECT_NAME}")
 
 target_include_directories(
 	${PROJECT_NAME}
@@ -51,14 +53,38 @@ target_include_directories(
 	PRIVATE "${SDK_DIR}/nodejs-mobile/deps/v8/include"
 	PRIVATE "${SDK_DIR}/nodejs-mobile/deps/uv/include"
 	PRIVATE "${SDK_DIR}/nan"
+	PRIVATE ${LILYPOND_DIR}/node-addon/include
+)
+
+
+# node
+add_library(
+	node
+	SHARED
+	IMPORTED
+)
+
+set_target_properties(
+	node
+	PROPERTIES IMPORTED_LOCATION
+	${SDK_DIR}/nodejs-mobile/out_android/${ANDROID_ABI}/libnode.so
+)
+
+
+# android log
+find_library(
+	log-lib
+	log
 )
 
 
 target_link_libraries(
 	${PROJECT_NAME}
 
-	PRIVATE lilypond
-	PRIVATE stdc++fs
+	#PRIVATE lilypond
+	#PRIVATE stdc++fs
+	PRIVATE node
+	PRIVATE ${log-lib}
 )
 
 
@@ -69,13 +95,13 @@ set_target_properties(
 	LINKER_LANGUAGE CXX
 
 	# Nodejs native addaon bianry file name format
-	PREFIX ""
-	OUTPUT_NAME "lilypond"
-	SUFFIX ".node"
+	#PREFIX ""
+	#OUTPUT_NAME "lilypond"
+	#SUFFIX ".node"
 )
 
 
-add_custom_command(
+#[[add_custom_command(
 	TARGET ${PROJECT_NAME}
 	POST_BUILD 
 	COMMAND "${CMAKE_COMMAND}" -E copy 
@@ -88,4 +114,4 @@ add_custom_command(
 		${LILYPOND_DIR}/build/out/share
 		${CMAKE_HOME_DIRECTORY}/output/share
 	COMMENT "Copying to output directory."
-)
+)]]
