@@ -21,49 +21,49 @@ public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'native-lib' library on application startup.
     static {
-        //System.loadLibrary("native-lib");
-        //System.loadLibrary("node");
+        System.loadLibrary("native-lib");
+        System.loadLibrary("node");
     }
 
-    //We just want one instance of node running in the background.
-    public static boolean _startedNodeAlready=false;
+    // We just want one instance of node running in the background.
+    public static boolean _startedNodeAlready = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /*if( !_startedNodeAlready ) {
-            _startedNodeAlready=true;
+        if( !_startedNodeAlready ) {
+            _startedNodeAlready = true;
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    //The path where we expect the node project to be at runtime.
-                    String nodeDir=getApplicationContext().getFilesDir().getAbsolutePath()+"/nodejs-project";
+                    // The path where we expect the node project to be at runtime.
+                    String nodeDir = getApplicationContext().getFilesDir().getAbsolutePath() + "/lilypond-server";
                     if (wasAPKUpdated()) {
-                        //Recursively delete any existing nodejs-project.
-                        File nodeDirReference=new File(nodeDir);
+                        // Recursively delete any existing lilypond-server.
+                        File nodeDirReference = new File(nodeDir);
                         if (nodeDirReference.exists()) {
                             deleteFolderRecursively(new File(nodeDir));
                         }
-                        //Copy the node project from assets into the application's data path.
-                        copyAssetFolder(getApplicationContext().getAssets(), "nodejs-project", nodeDir);
+                        // Copy the node project from assets into the application's data path.
+                        copyAssetFolder(getApplicationContext().getAssets(), "lilypond-server", nodeDir);
 
                         saveLastUpdateTime();
                     }
-                    startNodeWithArguments(new String[]{"node", nodeDir+"/main.js"});
+                    startNodeWithArguments(new String[] {"node", nodeDir + "/main.js"});
                 }
             }).start();
-        }*/
+        }
 
 
         final Button buttonVersions = (Button) findViewById(R.id.btRequest);
-        final TextView textViewVersions = (TextView) findViewById(R.id.tvVersions);
+        final TextView textViewVersions = (TextView) findViewById(R.id.tvRequest);
 
         buttonVersions.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                //Network operations should be done in the background.
+                // Network operations should be done in the background.
                 new AsyncTask<Void,Void,String>() {
                     @Override
                     protected String doInBackground(Void... params) {
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         return (lastUpdateTime != previousLastUpdateTime);
     }
 
+
     private void saveLastUpdateTime() {
         long lastUpdateTime = 1;
         try {
@@ -123,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putLong("NODEJS_MOBILE_APK_LastUpdateTime", lastUpdateTime);
         editor.commit();
     }
+
 
     private static boolean deleteFolderRecursively(File file) {
         try {
@@ -142,13 +145,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private static boolean copyAssetFolder(AssetManager assetManager, String fromAssetPath, String toPath) {
         try {
             String[] files = assetManager.list(fromAssetPath);
             boolean res = true;
 
             if (files.length==0) {
-                //If it's a file, it won't have any assets "inside" it.
+                // If it's a file, it won't have any assets "inside" it.
                 res &= copyAsset(assetManager,
                         fromAssetPath,
                         toPath);
@@ -165,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
 
     private static boolean copyAsset(AssetManager assetManager, String fromAssetPath, String toPath) {
         InputStream in = null;
@@ -185,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     }
+
 
     private static void copyFile(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[1024];
