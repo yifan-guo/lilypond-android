@@ -43,8 +43,12 @@ if(${ANDROID_ABI} STREQUAL "x86_64")
 	target_include_directories(
 		lilypond
 
-		PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
+		PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/x86_64/glib-2.0/include
 	)
+
+	import_lib(guile /usr/local/lib/libguile.so.17)
+	import_lib(fontconfig /usr/lib/x86_64-linux-gnu/libfontconfig.so.1)
+	import_lib(pangoft2 /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0)
 endif()
 
 target_include_directories(
@@ -54,6 +58,14 @@ target_include_directories(
 	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/lily
 	PUBLIC ${SDK_DIR}/gmp-Rupan/${ANDROID_ABI}
+)
+
+target_link_libraries(
+	lilypond
+
+	PRIVATE guile
+	PRIVATE fontconfig
+	PRIVATE pangoft2
 )
 
 
@@ -92,20 +104,12 @@ set_target_properties(
 )
 
 
-# android log
-find_library(
-	log-lib
-	log
-)
-
-
 target_link_libraries(
 	${PROJECT_NAME}
 
 	#PRIVATE lilypond
 	#PRIVATE stdc++fs
 	PRIVATE node
-	#PRIVATE ${log-lib}
 )
 
 

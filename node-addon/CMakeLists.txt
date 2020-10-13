@@ -26,6 +26,18 @@ target_include_directories(
 	PRIVATE ${LILYPOND_DIR}/build/lily/out
 )
 
+import_lib(guile /usr/local/lib/libguile.so.17)
+import_lib(fontconfig /usr/lib/x86_64-linux-gnu/libfontconfig.so.1)
+import_lib(pangoft2 /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0)
+
+target_link_libraries(
+	lilypond
+
+	PRIVATE guile
+	PRIVATE fontconfig
+	PRIVATE pangoft2
+)
+
 
 
 file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/source/*.cc)

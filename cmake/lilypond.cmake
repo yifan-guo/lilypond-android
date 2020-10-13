@@ -53,10 +53,10 @@ target_include_directories(
 )
 
 
-target_link_libraries(
+#[[target_link_libraries(
 	lilypond
 
 	PRIVATE guile
 	PRIVATE fontconfig
 	PRIVATE pangoft2
-)
+)]]
