@@ -16,6 +16,7 @@ project(lilypond-node-addon-android)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-std=c++17")
 set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/../..)
+set(LIBS_DIR ${PROJECT_SOURCE_DIR}/third-party/libs)
 set(SDK_DIR $ENV{HOME}/sdk)
 
 # for android emulator
@@ -28,16 +29,18 @@ set(ABI_64BITS arm64-v8a x86_64)
 set(ABI_32BITS armeabi-v7a x86)
 
 
-#dump_all_variables()
+# third party libraries
+include(${LIBS_DIR}/libffi/libffi.cmake)
+
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
-if(${ANDROID_ABI} IN_LIST ABI_64BITS)
+#[[if(${ANDROID_ABI} IN_LIST ABI_64BITS)
 	target_compile_definitions(
 		lilypond
 
 		PRIVATE __x86_64__
 	)
-endif()
+endif()]]
 
 import_lib(pangoft2		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpangoft2-1.0.so.0)
 import_lib(pango		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpango-1.0.so.0)
@@ -67,6 +70,7 @@ target_link_libraries(
 	PRIVATE freetype2
 	PRIVATE glib
 	PRIVATE gobject
+	#PRIVATE ffi
 )
 
 
