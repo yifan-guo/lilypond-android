@@ -57,7 +57,7 @@ target_include_directories(
 	#PUBLIC ${ANDROID_HOST_PREBUILTS}/sysroot/usr/include/c++/v1
 	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/lily
-	PUBLIC ${SDK_DIR}/gmp-Rupan/${ANDROID_ABI}
+	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/gmp/${ANDROID_ABI}
 )
 
 target_link_libraries(
