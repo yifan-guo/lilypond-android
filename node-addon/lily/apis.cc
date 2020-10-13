@@ -3,8 +3,10 @@
 #include <sstream>
 #include <cstdio>
 #include <ctime>
-#include <libintl.h>
 #include <regex>
+#if HAVE_GETTEXT
+#	include <libintl.h>
+#endif
 
 #include "apis.hh"
 

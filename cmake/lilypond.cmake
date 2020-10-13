@@ -3,6 +3,7 @@ include(${CMAKE_CURRENT_LIST_DIR}/dependencies.cmake)
 
 
 file(GLOB SOURCE_FILES ${LILYPOND_DIR}/lily/*.cc)
+list(FILTER SOURCE_FILES EXCLUDE REGEX main\.cc)
 
 file(GLOB FLOWER_SOURCE_FILES ${LILYPOND_DIR}/flower/*.cc)
 list(FILTER FLOWER_SOURCE_FILES EXCLUDE REGEX test-.*)
@@ -42,8 +43,6 @@ target_compile_definitions(
 target_include_directories(
 	lilypond
 
-	#PRIVATE ${LILYPOND_DIR}/build
-	PRIVATE ${LILYPOND_DIR}/build/lily/out
 	PRIVATE ${LILYPOND_DIR}/lily/include
 	PRIVATE ${LILYPOND_DIR}/flower/include
 	PUBLIC ${LILYPOND_DIR}/node-addon/include

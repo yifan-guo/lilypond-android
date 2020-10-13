@@ -23,7 +23,9 @@ target_include_directories(
 	lilypond
 
 	PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
+	PRIVATE ${LILYPOND_DIR}/build/lily/out
 )
+
 
 
 file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/source/*.cc)

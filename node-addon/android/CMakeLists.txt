@@ -24,21 +24,37 @@ set(TARGET_ABI x86)
 # for physical android device
 #set(TARGET_ABI arm64-v8a)
 
+set(ABI_64BITS arm64-v8a x86_64)
+set(ABI_32BITS armeabi-v7a x86)
 
-#[[include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
-target_compile_definitions(
-	lilypond
+#dump_all_variables()
+include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
-	PRIVATE __x86_64__
-)
+if(${ANDROID_ABI} IN_LIST ABI_64BITS)
+	target_compile_definitions(
+		lilypond
+
+		PRIVATE __x86_64__
+	)
+endif()
+
+if(${ANDROID_ABI} STREQUAL "x86_64")
+	target_include_directories(
+		lilypond
+
+		PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
+	)
+endif()
 
 target_include_directories(
 	lilypond
 
-	#PUBLIC /usr/include
+	#PUBLIC ${ANDROID_HOST_PREBUILTS}/sysroot/usr/include/c++/v1
+	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
+	PRIVATE ${CMAKE_HOME_DIRECTORY}/lily
 	PUBLIC ${SDK_DIR}/gmp-Rupan/${ANDROID_ABI}
-)]]
+)
 
 
 file(GLOB ADDON_SOURCE_FILES ${CMAKE_HOME_DIRECTORY}/../source/*.cc)
