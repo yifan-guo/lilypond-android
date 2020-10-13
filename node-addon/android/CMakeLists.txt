@@ -40,24 +40,25 @@ if(${ANDROID_ABI} IN_LIST ABI_64BITS)
 endif()
 
 if(${ANDROID_ABI} STREQUAL "x86_64")
-	target_include_directories(
-		lilypond
-
-		PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/x86_64/glib-2.0/include
-	)
-
 	import_lib(guile /usr/local/lib/libguile.so.17)
 	import_lib(fontconfig /usr/lib/x86_64-linux-gnu/libfontconfig.so.1)
-	import_lib(pangoft2 /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0)
 endif()
+
+import_lib(pangoft2 ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpangoft2-1.0.so.0)
+import_lib(pango ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpango-1.0.so.0)
 
 target_include_directories(
 	lilypond
 
-	#PUBLIC ${ANDROID_HOST_PREBUILTS}/sysroot/usr/include/c++/v1
-	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/lily
+	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/gmp/${ANDROID_ABI}
+	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/include
+
+	#PRIVATE /usr/include/pango-1.0
+	PRIVATE /usr/include/guile/1.8
+	PRIVATE /usr/include/freetype2
+	PRIVATE /usr/include/glib-2.0
 )
 
 target_link_libraries(
@@ -65,7 +66,8 @@ target_link_libraries(
 
 	PRIVATE guile
 	PRIVATE fontconfig
-	PRIVATE pangoft2
+	#PRIVATE pangoft2
+	PRIVATE pango
 )
 
 

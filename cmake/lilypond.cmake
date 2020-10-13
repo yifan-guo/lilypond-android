@@ -46,10 +46,6 @@ target_include_directories(
 	PRIVATE ${LILYPOND_DIR}/lily/include
 	PRIVATE ${LILYPOND_DIR}/flower/include
 	PUBLIC ${LILYPOND_DIR}/node-addon/include
-	PRIVATE /usr/include/guile/1.8
-	PRIVATE /usr/include/freetype2
-	PRIVATE /usr/include/pango-1.0
-	PRIVATE /usr/include/glib-2.0
 )
 
 

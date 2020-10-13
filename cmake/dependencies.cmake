@@ -12,8 +12,8 @@ function(import_lib NAME PATH)
 	set_target_properties(
 		${NAME}
 
-		PROPERTIES IMPORTED_LOCATION
-		${PATH}
+		PROPERTIES
+			IMPORTED_LOCATION ${PATH}
 	)
 endfunction()
 
