@@ -46,6 +46,7 @@ endif()
 
 import_lib(pangoft2 ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpangoft2-1.0.so.0)
 import_lib(pango ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpango-1.0.so.0)
+import_lib(freetype2 ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/freetype2/libfreetype.so.6)
 
 target_include_directories(
 	lilypond
@@ -55,9 +56,8 @@ target_include_directories(
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/gmp/${ANDROID_ABI}
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/include
 
-	#PRIVATE /usr/include/pango-1.0
+	#PRIVATE /usr/include/freetype2
 	PRIVATE /usr/include/guile/1.8
-	PRIVATE /usr/include/freetype2
 	PRIVATE /usr/include/glib-2.0
 )
 
@@ -66,8 +66,9 @@ target_link_libraries(
 
 	PRIVATE guile
 	PRIVATE fontconfig
-	#PRIVATE pangoft2
+	PRIVATE pangoft2
 	PRIVATE pango
+	PRIVATE freetype2
 )
 
 
