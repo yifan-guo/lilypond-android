@@ -54,6 +54,12 @@ add_library(
 	${ADDON_SOURCE_FILES}
 )
 
+target_compile_definitions(
+	${PROJECT_NAME}
+
+	PRIVATE HAS_FILESYSTEM=1
+)
+
 target_include_directories(
 	${PROJECT_NAME}
 

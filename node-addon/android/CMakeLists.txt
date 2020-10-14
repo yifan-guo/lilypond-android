@@ -112,7 +112,7 @@ set_target_properties(
 target_link_libraries(
 	${PROJECT_NAME}
 
-	#PRIVATE lilypond
+	PRIVATE lilypond
 	#PRIVATE stdc++fs
 	PRIVATE node
 )

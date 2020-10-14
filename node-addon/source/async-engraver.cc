@@ -1,26 +1,31 @@
 
 #include <iostream>
-#include <experimental/filesystem>
+#if HAS_FILESYSTEM
+#	include <experimental/filesystem>
+#endif
 #include <dlfcn.h>
 
-//#include "apis.hh"
+#include "apis.hh"
 #include "async-engraver.hh"
 
 
 
-//namespace fs = std::experimental::filesystem;
+#if HAS_FILESYSTEM
+namespace fs = std::experimental::filesystem;
+#endif
 
 
 struct Initializer
 {
 	Initializer ()
 	{
-		/*Dl_info info;
+		Dl_info info;
 		dladdr((void*)&LilyEx::initialize, &info);
 
 		std::string ly_path;
 		if (getenv("LILYPOND_PATH"))
 			ly_path = getenv("LILYPOND_PATH");
+#if HAS_FILESYSTEM
 		else {
 			fs::path liblily_path = info.dli_fname;
 			auto dir = liblily_path.parent_path();
@@ -34,8 +39,9 @@ struct Initializer
 
 			ly_path = (dir / "bin/lilypond").u8string();
 		}
+#endif
 
-		LilyEx::initialize(ly_path);*/
+		LilyEx::initialize(ly_path);
 		std::cout << "fake lilypond init." << std::endl;
 	}
 };
@@ -72,7 +78,7 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 
 		static Initializer init;
 
-		/*const int error = LilyEx::engrave(task->ly_code, LilyEx::EngraveOptions {
+		const int error = LilyEx::engrave(task->ly_code, LilyEx::EngraveOptions {
 			// includeFolders
 			task->includeFolders,
 
@@ -99,8 +105,8 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 						(*task->onMIDI)(filename, data);
 					}));
 			},
-		});*/
-		std::cout << "fake lilypond engrave." << std::endl;
+		});
+		/*std::cout << "fake lilypond engrave." << std::endl;
 		const int error = 0;
 		if (task->log)
 			sender(Functor0([=] {
@@ -181,7 +187,7 @@ c38 -21 72 -53 72 -96z" fill="currentColor"></path>
 
 		sender(Functor0([=] {
 			task->onFinish(error);
-		}));
+		}));*/
 	}
 }
 
