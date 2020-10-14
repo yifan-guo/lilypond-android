@@ -25,12 +25,15 @@ set(TARGET_ABI x86)
 # for physical android device
 #set(TARGET_ABI arm64-v8a)
 
-set(ABI_64BITS arm64-v8a x86_64)
-set(ABI_32BITS armeabi-v7a x86)
+set(ABI_64BITS	arm64-v8a x86_64)
+set(ABI_32BITS	armeabi-v7a x86)
+set(ABI_ARM		arm64-v8a armeabi-v7a)
+set(ABI_X86		x86 x86_64)
 
 
 # third party libraries
 include(${LIBS_DIR}/libffi/libffi.cmake)
+include(${LIBS_DIR}/glib-2/glib.cmake)
 
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 
@@ -47,7 +50,7 @@ import_lib(pango		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpa
 import_lib(freetype2	${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/freetype2/libfreetype.so.6)
 import_lib(fontconfig	${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/fontconfig/libfontconfig.so.1)
 import_lib(guile		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/guile/libguile.so.17)
-import_lib(glib			${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/libglib-2.0.so.0)
+#import_lib(glib-lib		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/libglib-2.0.so.0)
 import_lib(gobject		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/libgobject-2.0.so)
 
 target_include_directories(
@@ -55,7 +58,8 @@ target_include_directories(
 
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/lily
 	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
-	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include/glib-2.0
+	#PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include/glib-2.0
+	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/glib-2/src
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/gmp/${ANDROID_ABI}
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/include
 )
