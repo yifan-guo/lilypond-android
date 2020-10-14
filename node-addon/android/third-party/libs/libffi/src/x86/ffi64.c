@@ -68,8 +68,8 @@ struct register_args
   UINT64 r10;	/* static chain */
 };
 
-extern void ffi_call_unix64 (void *args, unsigned long bytes, unsigned flags,
-			     void *raddr, void (*fnaddr)(void)) FFI_HIDDEN;
+//extern void ffi_call_unix64 (void *args, unsigned long bytes, unsigned flags,
+//			     void *raddr, void (*fnaddr)(void)) FFI_HIDDEN;
 
 /* All reference to register classes here is identical to the code in
    gcc/config/i386/i386.c. Do *not* change one without the other.  */
@@ -389,10 +389,10 @@ examine_argument (ffi_type *type, enum x86_64_reg_class classes[MAX_CLASSES],
 
 /* Perform machine dependent cif processing.  */
 
-#ifndef __ILP32__
+/*#ifndef __ILP32__
 extern ffi_status
 ffi_prep_cif_machdep_efi64(ffi_cif *cif);
-#endif
+#endif*/
 
 ffi_status FFI_HIDDEN
 ffi_prep_cif_machdep (ffi_cif *cif)
@@ -403,10 +403,10 @@ ffi_prep_cif_machdep (ffi_cif *cif)
   size_t bytes, n, rtype_size;
   ffi_type *rtype;
 
-#ifndef __ILP32__
+/*#ifndef __ILP32__
   if (cif->abi == FFI_EFI64 || cif->abi == FFI_GNUW64)
     return ffi_prep_cif_machdep_efi64(cif);
-#endif
+#endif*/
   if (cif->abi != FFI_UNIX64)
     return FFI_BAD_ABI;
 
@@ -666,60 +666,63 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *rvalue,
     }
   reg_args->rax = ssecount;
 
-  ffi_call_unix64 (stack, cif->bytes + sizeof (struct register_args),
-		   flags, rvalue, fn);
+	// WORKAROUND
+  //ffi_call_unix64 (stack, cif->bytes + sizeof (struct register_args),
+	//	   flags, rvalue, fn);
 }
 
-#ifndef __ILP32__
+/*#ifndef __ILP32__
 extern void
 ffi_call_efi64(ffi_cif *cif, void (*fn)(void), void *rvalue, void **avalue);
-#endif
+#endif*/
 
 void
 ffi_call (ffi_cif *cif, void (*fn)(void), void *rvalue, void **avalue)
 {
-#ifndef __ILP32__
+	// WORKAROUND
+/*#ifndef __ILP32__
   if (cif->abi == FFI_EFI64 || cif->abi == FFI_GNUW64)
     {
       ffi_call_efi64(cif, fn, rvalue, avalue);
       return;
     }
-#endif
+#endif*/
   ffi_call_int (cif, fn, rvalue, avalue, NULL);
 }
 
-#ifndef __ILP32__
+/*#ifndef __ILP32__
 extern void
 ffi_call_go_efi64(ffi_cif *cif, void (*fn)(void), void *rvalue,
 		  void **avalue, void *closure);
-#endif
+#endif*/
 
 void
 ffi_call_go (ffi_cif *cif, void (*fn)(void), void *rvalue,
 	     void **avalue, void *closure)
 {
-#ifndef __ILP32__
+	// WORKAROUND
+/*#ifndef __ILP32__
   if (cif->abi == FFI_EFI64 || cif->abi == FFI_GNUW64)
     {
       ffi_call_go_efi64(cif, fn, rvalue, avalue, closure);
       return;
     }
-#endif
+#endif*/
   ffi_call_int (cif, fn, rvalue, avalue, closure);
 }
 
 
-extern void ffi_closure_unix64(void) FFI_HIDDEN;
-extern void ffi_closure_unix64_sse(void) FFI_HIDDEN;
+//extern void ffi_closure_unix64(void) FFI_HIDDEN;
+//extern void ffi_closure_unix64_sse(void) FFI_HIDDEN;
 
-#ifndef __ILP32__
+/*#ifndef __ILP32__
 extern ffi_status
 ffi_prep_closure_loc_efi64(ffi_closure* closure,
 			   ffi_cif* cif,
 			   void (*fun)(ffi_cif*, void*, void**, void*),
 			   void *user_data,
 			   void *codeloc);
-#endif
+#endif*/
 
 ffi_status
 ffi_prep_closure_loc (ffi_closure* closure,
@@ -739,14 +742,16 @@ ffi_prep_closure_loc (ffi_closure* closure,
   void (*dest)(void);
   char *tramp = closure->tramp;
 
-#ifndef __ILP32__
+// WORKAROUND
+/*#ifndef __ILP32__
   if (cif->abi == FFI_EFI64 || cif->abi == FFI_GNUW64)
     return ffi_prep_closure_loc_efi64(closure, cif, fun, user_data, codeloc);
-#endif
+#endif*/
   if (cif->abi != FFI_UNIX64)
     return FFI_BAD_ABI;
 
-  if (cif->flags & UNIX64_FLAG_XMM_ARGS)
+	// WORKAROUND
+  /*if (cif->flags & UNIX64_FLAG_XMM_ARGS)
     dest = ffi_closure_unix64_sse;
   else
     dest = ffi_closure_unix64;
@@ -756,7 +761,7 @@ ffi_prep_closure_loc (ffi_closure* closure,
 
   closure->cif = cif;
   closure->fun = fun;
-  closure->user_data = user_data;
+  closure->user_data = user_data;*/
 
   return FFI_OK;
 }
@@ -854,31 +859,33 @@ ffi_closure_unix64_inner(ffi_cif *cif,
   return flags;
 }
 
-extern void ffi_go_closure_unix64(void) FFI_HIDDEN;
-extern void ffi_go_closure_unix64_sse(void) FFI_HIDDEN;
+//extern void ffi_go_closure_unix64(void) FFI_HIDDEN;
+//extern void ffi_go_closure_unix64_sse(void) FFI_HIDDEN;
 
-#ifndef __ILP32__
+/*#ifndef __ILP32__
 extern ffi_status
 ffi_prep_go_closure_efi64(ffi_go_closure* closure, ffi_cif* cif,
 			  void (*fun)(ffi_cif*, void*, void**, void*));
-#endif
+#endif*/
 
 ffi_status
 ffi_prep_go_closure (ffi_go_closure* closure, ffi_cif* cif,
 		     void (*fun)(ffi_cif*, void*, void**, void*))
 {
-#ifndef __ILP32__
+	// WORKAROUND
+/*#ifndef __ILP32__
   if (cif->abi == FFI_EFI64 || cif->abi == FFI_GNUW64)
     return ffi_prep_go_closure_efi64(closure, cif, fun);
-#endif
+#endif*/
   if (cif->abi != FFI_UNIX64)
     return FFI_BAD_ABI;
 
-  closure->tramp = (cif->flags & UNIX64_FLAG_XMM_ARGS
+	// WORKAROUND
+  /*closure->tramp = (cif->flags & UNIX64_FLAG_XMM_ARGS
 		    ? ffi_go_closure_unix64_sse
 		    : ffi_go_closure_unix64);
   closure->cif = cif;
-  closure->fun = fun;
+  closure->fun = fun;*/
 
   return FFI_OK;
 }
