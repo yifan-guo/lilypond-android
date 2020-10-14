@@ -25,13 +25,13 @@ add_library(
 	${GOBJECT_SOURCE_FILES}
 )
 
-#[[add_library(
+add_library(
 	gthread
 
 	SHARED
 
 	${GTHREAD_SOURCE_FILES}
-)]]
+)
 
 
 set_target_properties(
@@ -48,18 +48,19 @@ set_target_properties(
 	LINKER_LANGUAGE C
 )
 
-#[[set_target_properties(
+set_target_properties(
 	gthread
 	PROPERTIES
 
 	LINKER_LANGUAGE C
-)]]
+)
+
 
 target_compile_definitions(
 	glib
 
 	PRIVATE G_LOG_DOMAIN="GLib"
-	#PRIVATE G_DISABLE_CAST_CHECKS
+	PRIVATE G_DISABLE_CAST_CHECKS
 	#PRIVATE G_DISABLE_DEPRECATED
 	PRIVATE GLIB_COMPILATION
 
@@ -89,6 +90,14 @@ target_compile_definitions(
 	PRIVATE GOBJECT_COMPILATION
 )
 
+target_compile_definitions(
+	gthread
+
+	PRIVATE G_LOG_DOMAIN="GThread"
+	PRIVATE G_DISABLE_CAST_CHECKS
+)
+
+
 target_include_directories(
 	glib
 
@@ -106,10 +115,24 @@ target_include_directories(
 	PUBLIC ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
 )
 
+target_include_directories(
+	gthread
+
+	PUBLIC ${LIBS_DIR}/glib-2/src
+	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}
+	PUBLIC ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+)
+
 
 target_link_libraries(
 	gobject
 
 	PRIVATE ffi
+	PRIVATE glib
+)
+
+target_link_libraries(
+	gthread
+
 	PRIVATE glib
 )
