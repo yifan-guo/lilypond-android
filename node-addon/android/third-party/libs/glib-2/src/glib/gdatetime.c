@@ -2775,8 +2775,10 @@ format_number (GString  *str,
 
       if G_UNLIKELY (g_once_init_enter (&initialised))
         {
+//#define DO_DIGIT(n) \
+//        alt_digits[n] = nl_langinfo (_NL_CTYPE_OUTDIGIT## n ##_MB)
 #define DO_DIGIT(n) \
-        alt_digits[n] = nl_langinfo (_NL_CTYPE_OUTDIGIT## n ##_MB)
+        alt_digits[n] = nl_langinfo (41 + n)
           DO_DIGIT(0); DO_DIGIT(1); DO_DIGIT(2); DO_DIGIT(3); DO_DIGIT(4);
           DO_DIGIT(5); DO_DIGIT(6); DO_DIGIT(7); DO_DIGIT(8); DO_DIGIT(9);
 #undef DO_DIGIT
