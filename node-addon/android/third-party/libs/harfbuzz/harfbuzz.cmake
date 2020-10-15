@@ -1,5 +1,5 @@
 
-file(GLOB_RECURSE HARFBUZZ_SOURCE_FILES ${LIBS_DIR}/harfbuzz/src/*.c)
+#file(GLOB_RECURSE HARFBUZZ_SOURCE_FILES ${LIBS_DIR}/harfbuzz/src/*.cc)
 
 
 add_library(
@@ -7,7 +7,8 @@ add_library(
 
 	SHARED
 
-	${HARFBUZZ_SOURCE_FILES}
+	#${HARFBUZZ_SOURCE_FILES}
+	${LIBS_DIR}/harfbuzz/src/harfbuzz.cc
 )
 
 
@@ -19,11 +20,11 @@ set_target_properties(
 )
 
 
-#[[target_compile_definitions(
+target_compile_definitions(
 	harfbuzz
 
-	PRIVATE FT2_BUILD_LIBRARY
-)]]
+	PRIVATE HAVE_CONFIG_H
+)
 
 
 target_include_directories(
@@ -31,4 +32,15 @@ target_include_directories(
 
 	PUBLIC ${LIBS_DIR}/harfbuzz/include
 	PUBLIC ${LIBS_DIR}/harfbuzz/${ANDROID_ABI}
+	PRIVATE ${LIBS_DIR}/glib-2/src
+	PRIVATE ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+	PRIVATE ${LIBS_DIR}/freetype/include
+)
+
+
+target_link_libraries(
+	harfbuzz
+
+	PRIVATE freetype2
+	PRIVATE glib
 )
