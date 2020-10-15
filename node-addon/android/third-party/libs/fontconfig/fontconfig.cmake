@@ -1,4 +1,8 @@
 
+include(${LIBS_DIR}/expat/expat.cmake)
+
+
+
 file(GLOB_RECURSE FONTCONFIG_SOURCE_FILES ${LIBS_DIR}/fontconfig/src/*.c)
 
 
@@ -11,12 +15,12 @@ add_library(
 )
 
 
-set_target_properties(
+#[[set_target_properties(
 	fontconfig
 	PROPERTIES
 
 	LINKER_LANGUAGE c
-)
+)]]
 
 
 target_compile_definitions(
@@ -34,4 +38,12 @@ target_include_directories(
 	PUBLIC ${LIBS_DIR}/fontconfig/include
 	PUBLIC ${LIBS_DIR}/fontconfig/${ANDROID_ABI}
 	PRIVATE ${LIBS_DIR}/freetype/include
+)
+
+
+target_link_libraries(
+	fontconfig
+
+	PRIVATE freetype2
+	PRIVATE expat
 )
