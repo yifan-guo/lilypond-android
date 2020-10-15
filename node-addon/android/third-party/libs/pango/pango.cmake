@@ -46,6 +46,7 @@ target_include_directories(
 	PRIVATE ${LIBS_DIR}/freetype/include
 	PRIVATE ${LIBS_DIR}/harfbuzz/include
 	PRIVATE ${LIBS_DIR}/fribidi/include
+	PRIVATE ${LIBS_DIR}/fontconfig/include
 
 	# temp
 	PRIVATE ${LIBS_DIR}/../include
@@ -59,4 +60,5 @@ target_link_libraries(
 	PRIVATE gobject
 	PRIVATE glib
 	PRIVATE freetype2
+	PRIVATE fontconfig
 )

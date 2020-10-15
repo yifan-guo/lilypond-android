@@ -34,6 +34,7 @@ set(ABI_X86		x86 x86_64)
 # third party libraries
 include(${LIBS_DIR}/glib-2/glib.cmake)
 include(${LIBS_DIR}/freetype/freetype.cmake)
+include(${LIBS_DIR}/fontconfig/fontconfig.cmake)
 include(${LIBS_DIR}/pango/pango.cmake)
 
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
@@ -49,7 +50,7 @@ endif()]]
 #import_lib(pangoft2		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpangoft2-1.0.so.0)
 #import_lib(pango		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/pango/libpango-1.0.so.0)
 #import_lib(freetype2	${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/freetype2/libfreetype.so.6)
-import_lib(fontconfig	${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/fontconfig/libfontconfig.so.1)
+#import_lib(fontconfig	${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/fontconfig/libfontconfig.so.1)
 import_lib(guile		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/guile/libguile.so.17)
 #import_lib(glib-lib		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/libglib-2.0.so.0)
 #import_lib(gobject		${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/libgobject-2.0.so)
@@ -63,6 +64,7 @@ target_include_directories(
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/glib-2/src
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/gmp/${ANDROID_ABI}
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/include
+	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/pango/include
 )
 
 target_link_libraries(
