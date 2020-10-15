@@ -132,6 +132,9 @@ if (${ANDROID_ABI} STREQUAL ${TARGET_ABI})
 		COMMAND "${CMAKE_COMMAND}" -E copy 
 			${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lib${PROJECT_NAME}.so
 			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/lilypond.node
+		COMMAND "${CMAKE_COMMAND}" -E copy 
+			${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
+			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/
 		COMMENT "Copying to app assets directory."
 	)
 endif ()
