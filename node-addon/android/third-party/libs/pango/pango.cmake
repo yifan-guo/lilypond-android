@@ -1,4 +1,8 @@
 
+include(${LIBS_DIR}/harfbuzz/harfbuzz.cmake)
+
+
+
 file(GLOB_RECURSE PANGO_SOURCE_FILES ${LIBS_DIR}/pango/src/*.c)
 
 
@@ -40,7 +44,19 @@ target_include_directories(
 	PRIVATE ${LIBS_DIR}/glib-2/src
 	PRIVATE ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
 	PRIVATE ${LIBS_DIR}/freetype/include
+	PRIVATE ${LIBS_DIR}/harfbuzz/include
+	PRIVATE ${LIBS_DIR}/fribidi/include
 
 	# temp
 	PRIVATE ${LIBS_DIR}/../include
+)
+
+
+target_link_libraries(
+	pango
+
+	PRIVATE harfbuzz
+	PRIVATE gobject
+	PRIVATE glib
+	PRIVATE freetype2
 )
