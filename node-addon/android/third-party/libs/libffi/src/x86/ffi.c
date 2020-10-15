@@ -388,7 +388,8 @@ ffi_call_int (ffi_cif *cif, void (*fn)(void), void *rvalue,
     }
   FFI_ASSERT (dir > 0 || argp == stack);
 
-  ffi_call_i386 (frame, stack);
+	// WORKAROUND
+  //ffi_call_i386 (frame, stack);
 }
 
 void
@@ -543,14 +544,14 @@ ffi_prep_closure_loc (ffi_closure* closure,
     case FFI_THISCALL:
     case FFI_FASTCALL:
     case FFI_MS_CDECL:
-      dest = ffi_closure_i386;
+      dest = 0; //ffi_closure_i386;	// WORKAROUND
       break;
     case FFI_STDCALL:
     case FFI_PASCAL:
-      dest = ffi_closure_STDCALL;
+      dest = 0; //ffi_closure_STDCALL;	// WORKAROUND
       break;
     case FFI_REGISTER:
-      dest = ffi_closure_REGISTER;
+      dest = 0; //ffi_closure_REGISTER;	// WORKAROUND
       op = 0x68;  /* pushl imm */
       break;
     default:
@@ -586,15 +587,15 @@ ffi_prep_go_closure (ffi_go_closure* closure, ffi_cif* cif,
     {
     case FFI_SYSV:
     case FFI_MS_CDECL:
-      dest = ffi_go_closure_ECX;
+      dest = 0; //ffi_go_closure_ECX; // WORKAROUND
       break;
     case FFI_THISCALL:
     case FFI_FASTCALL:
-      dest = ffi_go_closure_EAX;
+      dest = 0; //ffi_go_closure_EAX; // WORKAROUND
       break;
     case FFI_STDCALL:
     case FFI_PASCAL:
-      dest = ffi_go_closure_STDCALL;
+      dest = 0; //ffi_go_closure_STDCALL; // WORKAROUND
       break;
     case FFI_REGISTER:
     default:
@@ -641,10 +642,10 @@ ffi_prep_raw_closure_loc (ffi_raw_closure *closure,
   switch (cif->abi)
     {
     case FFI_THISCALL:
-      dest = ffi_closure_raw_THISCALL;
+      dest = 0; //ffi_closure_raw_THISCALL;	// WORKAROUND
       break;
     case FFI_SYSV:
-      dest = ffi_closure_raw_SYSV;
+      dest = 0; //ffi_closure_raw_SYSV;	// WORKAROUND
       break;
     default:
       return FFI_BAD_ABI;
@@ -755,7 +756,8 @@ ffi_raw_call(ffi_cif *cif, void (*fn)(void), void *rvalue, ffi_raw *avalue)
   if (i < n)
     memcpy (argp, avalue, bytes);
 
-  ffi_call_i386 (frame, stack);
+	// WORKAROUND
+  //ffi_call_i386 (frame, stack);
 }
 #endif /* !FFI_NO_RAW_API */
 #endif /* __i386__ */

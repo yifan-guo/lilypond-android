@@ -9,6 +9,7 @@ add_library(
 	STATIC
 
 	${LIBFFI_SOURCE_FILES}
+	#${LIBS_DIR}/libffi/src/x86/sysv.S
 )
 
 

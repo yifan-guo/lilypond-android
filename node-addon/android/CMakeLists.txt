@@ -57,7 +57,6 @@ target_include_directories(
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/lily
 	PUBLIC ${CMAKE_HOME_DIRECTORY}/third-party/include
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/glib-2/src
-	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/${ANDROID_ABI}/glib-2.0/include
 	PRIVATE ${CMAKE_HOME_DIRECTORY}/third-party/libs/pango/include
 )
 
