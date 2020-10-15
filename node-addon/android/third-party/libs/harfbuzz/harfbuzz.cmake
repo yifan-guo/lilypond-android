@@ -33,7 +33,7 @@ target_include_directories(
 	PUBLIC ${LIBS_DIR}/harfbuzz/include
 	PUBLIC ${LIBS_DIR}/harfbuzz/${ANDROID_ABI}
 	PRIVATE ${LIBS_DIR}/glib-2/src
-	PRIVATE ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+	PRIVATE ${LIBS_DIR}/glib-2/${ANDROID_ABI}/include
 	PRIVATE ${LIBS_DIR}/freetype/include
 )
 

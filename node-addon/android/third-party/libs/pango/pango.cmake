@@ -43,7 +43,7 @@ target_include_directories(
 	PRIVATE ${LIBS_DIR}/pango/include/pango
 	PUBLIC ${LIBS_DIR}/pango/${ANDROID_ABI}
 	PRIVATE ${LIBS_DIR}/glib-2/src
-	PRIVATE ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+	PRIVATE ${LIBS_DIR}/glib-2/${ANDROID_ABI}/include
 	PRIVATE ${LIBS_DIR}/freetype/include
 	PRIVATE ${LIBS_DIR}/harfbuzz/include
 	PRIVATE ${LIBS_DIR}/fribidi/include

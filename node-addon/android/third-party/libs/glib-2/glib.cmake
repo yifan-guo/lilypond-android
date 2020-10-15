@@ -103,7 +103,7 @@ target_include_directories(
 
 	PUBLIC ${LIBS_DIR}/glib-2/src
 	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}
-	PUBLIC ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}/include
 	PUBLIC ${LIBS_DIR}/libffi/${ANDROID_ABI}/include
 )
 
@@ -112,7 +112,7 @@ target_include_directories(
 
 	PUBLIC ${LIBS_DIR}/glib-2/src
 	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}
-	PUBLIC ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}/include
 )
 
 target_include_directories(
@@ -120,7 +120,7 @@ target_include_directories(
 
 	PUBLIC ${LIBS_DIR}/glib-2/src
 	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}
-	PUBLIC ${LIBS_DIR}/../${ANDROID_ABI}/glib-2.0/include
+	PUBLIC ${LIBS_DIR}/glib-2/${ANDROID_ABI}/include
 )
 
 

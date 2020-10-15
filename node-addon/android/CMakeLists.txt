@@ -37,7 +37,10 @@ include(${LIBS_DIR}/freetype/freetype.cmake)
 include(${LIBS_DIR}/fontconfig/fontconfig.cmake)
 include(${LIBS_DIR}/pango/pango.cmake)
 
+# lilypond main module
 include(${LILYPOND_DIR}/cmake/lilypond.cmake)
+
+
 
 #[[if(${ANDROID_ABI} IN_LIST ABI_64BITS)
 	target_compile_definitions(
@@ -72,7 +75,6 @@ target_link_libraries(
 
 	PRIVATE guile
 	PRIVATE fontconfig
-	#PRIVATE pangoft2
 	PRIVATE pango
 	PRIVATE freetype2
 	PRIVATE glib
@@ -119,7 +121,6 @@ target_link_libraries(
 	${PROJECT_NAME}
 
 	PRIVATE lilypond
-	#PRIVATE stdc++fs
 	PRIVATE node
 )
 
