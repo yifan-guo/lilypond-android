@@ -1,5 +1,6 @@
 
 include(${LIBS_DIR}/harfbuzz/harfbuzz.cmake)
+include(${LIBS_DIR}/fribidi/fribidi.cmake)
 
 
 
@@ -61,4 +62,5 @@ target_link_libraries(
 	PRIVATE glib
 	PRIVATE freetype2
 	PRIVATE fontconfig
+	PRIVATE fribidi
 )
