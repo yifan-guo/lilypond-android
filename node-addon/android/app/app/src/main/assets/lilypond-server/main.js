@@ -75,4 +75,6 @@ http_server.listen(3000, "0.0.0.0", () => {
 
 	PWD = path.resolve(process.argv[1], "..");
 	console.log("PWD:", PWD);
+
+	process.env.LILYPOND_PATH = path.join(PWD, "bin/lilypond");
 });

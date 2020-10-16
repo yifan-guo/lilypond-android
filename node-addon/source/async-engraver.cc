@@ -41,8 +41,8 @@ struct Initializer
 		}
 #endif
 
+		//std::cout << "ly_path: " << ly_path << std::endl;
 		LilyEx::initialize(ly_path);
-		std::cout << "fake lilypond init." << std::endl;
 	}
 };
 
