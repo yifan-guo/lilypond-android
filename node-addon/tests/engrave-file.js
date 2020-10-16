@@ -5,6 +5,8 @@ const lilypond = require("../output/lilypond");
 
 
 const main = async (filename) => {
+	console.log("Engraving file:", filename);
+
 	const code = fs.readFileSync(filename);
 	const error = await lilypond.engrave(code, {
 		onSVG (filename, content) {

@@ -265,6 +265,43 @@ LY_DEFINE (lyx_output_port, "lyx:output-port",
 	return SCM_UNSPECIFIED;
 }
 
+static char const *PROGRAM_NAME = "lilypond";
+static char const *PROGRAM_URL = "https://lilypond.org";
+
+LY_DEFINE (ly_usage, "ly:usage",
+					0, 0, 0, (),
+					"Print usage message.")
+/*
+ * ly_usage: Routine to output standard information when LilyPond is run without a
+ * source file to compile.
+ * Also callable as ly:usage from Scheme.
+ */
+{
+	/* No version number or newline here.	It confuses help2man.	*/
+	printf ("%s", (_f ("Usage: %s [OPTION]... FILE...", PROGRAM_NAME).c_str ()));
+	printf ("\n\n");
+	printf ("%s", (_ ("Typeset music and/or produce MIDI from FILE.").c_str ()));
+	printf ("\n\n");
+	printf ("%s", (_ ("LilyPond produces beautiful music notation.").c_str ()));
+	printf ("\n");
+	printf ("%s", (_f ("For more information, see %s", PROGRAM_URL).c_str ()));
+	printf ("\n\n");
+	//printf ("%s", (_ ("Options:").c_str ()));
+	//printf ("\n");
+	//printf ("%s", Long_option_init::table_string (options_static).c_str ());
+	//printf ("\n");
+	/* Translators, please translate this string as
+		 "Report bugs in English via %s",
+		 or if there is a LilyPond users list or forum in your language
+		 "Report bugs in English via %s or in YOUR_LANG via URI"	*/
+	printf ("%s", (_f ("You found a bug? Please read %s",
+										 "https://lilypond.org/bug-reports.html")
+								 .c_str ()));
+	printf ("\n");
+	printf ("\n");
+	return SCM_UNSPECIFIED;
+}
+
 
 void on_midi_output (const std::string& filename, const ByteBuffer& data)
 {
