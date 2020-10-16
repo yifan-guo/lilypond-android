@@ -57,10 +57,10 @@ typedef unsigned long long guint64;
 #define G_GINT64_FORMAT "li"
 #define G_GUINT64_FORMAT "lu"
 
-#define GLIB_SIZEOF_VOID_P 8
-#define GLIB_SIZEOF_LONG   8
-#define GLIB_SIZEOF_SIZE_T 8
-#define GLIB_SIZEOF_SSIZE_T 8
+#define GLIB_SIZEOF_VOID_P 4
+#define GLIB_SIZEOF_LONG   4
+#define GLIB_SIZEOF_SIZE_T 4
+#define GLIB_SIZEOF_SSIZE_T 4
 
 typedef signed long gssize;
 typedef unsigned long gsize;

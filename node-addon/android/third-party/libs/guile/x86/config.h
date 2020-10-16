@@ -828,28 +828,28 @@ Boston, MA 02110-1301, USA.
 #define SIZEOF_INTMAX_T 8
 
 /* The size of `intptr_t', as computed by sizeof. */
-#define SIZEOF_INTPTR_T 8
+#define SIZEOF_INTPTR_T 4
 
 /* The size of `long', as computed by sizeof. */
-#define SIZEOF_LONG 8
+#define SIZEOF_LONG 4
 
 /* The size of `long long', as computed by sizeof. */
 #define SIZEOF_LONG_LONG 8
 
 /* The size of `off_t', as computed by sizeof. */
-#define SIZEOF_OFF_T 8
+#define SIZEOF_OFF_T 4
 
 /* The size of `ptrdiff_t', as computed by sizeof. */
-#define SIZEOF_PTRDIFF_T 8
+#define SIZEOF_PTRDIFF_T 4
 
 /* The size of `short', as computed by sizeof. */
 #define SIZEOF_SHORT 2
 
 /* The size of `size_t', as computed by sizeof. */
-#define SIZEOF_SIZE_T 8
+#define SIZEOF_SIZE_T 4
 
 /* The size of `uintptr_t', as computed by sizeof. */
-#define SIZEOF_UINTPTR_T 8
+#define SIZEOF_UINTPTR_T 4
 
 /* The size of `unsigned char', as computed by sizeof. */
 #define SIZEOF_UNSIGNED_CHAR 1
@@ -858,7 +858,7 @@ Boston, MA 02110-1301, USA.
 #define SIZEOF_UNSIGNED_INT 4
 
 /* The size of `unsigned long', as computed by sizeof. */
-#define SIZEOF_UNSIGNED_LONG 8
+#define SIZEOF_UNSIGNED_LONG 4
 
 /* The size of `unsigned long long', as computed by sizeof. */
 #define SIZEOF_UNSIGNED_LONG_LONG 8
@@ -870,7 +870,7 @@ Boston, MA 02110-1301, USA.
 #define SIZEOF_UNSIGNED___INT64 0
 
 /* The size of `void *', as computed by sizeof. */
-#define SIZEOF_VOID_P 8
+#define SIZEOF_VOID_P 4
 
 /* The size of `__int64', as computed by sizeof. */
 #define SIZEOF___INT64 0
