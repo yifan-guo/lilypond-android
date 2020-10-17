@@ -77,5 +77,8 @@ http_server.listen(3000, "0.0.0.0", () => {
 	console.log("PWD:", PWD);
 
 	process.env.LILYPOND_PATH = path.join(PWD, "bin/lilypond");
-	process.env.GUILE_LOAD_PATH = path.join(PWD, "share/guile/1.8");
+
+	//const scm_path = path.join(process.env.LILYPOND_PATH, "scm");
+	process.env.GUILE_LOAD_PATH = path.join(PWD, "share/guile/1.8") //+ ":" + scm_path;
+	console.log("GUILE_LOAD_PATH:", process.env.GUILE_LOAD_PATH);
 });

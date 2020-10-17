@@ -120,16 +120,16 @@ Boston, MA 02110-1301, USA.
 /* #undef HAVE_CRT_EXTERNS_H */
 
 /* Define to 1 if you have the `crypt' function. */
-#define HAVE_CRYPT 1
+#define HAVE_CRYPT 0
 
 /* Define to 1 if you have the <crypt.h> header file. */
-#define HAVE_CRYPT_H 1
+#define HAVE_CRYPT_H 0
 
 /* Define to 1 if you have the `ctermid' function. */
 #define HAVE_CTERMID 1
 
 /* Define to 1 if you have the `cuserid' function. */
-#define HAVE_CUSERID 1
+#define HAVE_CUSERID 0
 
 /* Define if the GNU dcgettext() function is already present or preinstalled.
    */
@@ -266,7 +266,7 @@ Boston, MA 02110-1301, USA.
 #define HAVE_GETNETENT 1
 
 /* Define to 1 if you have the `getpass' function. */
-#define HAVE_GETPASS 1
+#define HAVE_GETPASS 0
 
 /* Define to 1 if you have the `getpgrp' function. */
 #define HAVE_GETPGRP 1
@@ -527,7 +527,7 @@ Boston, MA 02110-1301, USA.
 #define HAVE_SETITIMER 1
 
 /* Define to 1 if you have the `setlocale' function. */
-#define HAVE_SETLOCALE 1
+//#define HAVE_SETLOCALE 0
 
 /* Define to 1 if you have the `setnetent' function. */
 #define HAVE_SETNETENT 1
