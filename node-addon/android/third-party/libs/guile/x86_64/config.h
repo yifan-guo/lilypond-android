@@ -446,7 +446,7 @@ Boston, MA 02110-1301, USA.
 #define HAVE_PIPE 1
 
 /* Define this if you want support for POSIX system calls in Guile. */
-//#define HAVE_POSIX 1
+#define HAVE_POSIX 1
 
 /* Define to 1 if you have the <process.h> header file. */
 /* #undef HAVE_PROCESS_H */
