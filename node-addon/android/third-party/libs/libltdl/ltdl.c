@@ -4,6 +4,8 @@
 
 #include "ltdl.h"
 
+#include <dlfcn.h>
+
 
 
 int lt_dlinit ()
@@ -14,23 +16,24 @@ int lt_dlinit ()
 
 lt_dlhandle lt_dlopenext	(const char *filename)
 {
-	return 0;
+	return (lt_dlhandle)dlopen(filename, RTLD_LAZY);
 }
 
 
 const char *lt_dlerror		()
 {
-	return "__FAKE_LTDL_ERROR__";
+	//return "__FAKE_LTDL_ERROR__";
+	return dlerror();
 }
 
 
 lt_ptr	    lt_dlsym		(lt_dlhandle handle, const char *name)
 {
-	return 0;
+	return dlsym((void*)handle, name);
 }
 
 
 int	    lt_dlclose		(lt_dlhandle handle)
 {
-	return 0;
+	return dlclose((void*)handle);
 }
