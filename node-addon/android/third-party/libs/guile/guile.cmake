@@ -63,7 +63,7 @@ set_target_properties(
 
 	PROPERTIES
 		OUTPUT_NAME "guile-srfi-srfi-1-v-3"
-		SUFFIX ""
+		#SUFFIX ""
 )
 
 

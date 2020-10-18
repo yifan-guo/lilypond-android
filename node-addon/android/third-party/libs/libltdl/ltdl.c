@@ -16,7 +16,15 @@ int lt_dlinit ()
 
 lt_dlhandle lt_dlopenext	(const char *filename)
 {
-	return (lt_dlhandle)dlopen(filename, RTLD_LAZY);
+	char path[0x1000];
+	strcpy (path, filename);
+
+	// append .so
+	size_t len = strlen(path);
+	if (path[len - 3] != '.' || path[len - 2] != 's' || path[len - 1] != 'o')
+		strcat(path, ".so");
+
+	return (lt_dlhandle)dlopen(path, RTLD_LAZY);
 }
 
 
