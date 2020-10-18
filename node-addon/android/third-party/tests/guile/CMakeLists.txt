@@ -48,17 +48,21 @@ include_directories(
 find_package (Threads)
 
 target_link_libraries(
+	guile
+
+	PRIVATE ${CMAKE_THREAD_LIBS_INIT}
+	PRIVATE m
+	PRIVATE dl
+)
+
+target_link_libraries(
 	guile-cli
 
 	PRIVATE guile
-	PRIVATE ${CMAKE_THREAD_LIBS_INIT}
-	PRIVATE m
 )
 
 target_link_libraries(
 	guile-test1
 
 	PRIVATE guile
-	PRIVATE ${CMAKE_THREAD_LIBS_INIT}
-	PRIVATE m
 )

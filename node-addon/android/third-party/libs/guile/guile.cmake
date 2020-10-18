@@ -43,3 +43,47 @@ target_link_libraries(
 	PRIVATE gmp
 	PRIVATE ltdl
 )
+
+
+
+file(GLOB_RECURSE SRFI_SOURCE_FILES ${LIBS_DIR}/guile/srfi/*.c)
+
+
+add_library(
+	guile-srfi
+
+	SHARED
+
+	${SRFI_SOURCE_FILES}
+)
+
+
+set_target_properties(
+	guile-srfi
+
+	PROPERTIES
+		OUTPUT_NAME "guile-srfi-srfi-1-v-3"
+		SUFFIX ""
+)
+
+
+target_compile_definitions(
+	guile-srfi
+
+	PRIVATE HAVE_CONFIG_H
+)
+
+
+target_include_directories(
+	guile-srfi
+
+	PUBLIC ${LIBS_DIR}/guile/include
+	PUBLIC ${LIBS_DIR}/guile/${ANDROID_ABI}
+	PUBLIC ${LIBS_DIR}/guile
+)
+
+target_link_libraries(
+	guile-srfi
+
+	PRIVATE guile
+)
