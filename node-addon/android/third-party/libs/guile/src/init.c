@@ -473,7 +473,7 @@ scm_i_init_guile (SCM_STACKITEM *base)
   scm_init_properties ();
   scm_init_hooks ();            /* Requires smob_prehistory */
   scm_init_gc ();		/* Requires hooks, async */
-  //scm_init_i18n ();	// WORKAROUND
+  scm_init_i18n ();
   scm_init_ioext ();
   scm_init_keywords ();
   scm_init_list ();
