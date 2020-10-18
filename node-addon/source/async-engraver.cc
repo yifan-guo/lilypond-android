@@ -183,11 +183,11 @@ c38 -21 72 -53 72 -96z" fill="currentColor"></path>
 
 				(*task->onSVG)("test.ly", svg);
 			}));
-		}
+		}*/
 
 		sender(Functor0([=] {
 			task->onFinish(error);
-		}));*/
+		}));
 	}
 }
 
