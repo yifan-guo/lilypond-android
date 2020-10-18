@@ -1,7 +1,7 @@
 
 /*
- Automatically generated from /home/xunan/work/lilypond/lily/../VERSION
- by /home/xunan/work/lilypond/scripts/build/make-version.py.
+ Automatically generated from ~/work/lilypond/lily/../VERSION
+ by ~/work/lilypond/scripts/build/make-version.py.
 */
 #ifndef VERSION_HH
 #define VERSION_HH

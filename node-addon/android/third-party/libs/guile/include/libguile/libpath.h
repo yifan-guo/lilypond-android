@@ -3,8 +3,8 @@
 #define SCM_LIBRARY_DIR "/usr/local/share/guile/1.8"
 #define SCM_SITE_DIR "/usr/local/share/guile/site"
 #define SCM_BUILD_INFO { \
-	{ "srcdir", "/home/xunan/sdk/guile-1.8.8/libguile" }, \
- { "top_srcdir",    "/home/xunan/sdk/guile-1.8.8" }, \
+	{ "srcdir", "~/sdk/guile-1.8.8/libguile" }, \
+ { "top_srcdir",    "~/sdk/guile-1.8.8" }, \
 	{ "prefix",	   "/usr/local" }, \
 	{ "exec_prefix",   "/usr/local" }, \
 	{ "bindir",	   "/usr/local/bin" }, \

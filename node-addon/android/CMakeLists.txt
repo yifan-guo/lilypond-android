@@ -141,3 +141,8 @@ if (${ANDROID_ABI} STREQUAL ${TARGET_ABI})
 		COMMENT "Copying to app assets directory."
 	)
 endif ()
+
+# Assets copy
+# copy	lilypond/build/out/share		-> lilypond/node-addon/android/app/app/src/main/assets/lilypond-server/share
+# copy	/usr/local/share/guile/			-> lilypond/node-addon/android/app/app/src/main/assets/lilypond-server/share/guile
+# copy	/etc/fonts						-> lilypond/node-addon/android/app/app/src/main/assets/lilypond-server/share/fonts
