@@ -34,8 +34,8 @@ target_include_directories(
 )
 
 
-include(${LILYPOND_DIR}/cmake/dependencies.cmake)
-import_lib(gmp	${LIBS_DIR}/gmp/${ANDROID_ABI}/libgmp.so)
+#include(${LILYPOND_DIR}/cmake/dependencies.cmake)
+#import_lib(gmp	${LIBS_DIR}/gmp/${ANDROID_ABI}/libgmp.so)
 
 target_link_libraries(
 	guile

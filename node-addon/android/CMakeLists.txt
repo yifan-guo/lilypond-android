@@ -31,6 +31,9 @@ set(ABI_ARM		arm64-v8a armeabi-v7a)
 set(ABI_X86		x86 x86_64)
 
 
+include(${LILYPOND_DIR}/cmake/dependencies.cmake)
+import_lib(gmp	${LIBS_DIR}/gmp/${ANDROID_ABI}/libgmp.so)
+
 # third party libraries
 include(${LIBS_DIR}/glib-2/glib.cmake)
 include(${LIBS_DIR}/freetype/freetype.cmake)
