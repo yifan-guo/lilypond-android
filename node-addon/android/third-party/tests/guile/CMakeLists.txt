@@ -31,9 +31,14 @@ add_executable (
 	${PROJECT_SOURCE_DIR}/guile.c
 )
 
-target_include_directories(
-	guile-cli
+add_executable (
+	guile-test1
 
+	${PROJECT_SOURCE_DIR}/guile-test1.cc
+)
+
+
+include_directories(
 	PRIVATE ${LIBS_DIR}/guile/include
 	PRIVATE ${LIBS_DIR}/guile/x86_64
 )
@@ -42,6 +47,14 @@ find_package (Threads)
 
 target_link_libraries(
 	guile-cli
+
+	PRIVATE guile
+	PRIVATE ${CMAKE_THREAD_LIBS_INIT}
+	PRIVATE m
+)
+
+target_link_libraries(
+	guile-test1
 
 	PRIVATE guile
 	PRIVATE ${CMAKE_THREAD_LIBS_INIT}
