@@ -86,4 +86,5 @@ target_link_libraries(
 	guile-srfi
 
 	PRIVATE guile
+	PRIVATE gmp
 )
