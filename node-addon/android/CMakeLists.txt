@@ -19,16 +19,11 @@ set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/../..)
 set(LIBS_DIR ${PROJECT_SOURCE_DIR}/third-party/libs)
 set(SDK_DIR $ENV{HOME}/sdk)
 
-# for android emulator
-set(TARGET_ABI x86)
-
-# for physical android device
-#set(TARGET_ABI arm64-v8a)
-
 set(ABI_64BITS	arm64-v8a x86_64)
 set(ABI_32BITS	armeabi-v7a x86)
 set(ABI_ARM		arm64-v8a armeabi-v7a)
 set(ABI_X86		x86 x86_64)
+set(ABI_DEPLOY	x86 arm64-v8a)
 
 
 include(${LILYPOND_DIR}/cmake/dependencies.cmake)
@@ -127,8 +122,8 @@ set_target_properties(
 
 
 # copy target library files
-if (${ANDROID_ABI} STREQUAL ${TARGET_ABI})
-	#message (WARNING "copy: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lib${PROJECT_NAME}.so, ${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/lilypond.node")
+if (${ANDROID_ABI} IN_LIST ABI_DEPLOY)
+	message (WARNING "copying: ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so")
 	add_custom_command(
 		TARGET ${PROJECT_NAME}
 		POST_BUILD
