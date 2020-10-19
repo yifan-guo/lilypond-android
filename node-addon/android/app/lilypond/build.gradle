@@ -3,6 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        release {
+        keyAlias 'release'
+            storePassword '123'
+            keyPassword '123'
+        }
+    }
     compileSdkVersion 29
 
     defaultConfig {
@@ -29,6 +36,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
     externalNativeBuild {
