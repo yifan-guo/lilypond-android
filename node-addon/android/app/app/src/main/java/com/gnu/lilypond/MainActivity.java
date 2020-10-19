@@ -7,11 +7,12 @@ import android.os.AsyncTask;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.SharedPreferences;
-import android.content.res.AssetManager;
+//import android.content.Context;
+//import android.content.pm.PackageInfo;
+//import android.content.pm.PackageManager;
+//import android.content.SharedPreferences;
+//import android.content.res.AssetManager;
+import android.content.Intent;
 import java.net.*;
 import java.io.*;
 
@@ -19,21 +20,15 @@ import java.io.*;
 
 public class MainActivity extends AppCompatActivity {
 
-	// Used to load the 'native-lib' library on application startup.
-	static {
-		System.loadLibrary("native-lib");
-		System.loadLibrary("node");
-	}
-
 	// We just want one instance of node running in the background.
-	public static boolean _startedNodeAlready = false;
+	//public static boolean _startedNodeAlready = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		if( !_startedNodeAlready ) {
+		/*if( !_startedNodeAlready ) {
 			_startedNodeAlready = true;
 			new Thread(new Runnable() {
 				@Override
@@ -54,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
 					startNodeWithArguments(new String[] {"node", nodeDir + "/main.js"});
 				}
 			}).start();
-		}
+		}*/
+		Intent intent = new Intent(this, NodeService.class);
+		startService(intent);
 
 
 		final Button buttonVersions = (Button) findViewById(R.id.btRequest);
@@ -96,9 +93,9 @@ public class MainActivity extends AppCompatActivity {
 	 * A native method that is implemented by the 'native-lib' native library,
 	 * which is packaged with this application.
 	 */
-	public native Integer startNodeWithArguments(String[] arguments);
+	//public native Integer startNodeWithArguments(String[] arguments);
 
-	private boolean wasAPKUpdated() {
+	/*private boolean wasAPKUpdated() {
 		SharedPreferences prefs = getApplicationContext().getSharedPreferences("NODEJS_MOBILE_PREFS", Context.MODE_PRIVATE);
 		long previousLastUpdateTime = prefs.getLong("NODEJS_MOBILE_APK_LastUpdateTime", 0);
 		long lastUpdateTime = 1;
@@ -198,6 +195,6 @@ public class MainActivity extends AppCompatActivity {
 		while ((read = in.read(buffer)) != -1) {
 			out.write(buffer, 0, read);
 		}
-	}
+	}*/
 
 }
