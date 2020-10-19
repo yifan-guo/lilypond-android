@@ -12,6 +12,14 @@ add_library(
 	#${LIBS_DIR}/libffi/src/x86/sysv.S
 )
 
+if(${ANDROID_ABI} IN_LIST ABI_64BITS)
+	target_compile_definitions(
+		ffi
+
+		PRIVATE __x86_64__
+	)
+endif()
+
 
 target_include_directories(
 	ffi
