@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
 							int responseCode = conn.getResponseCode();
 							if (responseCode == HttpURLConnection.HTTP_OK)
-								nodeResponse = "It worked: ";
+								nodeResponse = "It worked:\n";
 							else
-								nodeResponse = "It failed: ";
+								nodeResponse = "It failed:\n";
 
 							String inputLine;
 							BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
