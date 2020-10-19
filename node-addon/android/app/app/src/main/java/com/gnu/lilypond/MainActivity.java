@@ -39,14 +39,6 @@ public class MainActivity extends AppCompatActivity {
 						String nodeResponse = "";
 						try {
 							URL localNodeServer = new URL("http://localhost:3000/");
-							/*BufferedReader in = new BufferedReader(
-									new InputStreamReader(localNodeServer.openStream()));
-
-							String inputLine;
-							while ((inputLine = in.readLine()) != null)
-								nodeResponse = nodeResponse + inputLine;
-
-							in.close();*/
 							HttpURLConnection conn = (HttpURLConnection)localNodeServer.openConnection();
 							conn.setRequestMethod("POST");
 							conn.setDoInput(true);
