@@ -133,6 +133,9 @@ if (${ANDROID_ABI} IN_LIST ABI_DEPLOY)
 		COMMAND "${CMAKE_COMMAND}" -E copy 
 			${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
 			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/
+		COMMAND "${CMAKE_COMMAND}" -E copy 
+			${LIBS_DIR}/gmp/${ANDROID_ABI}/libgmp.so
+			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/
 		COMMENT "Copying to app assets directory."
 	)
 endif ()
