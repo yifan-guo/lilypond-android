@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
 		buttonRequest.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
+				textViewStatus.setText("Request sent, waiting for response...");
+
 				// Network operations should be done in the background.
 				new AsyncTask<Void,Void,String>() {
 					@Override
