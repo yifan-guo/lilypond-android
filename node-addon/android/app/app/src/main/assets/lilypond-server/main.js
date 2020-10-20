@@ -68,19 +68,12 @@ const http_server = http.createServer( async (request, response) => {
 
 http_server.listen(3000, "0.0.0.0", () => {
 	console.log("Lilypond server is online: http://localhost:3000");
-	/*for (const key in process.env) {
-		console.log("env:", key, process.env[key]);
-	}
-	console.log("argv:", process.argv);*/
 
 	PWD = path.resolve(process.argv[1], "..");
-	console.log("PWD:", PWD);
+	//console.log("PWD:", PWD);
 
+	// set environment variables for native libraries
 	process.env.LILYPOND_PATH = path.join(PWD, "bin/lilypond");
-
 	process.env.GUILE_LOAD_PATH = path.join(PWD, "share/guile/1.8")
-	//console.log("GUILE_LOAD_PATH:", process.env.GUILE_LOAD_PATH);
-
 	process.env.FONTCONFIG_PATH = path.join(PWD, "share/fonts")
-	//console.log("FONTCONFIG_PATH:", process.env.FONTCONFIG_PATH);
 });
