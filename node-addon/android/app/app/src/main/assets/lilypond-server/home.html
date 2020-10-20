@@ -4,12 +4,17 @@
 		<title>
 			Lilypond Playground
 		</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 		<style>
 			body
 			{
-				width: 30em;
-				margin: 0 auto;
+				width: 100vw;
+				height: 100vh;
+				margin: 0;
 				font-size: 20px;
+				display: flex;
+				flex-direction: column;
+				overflow: hidden;
 			}
 
 			body > *
@@ -18,15 +23,21 @@
 				font-size: inherit;
 			}
 
+			#engrave
+			{
+				padding: .4em 0;
+			}
+
 			#code
 			{
-				height: 6em;
+				flex: 0 0 6em;
 			}
 
 			#result
 			{
-				margin: 1em 0;
-				background-color: #eee;
+				background-color: #f6f6fa;
+				flex: 1 1;
+				overflow: auto;
 			}
 		</style>
 		<script>
@@ -49,8 +60,7 @@
 	</head>
 	<body>
 		<textarea id="code">\version "2.20.0"
-\relative c' {c1}
-		</textarea>
+\relative c' {c1}</textarea>
 		<button id="engrave">Engrave</button>
 		<div id="result"></div>
 	</body>

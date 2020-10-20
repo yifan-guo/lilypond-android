@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		// Run nodejs server in a android service to keep it alive when app in the background.
 		Intent intent = new Intent(this, NodeService.class);
 		startService(intent);
 
