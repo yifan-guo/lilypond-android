@@ -1,4 +1,4 @@
-package com.gnu.lilypond;
+package com.gnu.lilyponddemo;
 
 import androidx.appcompat.app.AppCompatActivity;
 

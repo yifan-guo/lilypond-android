@@ -1,5 +1,5 @@
 
-package com.gnu.lilypond;
+package com.gnu.lilyponddemo;
 
 import java.io.*;
 import android.app.Service;
