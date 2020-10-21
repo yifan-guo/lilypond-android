@@ -18,7 +18,7 @@ int main ()
 	std::string cwd = getcwd (0, 0);
 	std::cout << "cwd: " << cwd << std::endl;
 
-	std::string guile_dir = cwd + "/../../../../app/app/src/main/assets/lilypond-server/share/guile/1.8";
+	std::string guile_dir = cwd + "/../../../../app/demo/src/main/assets/lilypond-server/share/guile/1.8";
 	std::string scm_dir = cwd + "/../scm";
 
 	setenv("GUILE_LOAD_PATH", guile_dir.c_str(), 1);

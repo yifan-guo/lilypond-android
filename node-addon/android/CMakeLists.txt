@@ -129,18 +129,18 @@ if (${ANDROID_ABI} IN_LIST ABI_DEPLOY)
 		POST_BUILD
 		COMMAND "${CMAKE_COMMAND}" -E copy 
 			${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lib${PROJECT_NAME}.so
-			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/lilypond.node
-		COMMAND "${CMAKE_COMMAND}" -E copy 
-			${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
-			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/
-		COMMAND "${CMAKE_COMMAND}" -E copy 
-			${LIBS_DIR}/gmp/${ANDROID_ABI}/libgmp.so
-			${CMAKE_HOME_DIRECTORY}/app/app/src/main/assets/lilypond-server/
+			${CMAKE_HOME_DIRECTORY}/app/demo/src/main/assets/lilypond-server/lilypond.node
+		#COMMAND "${CMAKE_COMMAND}" -E copy 
+		#	${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
+		#	${CMAKE_HOME_DIRECTORY}/app/demo/src/main/assets/lilypond-server/
+		#COMMAND "${CMAKE_COMMAND}" -E copy 
+		#	${LIBS_DIR}/gmp/${ANDROID_ABI}/libgmp.so
+		#	${CMAKE_HOME_DIRECTORY}/app/demo/src/main/assets/lilypond-server/
 		COMMENT "Copying to app assets directory."
 	)
 endif ()
 
 # Assets copy
-# copy	lilypond/build/out/share		-> lilypond/node-addon/android/app/app/src/main/assets/lilypond-server/share
-# copy	/usr/local/share/guile/			-> lilypond/node-addon/android/app/app/src/main/assets/lilypond-server/share/guile
-# copy	/etc/fonts						-> lilypond/node-addon/android/app/app/src/main/assets/lilypond-server/share/fonts
+# copy	lilypond/build/out/share		-> lilypond/node-addon/android/app/demo/src/main/assets/lilypond-server/share
+# copy	/usr/local/share/guile/			-> lilypond/node-addon/android/app/demo/src/main/assets/lilypond-server/share/guile
+# copy	/etc/fonts						-> lilypond/node-addon/android/app/demo/src/main/assets/lilypond-server/share/fonts
