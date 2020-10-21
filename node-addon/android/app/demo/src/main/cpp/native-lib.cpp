@@ -64,7 +64,7 @@ int start_redirecting_stdout_stderr() {
 
 //node's libUV requires all arguments being on contiguous memory.
 extern "C" jint JNICALL
-Java_com_gnu_lilypond_NodeService_startNodeWithArguments(
+Java_com_gnu_lilyponddemo_NodeService_startNodeWithArguments(
         JNIEnv *env,
         jobject /* this */,
         jobjectArray arguments) {
