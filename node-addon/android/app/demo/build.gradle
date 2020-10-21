@@ -4,11 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     signingConfigs {
-        release {
-        keyAlias 'release'
-            storePassword '123'
-            keyPassword '123'
-        }
     }
     compileSdkVersion 29
 
@@ -39,7 +34,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 
@@ -53,6 +47,11 @@ android {
         main {
             jniLibs.srcDirs 'libnode/bin/'
         }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
