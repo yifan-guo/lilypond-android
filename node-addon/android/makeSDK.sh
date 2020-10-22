@@ -8,6 +8,8 @@ abi_dirs=$(find ./app/lilypond/build/sdk/lilypond -mindepth 1 -maxdepth 1 -type 
 for dir in $abi_dirs
 do
 	rm $dir/*.a
+	rm $dir/libnode.so
+	rm $dir/libc++_shared.so
 	mv $dir/liblilypond-node-addon-android.so $dir/lilypond.node
 done
 
