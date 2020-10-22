@@ -34,6 +34,7 @@ extern std::string init_scheme_variables_global;
 extern std::string init_scheme_code_global;
 extern File_path global_path;
 extern std::string init_name_global;
+extern bool parse_protect_global;
 
 
 void init_fontconfig ();
@@ -417,6 +418,9 @@ namespace LilyEx
 		sources_.add (file);
 
 		basic_progress (_f ("Processing `%s'", source_name_ly.c_str ()));
+
+		// ensure guile error can be catched
+		parse_protect_global = true;
 
 		Lily_parser *parser = new Lily_parser (&sources_);
 		//parser->parse_file (init, source_name_ly, "");
