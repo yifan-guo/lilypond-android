@@ -16,8 +16,8 @@ project(lilypond-node-addon-android)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "-std=c++17")
 set(LILYPOND_DIR ${PROJECT_SOURCE_DIR}/../..)
+set(LIBNODE_DIR ${LILYPOND_DIR}/node-addon/android/app/demo/libnode)
 set(LIBS_DIR ${PROJECT_SOURCE_DIR}/third-party/libs)
-set(SDK_DIR $ENV{HOME}/sdk)
 
 set(ABI_64BITS	arm64-v8a x86_64)
 set(ABI_32BITS	armeabi-v7a x86)
@@ -83,10 +83,8 @@ add_library(
 target_include_directories(
 	${PROJECT_NAME}
 
-	PRIVATE "${SDK_DIR}/nodejs-mobile/src"
-	PRIVATE "${SDK_DIR}/nodejs-mobile/deps/v8/include"
-	PRIVATE "${SDK_DIR}/nodejs-mobile/deps/uv/include"
-	PRIVATE "${SDK_DIR}/nan"
+	PRIVATE ${LIBNODE_DIR}/include/node
+	PRIVATE ${LIBS_DIR}/nan/include
 	PRIVATE ${LILYPOND_DIR}/node-addon/include
 )
 
@@ -101,7 +99,7 @@ add_library(
 set_target_properties(
 	node
 	PROPERTIES IMPORTED_LOCATION
-	${SDK_DIR}/nodejs-mobile/out_android/${ANDROID_ABI}/libnode.so
+	${LIBNODE_DIR}/bin/${ANDROID_ABI}/libnode.so
 )
 
 
