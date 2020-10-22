@@ -10,6 +10,7 @@
 .DS_Store
 /build
 /captures
+/cache
 .externalNativeBuild
 .cxx
 debug.keystore
