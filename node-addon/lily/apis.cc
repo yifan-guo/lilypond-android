@@ -8,7 +8,7 @@
 #	include <libintl.h>
 #endif
 
-#include "apis.hh"
+#include "lilypond-ex.hh"
 
 #include "lily-imports.hh"
 #include "lily-guile.hh"

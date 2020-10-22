@@ -6,7 +6,7 @@
 #endif
 #include <dlfcn.h>
 
-#include "apis.hh"
+#include "lilypond-ex.hh"
 #include "async-engraver.hh"
 #include "async-progress-worker.hh"
 

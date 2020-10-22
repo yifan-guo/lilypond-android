@@ -5,7 +5,7 @@
 #include <node.h>
 #include <nan.h>
 
-#include "apis.hh"
+#include "lilypond-ex.hh"
 #include "async-engraver.hh"
 #include "persist.hh"
 
