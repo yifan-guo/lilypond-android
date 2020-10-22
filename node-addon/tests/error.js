@@ -4,7 +4,7 @@ const lilypond = require("../output/lilypond");
 
 
 
-const main = async () => {
+const test = async () => {
 	const error = await lilypond.engrave("$#", {
 		log (message) {
 			console.log("log:", message);
@@ -12,6 +12,13 @@ const main = async () => {
 	});
 
 	console.log("result:", error);
+};
+
+
+const main = async () => {
+	await test();
+
+	await test();
 };
 
 

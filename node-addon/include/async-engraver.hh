@@ -49,6 +49,8 @@ public:
 public:
 	AsyncEngraver ();
 
+	void queue ();
+
 
 public:
 	void appendTask (const Task* task);

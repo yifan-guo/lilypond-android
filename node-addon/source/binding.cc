@@ -1,5 +1,4 @@
 
-#include <functional>
 //#include <iostream>
 
 #include <v8.h>
@@ -7,7 +6,6 @@
 #include <nan.h>
 
 #include "apis.hh"
-#include "async-progress-worker.hh"
 #include "async-engraver.hh"
 #include "persist.hh"
 
@@ -150,9 +148,7 @@ void initialize(v8::Local<v8::Object> target)
 {
 	NODE_SET_METHOD(target, "engrave", engrave);
 
-	AsyncProgressQueueWorker::queue(
-		std::bind(&AsyncEngraver::engrave, &engraver, std::placeholders::_1),
-		std::bind(&AsyncEngraver::handleProgress, &engraver, std::placeholders::_1));
+	engraver.queue();
 }
 
 

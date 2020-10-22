@@ -1,5 +1,6 @@
 
 #include <iostream>
+//#include <cstdarg>
 #if HAS_FILESYSTEM
 #	include <experimental/filesystem>
 #endif
@@ -7,6 +8,7 @@
 
 #include "apis.hh"
 #include "async-engraver.hh"
+#include "async-progress-worker.hh"
 
 
 
@@ -53,6 +55,13 @@ AsyncEngraver::AsyncEngraver ()
 {
 }
 
+void AsyncEngraver::queue ()
+{
+	AsyncProgressQueueWorker::queue(
+		std::bind(&AsyncEngraver::engrave, this, std::placeholders::_1),
+		std::bind(&AsyncEngraver::handleProgress, this, std::placeholders::_1));
+}
+
 
 void AsyncEngraver::appendTask (const Task* task)
 {
@@ -76,40 +85,60 @@ void AsyncEngraver::engrave (const SendFunctor& sender)
 		tasks_.pop_front();
 		lock.unlock();
 
-		static Initializer init;
+		try
+		{
+			static Initializer init;
 
-		const int error = LilyEx::engrave(task->ly_code, LilyEx::EngraveOptions {
-			// includeFolders
-			task->includeFolders,
+			const int error = LilyEx::engrave(task->ly_code, LilyEx::EngraveOptions {
+				// includeFolders
+				task->includeFolders,
 
-			// log
-			[=](const std::string& messages) {
-				if (task->log)
-					sender(Functor0([=] {
-						(*task->log)(messages);
-					}));
-			},
+				// log
+				[=](const std::string& messages) {
+					if (task->log)
+						sender(Functor0([=] {
+							(*task->log)(messages);
+						}));
+				},
 
-			// onSVG
-			[=](const std::string& filename, const ByteBuffer& data) {
-				if (task->onSVG)
-					sender(Functor0([=] {
-						(*task->onSVG)(filename, data);
-					}));
-			},
+				// onSVG
+				[=](const std::string& filename, const ByteBuffer& data) {
+					if (task->onSVG)
+						sender(Functor0([=] {
+							(*task->onSVG)(filename, data);
+						}));
+				},
 
-			// onMIDI
-			[=](const std::string& filename, const ByteBuffer& data) {
-				if (task->onMIDI)
-					sender(Functor0([=] {
-						(*task->onMIDI)(filename, data);
-					}));
-			},
-		});
+				// onMIDI
+				[=](const std::string& filename, const ByteBuffer& data) {
+					if (task->onMIDI)
+						sender(Functor0([=] {
+							(*task->onMIDI)(filename, data);
+						}));
+				},
+			});
 
-		sender(Functor0([=] {
-			task->onFinish(error);
-		}));
+			sender(Functor0([=] {
+				task->onFinish(error);
+			}));
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << "AsyncEngraver::engrave error: " << e.what() << std::endl;
+
+			sender(Functor0([=] {
+				task->onFinish(-1);
+			}));
+		}
+		catch(...)
+		{
+			sender(Functor0([=] {
+				task->onFinish(-1);
+			}));
+
+			// fatal error thrown, process is crashing irretrievably, cannot report error either.
+			return;
+		}
 	}
 }
 
