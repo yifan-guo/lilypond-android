@@ -1,3 +1,10 @@
+# Lilypond Android Porting
+
+## Module dependencies
+
+![module dependencies graph](readme/android-modules.drawio.svg)
+
+---
 # LilyPond
 
 LilyPond is a music engraving program, devoted to producing the highest-quality
