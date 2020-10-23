@@ -1,4 +1,10 @@
-# Lilypond Android Porting
+# Lilypond Mobile Building Experiment
+
+This forked respository is an experiment for building Lilypond as [Nodejs C++ addon](https://nodejs.org/api/addons.html), and on mobile platform of Android & iOS.
+
+## CMake building
+
+[cmake/lilypond.cmake](cmake/lilypond.cmake) is the platform-independent CMake module for main library, which can be included by platform-specific `CMakeLists.txt` file.
 
 ## Module dependencies
 
