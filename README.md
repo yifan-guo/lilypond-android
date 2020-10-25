@@ -10,6 +10,16 @@ This forked respository is an experiment for building Lilypond as [Nodejs C++ ad
 
 ![module dependencies graph](readme/android-modules.drawio.svg)
 
+
+## Lilypond C++ APIs Proposal
+
+```cpp
+void initialize (const std::string& init_path);
+int engrave (const std::string& ly_code, const EngraveOptions& options);
+```
+
+Complete definition is at: [lilypond-ex.hh](node-addon/include/lilypond-ex.hh).
+
 ---
 # LilyPond
 
