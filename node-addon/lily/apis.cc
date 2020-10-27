@@ -304,10 +304,51 @@ LY_DEFINE (ly_usage, "ly:usage",
 }
 
 
+LY_DEFINE (lyx_print, "lyx:print",
+	1, 0, 0, (SCM message),
+	"Print message in std::cout")
+{
+	std::string str_message = ly_scm2string(message);
+	std::cout << str_message << std::endl;
+
+	return SCM_UNSPECIFIED;
+}
+
+
 void on_midi_output (const std::string& filename, const ByteBuffer& data)
 {
 	//std::cout << "t3:" << std::clock() << std::endl;
 	LilyEx::options_.onMIDI(filename, data);
+}
+
+SCM ly_init (void *p)
+{
+	ly_c_init_guile ();
+	std::cout << "initialize.3" << std::endl;
+	call_constructors ();
+	init_fontconfig ();
+
+	std::cout << "initialize.4" << std::endl;
+
+	init_freetype ();
+	ly_reset_all_fonts ();
+
+	return SCM_UNSPECIFIED;
+}
+
+
+static SCM handle_error (void *data, SCM /*tag*/, SCM args)
+{
+	//scm_display_error_message (scm_cadr (args), scm_caddr (args), scm_current_error_port ());
+
+	SCM port = scm_open_output_string();
+	scm_display_error_message (scm_cadr (args), scm_caddr (args), port);
+
+	SCM str = scm_get_output_string(port);
+	std::string str_message = ly_scm2string(str);
+	std::cerr << "SCM ERROR: " << str_message << std::endl;
+
+	return SCM_UNSPECIFIED;
 }
 
 
@@ -372,11 +413,15 @@ namespace LilyEx
 		init_scheme_code_global = "(begin " + init_scheme_code_global + ")";
 
 		ly_c_init_guile ();
+		/*ly_c_init_guile ();
+		std::cout << "initialize.3" << std::endl;
 		call_constructors ();
 		init_fontconfig ();
 
+		std::cout << "initialize.4" << std::endl;
+
 		init_freetype ();
-		ly_reset_all_fonts ();
+		ly_reset_all_fonts ();*/
 
 		sources_.set_path (&global_path);
 
