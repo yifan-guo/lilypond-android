@@ -324,11 +324,11 @@ void on_midi_output (const std::string& filename, const ByteBuffer& data)
 SCM ly_init (void *p)
 {
 	ly_c_init_guile ();
-	std::cout << "initialize.3" << std::endl;
+	//std::cout << "initialize.3" << std::endl;
 	call_constructors ();
 	init_fontconfig ();
 
-	std::cout << "initialize.4" << std::endl;
+	//std::cout << "initialize.4" << std::endl;
 
 	init_freetype ();
 	ly_reset_all_fonts ();
@@ -412,16 +412,7 @@ namespace LilyEx
 		init_scheme_variables_global = "(" + init_scheme_variables_global + ")";
 		init_scheme_code_global = "(begin " + init_scheme_code_global + ")";
 
-		ly_c_init_guile ();
-		/*ly_c_init_guile ();
-		std::cout << "initialize.3" << std::endl;
-		call_constructors ();
-		init_fontconfig ();
-
-		std::cout << "initialize.4" << std::endl;
-
-		init_freetype ();
-		ly_reset_all_fonts ();*/
+		scm_internal_catch (SCM_BOOL_T, ly_init, nullptr, &handle_error, nullptr);
 
 		sources_.set_path (&global_path);
 
