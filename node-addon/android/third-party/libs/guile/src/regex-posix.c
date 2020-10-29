@@ -71,15 +71,18 @@
 
 scm_t_bits scm_tc16_regex;
 
-int	cached_regcomp(regex_t* exp, const char* source, int flags);
-int	cached_regexec(const regex_t* exp, const char* source, size_t nmatch, regmatch_t matches[], int flags);
+typedef regex_t* ref_regex_t;
+int	cached_regcomp(ref_regex_t* exp, const char* source, int flags);
+void cached_regfree (ref_regex_t*__preg);
+int	cached_regexec(const ref_regex_t* exp, const char* source, size_t nmatch, regmatch_t matches[], int flags);
+size_t cached_regerror (int errcode, const ref_regex_t* preg, char* errbuf, size_t errbuf_size);
 
 
 static size_t
 regex_free (SCM obj)
 {
-  regfree (SCM_RGX (obj));
-  scm_gc_free (SCM_RGX (obj), sizeof(regex_t), "regex");
+  cached_regfree (SCM_RGX (obj));
+  scm_gc_free (SCM_RGX (obj), sizeof(ref_regex_t), "regex");
   return 0;
 }
 
@@ -88,18 +91,18 @@ regex_free (SCM obj)
 SCM_SYMBOL (scm_regexp_error_key, "regular-expression-syntax");
 
 static SCM
-scm_regexp_error_msg (int regerrno, regex_t *rx)
+scm_regexp_error_msg (int regerrno, ref_regex_t *rx)
 {
   char *errmsg;
   int l;
 
   errmsg = scm_malloc (80);
-  l = regerror (regerrno, rx, errmsg, 80);
+  l = cached_regerror (regerrno, rx, errmsg, 80);
   if (l > 80)
     {
       free (errmsg);
       errmsg = scm_malloc (l);
-      regerror (regerrno, rx, errmsg, l);
+      cached_regerror (regerrno, rx, errmsg, l);
     }
   return scm_take_locale_string (errmsg);
 }
@@ -156,7 +159,7 @@ SCM_DEFINE (scm_make_regexp, "make-regexp", 1, 0, 1,
 #define FUNC_NAME s_scm_make_regexp
 {
   SCM flag;
-  regex_t *rx;
+  ref_regex_t *rx;
   int status, cflags;
   char *c_pat;
 
@@ -176,7 +179,7 @@ SCM_DEFINE (scm_make_regexp, "make-regexp", 1, 0, 1,
       flag = SCM_CDR (flag);
     }
 
-  rx = scm_gc_malloc (sizeof(regex_t), "regex");
+  rx = scm_gc_malloc (sizeof(ref_regex_t), "regex");
   c_pat = scm_to_locale_string (pat);
   status = cached_regcomp (rx, c_pat,
 		    /* Make sure they're not passing REG_NOSUB;
@@ -186,7 +189,7 @@ SCM_DEFINE (scm_make_regexp, "make-regexp", 1, 0, 1,
   if (status != 0)
     {
       SCM errmsg = scm_regexp_error_msg (status, rx);
-      scm_gc_free (rx, sizeof(regex_t), "regex");
+      scm_gc_free (rx, sizeof(ref_regex_t), "regex");
       scm_error_scm (scm_regexp_error_key,
 		     scm_from_locale_string (FUNC_NAME),
 		     errmsg,
@@ -259,7 +262,7 @@ SCM_DEFINE (scm_regexp_exec, "regexp-exec", 2, 2, 0,
   /* re_nsub doesn't account for the `subexpression' representing the
      whole regexp, so add 1 to nmatches. */
 
-  nmatches = SCM_RGX(rx)->re_nsub + 1;
+  nmatches = (*SCM_RGX(rx))->re_nsub + 1;
   matches = scm_malloc (sizeof (regmatch_t) * nmatches);
   c_str = scm_to_locale_string (substr);
   status = cached_regexec (SCM_RGX (rx), c_str, nmatches, matches,
@@ -296,7 +299,7 @@ SCM_DEFINE (scm_regexp_exec, "regexp-exec", 2, 2, 0,
 void
 scm_init_regex_posix ()
 {
-  scm_tc16_regex = scm_make_smob_type ("regexp", sizeof (regex_t));
+  scm_tc16_regex = scm_make_smob_type ("regexp", sizeof (ref_regex_t));
   scm_set_smob_free (scm_tc16_regex, regex_free);
 
   /* Compilation flags.  */

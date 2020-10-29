@@ -25,7 +25,7 @@
 #include "libguile/__scm.h"
 
 SCM_API scm_t_bits scm_tc16_regex;
-#define SCM_RGX(X)	((regex_t *) SCM_SMOB_DATA (X))
+#define SCM_RGX(X)	((ref_regex_t *) SCM_SMOB_DATA (X))
 #define SCM_RGXP(X)	(SCM_SMOB_PREDICATE (scm_tc16_regex, (X)))
 
 SCM_API SCM scm_make_regexp (SCM pat, SCM flags);
