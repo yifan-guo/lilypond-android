@@ -71,6 +71,10 @@
 
 scm_t_bits scm_tc16_regex;
 
+int	cached_regcomp(regex_t* exp, const char* source, int flags);
+int	cached_regexec(const regex_t* exp, const char* source, size_t nmatch, regmatch_t matches[], int flags);
+
+
 static size_t
 regex_free (SCM obj)
 {
@@ -174,7 +178,7 @@ SCM_DEFINE (scm_make_regexp, "make-regexp", 1, 0, 1,
 
   rx = scm_gc_malloc (sizeof(regex_t), "regex");
   c_pat = scm_to_locale_string (pat);
-  status = regcomp (rx, c_pat,
+  status = cached_regcomp (rx, c_pat,
 		    /* Make sure they're not passing REG_NOSUB;
                        regexp-exec assumes we're getting match data.  */
 		    cflags & ~REG_NOSUB);
@@ -258,7 +262,7 @@ SCM_DEFINE (scm_regexp_exec, "regexp-exec", 2, 2, 0,
   nmatches = SCM_RGX(rx)->re_nsub + 1;
   matches = scm_malloc (sizeof (regmatch_t) * nmatches);
   c_str = scm_to_locale_string (substr);
-  status = regexec (SCM_RGX (rx), c_str, nmatches, matches,
+  status = cached_regexec (SCM_RGX (rx), c_str, nmatches, matches,
 		    scm_to_int (flags));
   free (c_str);
 

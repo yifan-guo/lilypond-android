@@ -4,6 +4,7 @@ include(${LIBS_DIR}/libltdl/ltdl.cmake)
 
 
 file(GLOB_RECURSE GUILE_SOURCE_FILES ${LIBS_DIR}/guile/src/*.c)
+file(GLOB_RECURSE GUILE_CXX_SOURCE_FILES ${LIBS_DIR}/guile/src/*.cc)
 
 
 add_library(
@@ -12,6 +13,7 @@ add_library(
 	SHARED
 
 	${GUILE_SOURCE_FILES}
+	${GUILE_CXX_SOURCE_FILES}
 )
 
 
