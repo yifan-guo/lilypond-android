@@ -22,12 +22,19 @@ include(${LILYPOND_DIR}/cmake/lilypond.cmake)
 target_include_directories(
 	lilypond
 
-	PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
+	#PRIVATE /usr/lib/x86_64-linux-gnu/glib-2.0/include
+	PRIVATE "~/sdk/glib-2/glib"
+	PRIVATE "~/sdk/glib-2"
 	PRIVATE ${LILYPOND_DIR}/build/lily/out
-	PRIVATE /usr/include/guile/1.8
-	PRIVATE /usr/include/freetype2
-	PRIVATE /usr/include/pango-1.0
-	PRIVATE /usr/include/glib-2.0
+	#PRIVATE /usr/include/guile/1.8
+	#PRIVATE /usr/include/freetype2
+	#PRIVATE /usr/include/pango-1.0
+	#PRIVATE /usr/include/glib-2.0
+	PRIVATE "~/sdk/guile-1.8.8"
+	PRIVATE "~/sdk/freetype-2.8.1/include"
+	PRIVATE "~/sdk/pango-1.42.4"
+	PRIVATE "~/sdk/gmp-6.2.0"
+	PRIVATE "~/sdk/fontconfig-2.12.6"
 )
 
 import_lib(guile /usr/local/lib/libguile.so.17)
@@ -92,10 +99,10 @@ add_custom_command(
 	TARGET ${PROJECT_NAME}
 	POST_BUILD 
 	COMMAND "${CMAKE_COMMAND}" -E copy 
-		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lilypond.node
+		.${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/lilypond.node
 		${CMAKE_HOME_DIRECTORY}/output/
 	COMMAND "${CMAKE_COMMAND}" -E copy 
-		${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
+		.${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/*.so
 		${CMAKE_HOME_DIRECTORY}/output/
 	COMMAND "${CMAKE_COMMAND}" -E create_symlink
 		${LILYPOND_DIR}/build/out/share
