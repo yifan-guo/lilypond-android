@@ -20,13 +20,13 @@
 #include "gregorian-ligature-engraver.hh"
 
 #include "gregorian-ligature.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "paper-column.hh"
 #include "pitch.hh"
 #include "spanner.hh"
 #include "staff-symbol-referencer.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 /* ASSIGN_EVENT_ONCE */
 #include "translator.icc"

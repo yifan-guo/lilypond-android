@@ -22,7 +22,7 @@
 
 #include "lily-guile.hh"
 #include "lily-proto.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 /*
   Data container for broadcasts.

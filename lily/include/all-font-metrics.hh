@@ -20,7 +20,7 @@
 #ifndef ALL_FONTS_HH
 #define ALL_FONTS_HH
 
-#include "file-path.hh"
+#include "../../flower/file-path.hh"
 #include "font-metric.hh"
 #include "config.hh"
 

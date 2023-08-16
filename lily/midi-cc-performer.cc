@@ -25,7 +25,7 @@
 #include "audio-item.hh"
 #include "context.hh"
 #include "dispatcher.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "listener.hh"
 #include "midi-cc-announcer.hh"
 #include "stream-event.hh"

@@ -22,12 +22,12 @@
 #include "align-interface.hh"
 #include "axis-group-interface.hh"
 #include "dimensions.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "output-def.hh"
 #include "paper-column.hh"
 #include "pointer-group-interface.hh"
 #include "side-position-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 using std::vector;

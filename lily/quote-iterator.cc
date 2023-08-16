@@ -22,11 +22,11 @@
 #include "context.hh"
 #include "dispatcher.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-guile.hh"
 #include "music-sequence.hh"
 #include "music.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 class Quote_iterator final : public Music_wrapper_iterator
 {

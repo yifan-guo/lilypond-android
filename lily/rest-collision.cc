@@ -21,7 +21,7 @@
 
 #include "directional-element-interface.hh"
 #include "duration.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "note-column.hh"
 #include "output-def.hh"
@@ -32,7 +32,7 @@
 #include "stem.hh"
 #include "grob.hh"
 #include "unpure-pure-container.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include <cmath> // ceil.

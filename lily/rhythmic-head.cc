@@ -23,7 +23,7 @@
 #include "rest.hh"
 #include "staff-symbol-referencer.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Item *
 Rhythmic_head::get_dots (Grob *me)

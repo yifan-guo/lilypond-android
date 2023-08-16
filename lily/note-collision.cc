@@ -21,7 +21,7 @@
 
 #include "axis-group-interface.hh"
 #include "dot-column.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "note-column.hh"
 #include "note-head.hh"
 #include "output-def.hh"
@@ -31,7 +31,7 @@
 #include "staff-symbol-referencer.hh"
 #include "side-position-interface.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

@@ -22,7 +22,7 @@
 
 #include "context.hh"
 #include "audio-element.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 ADD_TRANSLATOR_GROUP (Performer_group,
                       /* doc */

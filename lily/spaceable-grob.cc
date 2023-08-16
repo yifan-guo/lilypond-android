@@ -19,12 +19,12 @@
 
 #include "spaceable-grob.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "spring.hh"
 #include "pointer-group-interface.hh"
 #include "grob.hh"
 #include "paper-column.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 
 #include <cstdio>
 

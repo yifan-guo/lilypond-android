@@ -20,7 +20,7 @@
 
 #include "beam.hh"
 #include "engraver-group.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "misc.hh"
 #include "repeated-music.hh"
@@ -29,7 +29,7 @@
 #include "stem-tremolo.hh"
 #include "stem.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

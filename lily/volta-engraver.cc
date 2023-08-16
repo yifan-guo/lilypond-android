@@ -22,14 +22,14 @@
 #include "axis-group-interface.hh"
 #include "context.hh"
 #include "grob-array.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "note-column.hh"
 #include "item.hh"
 #include "side-position-interface.hh"
 #include "staff-symbol.hh"
 #include "text-interface.hh"
 #include "volta-bracket.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

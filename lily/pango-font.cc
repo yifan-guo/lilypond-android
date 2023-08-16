@@ -28,13 +28,13 @@
 
 #include "pango-font.hh"
 #include "dimensions.hh"
-#include "file-name.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/international.hh"
 #include "lookup.hh"            // debugging
 #include "ly-module.hh"
 #include "main.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 #include "all-font-metrics.hh"
 #include "program-option.hh"
 #include "open-type-font.hh"

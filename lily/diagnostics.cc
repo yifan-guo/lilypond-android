@@ -19,7 +19,7 @@
 
 #include "diagnostics.hh"
 #include "input.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 void
 Diagnostics::error (const std::string &arg) const

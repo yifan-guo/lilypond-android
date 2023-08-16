@@ -23,9 +23,9 @@
 #include "dispatcher.hh"
 #include "duration.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Rhythmic_music_iterator::Rhythmic_music_iterator ()
 {

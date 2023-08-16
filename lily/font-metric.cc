@@ -23,7 +23,7 @@
 #include "modified-font-metric.hh"
 #include "open-type-font.hh"
 #include "stencil.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cctype>
 #include <cmath>

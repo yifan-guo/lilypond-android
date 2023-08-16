@@ -21,7 +21,7 @@
 
 #include "directional-element-interface.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lookup.hh"
 #include "ly-scm-list.hh"
 #include "ly-smob-list.hh"
@@ -38,7 +38,7 @@
 #include "staff-symbol-referencer.hh"
 #include "system.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Interval
 Multi_measure_rest::bar_width (Spanner *me)

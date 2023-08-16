@@ -20,10 +20,10 @@
 #ifndef BEZIER_HH
 #define BEZIER_HH
 
-#include "interval.hh"
+#include "../../flower/interval.hh"
 #include "ly-scm-list.hh"
-#include "offset.hh"
-#include "polynomial.hh"
+#include "../../flower/offset.hh"
+#include "../../flower/polynomial.hh"
 
 /**
    Simple bezier curve

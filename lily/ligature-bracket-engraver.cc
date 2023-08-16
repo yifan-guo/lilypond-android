@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "international.hh"
+#include "../flower/international.hh"
 
 #include "engraver.hh"
 #include "note-column.hh"

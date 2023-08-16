@@ -22,12 +22,12 @@
 
 #include "global-ctor.hh"
 #include "lily-proto.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 #include "callback.hh"
 #include "input.hh"             // for error reporting
 #include "smobs.hh"
 #include "stream-event.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "protected-scm.hh"
 
 // The Translator_creator class is only for translators defined in C.

@@ -22,9 +22,9 @@
 #include "context.hh"
 #include "duration.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Event_iterator::Event_iterator ()
 {

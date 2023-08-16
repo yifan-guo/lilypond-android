@@ -25,7 +25,7 @@
 #include "break-align-interface.hh"
 #include "grob-array.hh"
 #include "hara-kiri-group-spanner.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lookup.hh"
 #include "main.hh"
 #include "output-def.hh"
@@ -38,7 +38,7 @@
 #include "staff-symbol-referencer.hh"
 #include "system-start-delimiter.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "unpure-pure-container.hh"
 #include "lily-imports.hh"
 

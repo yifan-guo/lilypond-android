@@ -21,13 +21,13 @@
 
 #include "context.hh"
 #include "engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "lyric-extender.hh"
 #include "note-head.hh"
 #include "pointer-group-interface.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "spanner.hh"
 #include "translator.icc"
 

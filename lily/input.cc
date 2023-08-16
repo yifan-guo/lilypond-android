@@ -19,12 +19,12 @@
 
 #include "input.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-imports.hh"
 #include "program-option.hh"
 #include "source-file.hh"
 #include "sources.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cstdio>
 

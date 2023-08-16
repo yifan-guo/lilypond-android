@@ -19,8 +19,8 @@
 
 #include "dispatcher.hh"
 #include "input.hh"
-#include "international.hh"
-#include "warn.hh"
+#include "../flower/international.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 const char *const Dispatcher::type_p_name_ = "ly:dispatcher?";

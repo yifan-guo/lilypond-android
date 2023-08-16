@@ -20,7 +20,7 @@
 #include "rod.hh"
 
 #include "paper-column.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "dimensions.hh"
 #include "spaceable-grob.hh"
 

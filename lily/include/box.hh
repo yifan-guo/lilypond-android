@@ -24,8 +24,8 @@
 #ifndef BOXES_HH
 #define BOXES_HH
 
-#include "interval.hh"
-#include "offset.hh"
+#include "../../flower/interval.hh"
+#include "../../flower/offset.hh"
 #include "smobs.hh"
 
 class Box : public Simple_smob<Box>

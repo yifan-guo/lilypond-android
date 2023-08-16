@@ -21,14 +21,14 @@
 #define CONTEXT_HH
 
 #include "acceptance-set.hh"
-#include "direction.hh"
+#include "../../flower/direction.hh"
 #include "duration.hh"
 #include "lily-guile.hh"
 #include "lily-proto.hh"
 #include "moment.hh"
 #include "scm-hash.hh"
-#include "std-vector.hh"
-#include "virtual-methods.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/virtual-methods.hh"
 
 class Context : public Smob<Context>
 {

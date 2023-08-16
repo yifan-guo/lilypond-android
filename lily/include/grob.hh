@@ -21,7 +21,7 @@
 #define GROB_HH
 
 #include "box.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 #include "diagnostics.hh"
 #include "dimension-cache.hh"
 #include "grob-interface.hh"

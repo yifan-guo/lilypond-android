@@ -21,11 +21,11 @@
 
 #include "context-def.hh"
 #include "dispatcher.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music-iterator.hh"
 #include "music.hh"
 #include "output-def.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cstdio>
 

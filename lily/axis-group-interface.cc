@@ -23,8 +23,8 @@
 #include "directional-element-interface.hh"
 #include "grob-array.hh"
 #include "hara-kiri-group-spanner.hh"
-#include "international.hh"
-#include "interval-set.hh"
+#include "../flower/international.hh"
+#include "../flower/interval-set.hh"
 #include "lookup.hh"
 #include "paper-column.hh"
 #include "paper-score.hh"
@@ -35,7 +35,7 @@
 #include "stem.hh"
 #include "stencil.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "unpure-pure-container.hh"
 
 #include <map>

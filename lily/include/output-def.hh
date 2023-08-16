@@ -21,7 +21,7 @@
 #define OUTPUT_DEF_HH
 
 #include "lily-proto.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 #include "smobs.hh"
 #include "input.hh"
 

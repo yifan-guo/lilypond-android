@@ -18,7 +18,7 @@
 */
 
 #include "lily-guile.hh"
-#include "offset.hh"
+#include "../flower/offset.hh"
 #include "transform.hh"
 
 const char *const

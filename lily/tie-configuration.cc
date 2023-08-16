@@ -20,7 +20,7 @@
 
 #include "tie-configuration.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "tie-formatting-problem.hh"
 #include "bezier.hh"
 

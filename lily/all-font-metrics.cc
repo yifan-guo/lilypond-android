@@ -19,13 +19,13 @@
 
 #include "all-font-metrics.hh"
 
-#include "string-convert.hh"
-#include "international.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "open-type-font.hh"
 #include "pango-font.hh"
 #include "scm-hash.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 

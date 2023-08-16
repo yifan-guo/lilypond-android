@@ -21,7 +21,7 @@
 #ifndef NAN_H_
 #define NAN_H_
 
-#include <node_version.h>
+#include "../../node/src/node_version.h"
 
 #define NODE_0_10_MODULE_VERSION 11
 #define NODE_0_12_MODULE_VERSION 14
@@ -52,10 +52,10 @@
 # error This version of node/NAN/v8 requires a C++11 compiler
 #endif
 
-#include <uv.h>
-#include <node.h>
-#include <node_buffer.h>
-#include <node_object_wrap.h>
+#include "../../node/deps/uv/include/uv.h"
+#include "../../node/src/node.h"
+#include "../../node/src/node_buffer.h"
+#include "../../node/src/node_object_wrap.h"
 #include <algorithm>
 #include <cstring>
 #include <climits>

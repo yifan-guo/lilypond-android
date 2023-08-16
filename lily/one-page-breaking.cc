@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "one-page-breaking.hh"
 #include "output-def.hh"
 #include "page-spacing.hh"

@@ -19,8 +19,8 @@
 
 #include "score-engraver.hh"
 #include "score-performer.hh"
-#include "warn.hh"
-#include "international.hh"
+#include "../flower/warn.hh"
+#include "../flower/international.hh"
 
 /*
   Quick & dirty.

@@ -18,11 +18,11 @@
 */
 
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "audio-item.hh"
 #include "audio-staff.hh"
 #include "performer.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 #include "lily-version.hh"
 
 #include "translator.icc"

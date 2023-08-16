@@ -21,7 +21,7 @@
 #include "bezier.hh"
 #include "lazy-skyline-pair.hh"
 #include "transform.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include FT_OUTLINE_H
 #include FT_BBOX_H

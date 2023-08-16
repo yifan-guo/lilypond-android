@@ -24,7 +24,7 @@
 
 #include "bezier.hh"
 #include "lily-proto.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 /* A candidate position for a slur. */
 class Slur_configuration

@@ -17,42 +17,32 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef REAL_HH
-#define REAL_HH
+#ifndef AXES_HH
+#define AXES_HH
 
-// Needed because of extension definitions for POSIX functions.
-#include "config.hh"
+#include <cassert>
 
-#include <algorithm>
-#include <climits>
-#include <cmath>
-#include <cstdlib>
-
-typedef double Real;
-static constexpr Real infinity_f = INFINITY;
-
-using std::abs; // TODO: replace abs (x) with std::abs (x) and remove this
-
-inline Real
-distance (Real x, Real y)
+enum Axis
 {
-  return std::abs (x - y);
+  X_AXIS = 0,
+  Y_AXIS = 1,
+  NO_AXES = 2,
+};
+
+static inline
+Axis
+incr (Axis &a)
+{
+  assert (a < NO_AXES);
+  a = Axis (int (a) + 1);
+  return a;
 }
 
-template<class T>
-inline int
-sign (T x)
+static inline
+Axis
+other_axis (Axis a)
 {
-  if (x != T (0))
-    return std::signbit (x) ? -1 : 1;
-  return 0;
+  return a == Y_AXIS ? X_AXIS : Y_AXIS;
 }
 
-template<class T>
-constexpr auto
-sqr (T x)->decltype (x *x)
-{
-  return x * x;
-}
-
-#endif
+#endif // AXES_HH

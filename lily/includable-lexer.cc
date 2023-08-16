@@ -21,13 +21,13 @@
 
 #include "config.hh"
 
-#include "file-name.hh"
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "source-file.hh"
 #include "sources.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <sstream>
 
@@ -59,7 +59,7 @@ Includable_lexer::new_input (const string &name, Sources *sources)
       string msg = _f ("cannot find file: `%s'", name);
       msg += "\n";
       msg += _f ("(search path: `%s')",
-                 (current_dir.length () ? (current_dir + PATHSEP) : "") + sources->search_path ().c_str ());
+                 (current_dir.length () ? (current_dir + '/') : "") + sources->search_path ().c_str ());
       LexerError (msg.c_str ());
       return;
     }

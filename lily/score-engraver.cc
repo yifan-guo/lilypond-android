@@ -25,7 +25,7 @@
 #include "context.hh"
 #include "dispatcher.hh"
 #include "grob-properties.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "open-type-font.hh"
 #include "output-def.hh"
@@ -33,7 +33,7 @@
 #include "paper-column.hh"
 #include "paper-score.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Score_engraver::Score_engraver ()
 {

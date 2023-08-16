@@ -21,7 +21,7 @@
 
 #include "dimensions.hh"
 #include "all-font-metrics.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "output-def.hh"
 #include "pango-font.hh"
 

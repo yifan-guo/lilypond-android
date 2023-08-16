@@ -55,7 +55,7 @@
 %parse-param {Lily_parser *parser}
 %parse-param {SCM *retval}
 %lex-param {Lily_parser *parser}
-%define parse.error verbose
+
 %debug
 
 /* We use SCMs to do strings, because it saves us the trouble of
@@ -95,7 +95,6 @@ or
 
 %left PREC_TOP
 
-%define api.pure full
 %locations
 
 %{ // -*-Fundamental-*-
@@ -136,7 +135,7 @@ FIXME:
 #include "scm-hash.hh"
 #include "score.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 void

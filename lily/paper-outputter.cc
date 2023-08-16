@@ -21,10 +21,10 @@
 #include "paper-outputter.hh"
 
 #include "dimensions.hh"
-#include "file-name.hh"
+#include "../flower/file-name.hh"
 #include "font-metric.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-imports.hh"
 #include "lily-version.hh"
 #include "main.hh"
@@ -33,8 +33,8 @@
 #include "paper-system.hh"
 #include "scm-hash.hh"
 #include "stencil-interpret.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 
 #include <cmath>
 #include <ctime>

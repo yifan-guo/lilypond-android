@@ -27,8 +27,8 @@
 #include "performance.hh"
 #include "midi-stream.hh"
 #include "output-def.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 #include "audio-staff.hh"
 
 ADD_TRANSLATOR_GROUP (Score_performer,

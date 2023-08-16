@@ -23,7 +23,7 @@
 #include "item.hh"
 #include "pointer-group-interface.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

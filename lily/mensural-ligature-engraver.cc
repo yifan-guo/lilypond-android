@@ -20,7 +20,7 @@
 
 #include "coherent-ligature-engraver.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "mensural-ligature.hh"
 #include "note-column.hh"
 #include "note-head.hh"
@@ -31,7 +31,7 @@
 #include "spanner.hh"
 #include "staff-symbol-referencer.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

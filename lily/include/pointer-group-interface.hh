@@ -20,7 +20,7 @@
 #ifndef POINTER_GROUP_INTERFACE_HH
 #define POINTER_GROUP_INTERFACE_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "lily-proto.hh"
 #include "lily-guile.hh"
 

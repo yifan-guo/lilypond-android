@@ -22,8 +22,8 @@
 
 #include <cstdlib>
 
-#include "std-vector.hh"
-#include "interval.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/interval.hh"
 
 double log_2 (double x);
 

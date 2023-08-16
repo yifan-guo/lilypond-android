@@ -19,10 +19,10 @@
 
 #include "page-spacing.hh"
 
-#include "international.hh"
-#include "matrix.hh"
+#include "../flower/international.hh"
+#include "../flower/matrix.hh"
 #include "page-breaking.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

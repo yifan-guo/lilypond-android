@@ -19,7 +19,7 @@
 
 #include "accidental-interface.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "lazy-skyline-pair.hh"
 #include "output-def.hh"

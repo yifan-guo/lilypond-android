@@ -18,9 +18,9 @@
 */
 
 #include "lily-modules.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-imports.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 class Scm_module::Variable_record
 {

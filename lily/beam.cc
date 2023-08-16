@@ -43,8 +43,8 @@
 #include "beaming-pattern.hh"
 #include "directional-element-interface.hh"
 #include "grob-array.hh"
-#include "international.hh"
-#include "interval-set.hh"
+#include "../flower/international.hh"
+#include "../flower/interval-set.hh"
 #include "item.hh"
 #include "lookup.hh"
 #include "ly-scm-list.hh"
@@ -58,7 +58,7 @@
 #include "staff-symbol.hh"
 #include "staff-symbol-referencer.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #if DEBUG_BEAM_SCORING
 #include "text-interface.hh" // debug output.

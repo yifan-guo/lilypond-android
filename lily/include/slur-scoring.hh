@@ -23,7 +23,7 @@
 #include <memory>
 
 #include "box.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "lily-guile.hh"
 #include "slur-score-parameters.hh"
 

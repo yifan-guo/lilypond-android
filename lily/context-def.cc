@@ -24,10 +24,10 @@
 
 #include "context.hh"
 #include "context-mod.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "output-def.hh"
 #include "translator.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::set;
 using std::string;

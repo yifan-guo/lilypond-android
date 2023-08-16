@@ -21,7 +21,7 @@
 #define SINGLE_MALT_GROUPING_ITEM_HH
 
 #include "lily-proto.hh"
-#include "direction.hh"
+#include "../../flower/direction.hh"
 #include "grob-interface.hh"
 #include "skyline.hh"
 

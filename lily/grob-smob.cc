@@ -20,7 +20,7 @@
 #include "grob.hh"
 
 #include "paper-score.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 const char *const Grob::type_p_name_ = "ly:grob?";
 

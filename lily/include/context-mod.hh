@@ -28,7 +28,7 @@
 
 #include "lily-proto.hh"
 #include "smobs.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 /*
   Modifications for an interpretation context as given in the

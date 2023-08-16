@@ -19,10 +19,10 @@
 
 #include "staff-spacing.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "paper-column.hh"
 #include "separation-item.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "staff-symbol-referencer.hh"
 #include "note-column.hh"
 #include "stem.hh"

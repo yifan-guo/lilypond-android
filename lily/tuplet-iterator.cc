@@ -20,7 +20,7 @@
 
 #include "context.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
 #include "music-wrapper-iterator.hh"
 #include "stream-event.hh"

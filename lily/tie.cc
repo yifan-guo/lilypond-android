@@ -38,7 +38,7 @@
 #include "tie-column.hh"
 #include "tie-configuration.hh"
 #include "tie-formatting-problem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "semi-tie-column.hh"
 
 using std::string;

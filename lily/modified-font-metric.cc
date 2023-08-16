@@ -19,7 +19,7 @@
 
 #include "modified-font-metric.hh"
 #include "pango-font.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "stencil.hh"
 #include "main.hh"
 #include "program-option.hh"

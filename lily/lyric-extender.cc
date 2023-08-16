@@ -22,7 +22,7 @@
 
 #include "system.hh"
 #include "item.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lookup.hh"
 #include "output-def.hh"
 #include "note-head.hh"

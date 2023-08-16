@@ -22,7 +22,7 @@
 #include "align-interface.hh"
 #include "axis-group-interface.hh"
 #include "hara-kiri-group-spanner.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "output-def.hh"
 #include "paper-book.hh"

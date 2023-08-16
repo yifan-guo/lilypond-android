@@ -23,9 +23,9 @@
 #include "config.hh"
 
 #include "file-name-map.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "misc.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include <cstdio>

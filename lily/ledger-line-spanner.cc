@@ -24,8 +24,8 @@
 #include "spanner.hh"
 #include "pointer-group-interface.hh"
 #include "paper-column.hh"
-#include "interval-set.hh"
-#include "std-vector.hh"
+#include "../flower/interval-set.hh"
+#include "../flower/std-vector.hh"
 
 #include <map>
 

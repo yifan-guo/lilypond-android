@@ -49,7 +49,7 @@
 #include "axis-group-interface.hh"
 #include "line-interface.hh"
 #include "beam.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "output-def.hh"
 #include "font-interface.hh"
 #include "text-interface.hh"

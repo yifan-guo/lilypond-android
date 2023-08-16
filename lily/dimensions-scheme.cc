@@ -19,7 +19,7 @@
 
 #include "lily-guile.hh"
 #include "dimensions.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 LY_DEFINE (ly_pt, "ly:pt",
            1, 0, 0, (SCM num),

@@ -31,7 +31,7 @@
 #include "stream-event.hh"
 #include "tie.hh"
 #include "tie-column.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "misc.hh"
 
 #include "translator.icc"

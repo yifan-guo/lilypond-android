@@ -18,7 +18,7 @@
 */
 
 #include "music.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "program-option.hh"
 
 class Relative_octave_music

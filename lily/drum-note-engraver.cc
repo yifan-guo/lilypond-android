@@ -26,7 +26,7 @@
 #include "script-interface.hh"
 #include "stem.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

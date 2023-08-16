@@ -21,7 +21,7 @@
 
 #include "axis-group-interface.hh"
 #include "paper-score.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "paper-column.hh"
 #include "lily-guile.hh"
 #include "system.hh"

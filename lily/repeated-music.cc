@@ -20,7 +20,7 @@
 #include "repeated-music.hh"
 #include "music-sequence.hh"
 #include "pitch.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "program-option.hh"
 
 Music *

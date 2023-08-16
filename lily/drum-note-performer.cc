@@ -23,7 +23,7 @@
 #include "global-context.hh"
 #include "stream-event.hh"
 #include "translator.icc"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

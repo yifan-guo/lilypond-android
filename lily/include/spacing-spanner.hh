@@ -21,8 +21,8 @@
 #define SPACING_SPANNER_HH
 
 #include "lily-proto.hh"
-#include "rational.hh"
-#include "std-vector.hh"
+#include "../../flower/rational.hh"
+#include "../../flower/std-vector.hh"
 #include "grob-interface.hh"
 #include "spring.hh"
 

@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "font-interface.hh"
 #include "line-interface.hh"
 #include "paper-column.hh"

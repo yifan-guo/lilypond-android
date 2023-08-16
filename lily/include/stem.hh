@@ -20,7 +20,7 @@
 #ifndef STEM_HH
 #define STEM_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "lily-proto.hh"
 #include "stem-info.hh"
 #include "grob-interface.hh"

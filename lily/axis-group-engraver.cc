@@ -23,9 +23,9 @@
 #include "hara-kiri-group-spanner.hh"
 #include "pointer-group-interface.hh"
 #include "context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "spanner.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

@@ -15,8 +15,8 @@
 #include "global-ctor.hh"
 #include "freetype.hh"
 #include "all-font-metrics.hh"
-#include "warn.hh"
-#include "international.hh"
+#include "../../flower/warn.hh"
+#include "../../flower/international.hh"
 #include "lily-version.hh"
 #include "relocate.hh"
 
@@ -24,7 +24,7 @@
 #include "file-name-map.hh"
 #include "lily-parser.hh"
 #include "source-file.hh"
-#include "string-convert.hh"
+#include "../../flower/string-convert.hh"
 
 
 

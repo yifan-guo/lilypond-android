@@ -23,7 +23,7 @@
 #include "context.hh"
 #include "duration.hh"
 #include "engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "pitch.hh"
 #include "protected-scm.hh"
@@ -33,7 +33,7 @@
 #include "spanner.hh"
 #include "stream-event.hh"
 #include "tie.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

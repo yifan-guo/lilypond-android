@@ -18,7 +18,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.hh"
+//#include "config.hh"
 
 #include "slur-scoring.hh"
 
@@ -28,7 +28,7 @@
 #include "clef.hh"
 #include "directional-element-interface.hh"
 #include "dots.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "main.hh"
 #include "misc.hh"
 #include "note-column.hh"
@@ -43,7 +43,7 @@
 #include "staff-symbol-referencer.hh"
 #include "staff-symbol.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cmath>
 #include <memory>

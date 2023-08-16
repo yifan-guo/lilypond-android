@@ -21,7 +21,7 @@
 #include "music-sequence.hh"
 #include "performer.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include "translator.icc"

@@ -20,8 +20,8 @@
 #define MAIN_HH
 
 #include "lily-proto.hh"
-#include "std-vector.hh"
-#include "std-string.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/std-string.hh"
 
 void debug_init ();
 void set_debug (bool);

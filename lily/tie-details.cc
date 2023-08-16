@@ -22,7 +22,7 @@
 #include "bezier.hh"
 #include "grob.hh"
 #include "staff-symbol-referencer.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "tie-details.hh"
 
 /*

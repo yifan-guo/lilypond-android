@@ -22,11 +22,11 @@
 #include "lookup.hh"
 
 #include "line-interface.hh"
-#include "warn.hh"
-#include "international.hh"
+#include "../flower/warn.hh"
+#include "../flower/international.hh"
 #include "dimensions.hh"
 #include "bezier.hh"
-#include "file-path.hh"
+#include "../flower/file-path.hh"
 #include "main.hh"
 #include "lily-guile.hh"
 

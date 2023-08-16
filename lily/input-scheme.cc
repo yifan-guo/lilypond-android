@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "std-string.hh"
+#include "../flower/std-string.hh"
 #include "input.hh"
 
 using std::string;

@@ -19,7 +19,7 @@
 
 #include "coherent-ligature-engraver.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "paper-column.hh"
 #include "pitch.hh"
 #include "pointer-group-interface.hh"

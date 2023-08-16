@@ -20,7 +20,7 @@
 #ifndef LILY_PROTO_HH
 #define LILY_PROTO_HH
 
-#include "flower-proto.hh"
+#include "../../flower/flower-proto.hh"
 
 class All_font_metrics;
 class Audio_column;

@@ -28,7 +28,7 @@
 #include "pointer-group-interface.hh"
 #include "skyline-pair.hh"
 #include "stencil.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

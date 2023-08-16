@@ -18,7 +18,7 @@
 */
 
 #include "spring.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 SCM
 Spring::equal_p (SCM a, SCM b)

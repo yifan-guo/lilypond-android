@@ -18,10 +18,10 @@
 */
 
 #include "lily-guile.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 
 #include <fontconfig/fontconfig.h>
 

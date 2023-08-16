@@ -22,7 +22,7 @@
 #include "spacing-options.hh"
 #include "moment.hh"
 #include "paper-column.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "pointer-group-interface.hh"
 #include "system.hh"
 #include "spacing-interface.hh"

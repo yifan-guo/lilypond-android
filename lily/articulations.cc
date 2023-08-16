@@ -20,7 +20,7 @@
 
 #include "articulations.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "context.hh"
 
 using std::vector;

@@ -19,7 +19,7 @@
 #ifndef PAPER_BOOK_HH
 #define PAPER_BOOK_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "smobs.hh"
 #include "lily-proto.hh"
 

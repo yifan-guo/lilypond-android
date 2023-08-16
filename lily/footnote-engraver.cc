@@ -21,7 +21,7 @@
 
 #include "music.hh"
 #include "stream-event.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "pointer-group-interface.hh"
 #include "spanner.hh"

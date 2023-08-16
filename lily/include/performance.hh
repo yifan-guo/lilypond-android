@@ -23,7 +23,7 @@
 #include "music-output.hh"
 
 #include "moment.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 /* MIDI output.  */
 class Performance : public Music_output

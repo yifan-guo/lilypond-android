@@ -18,7 +18,7 @@
 */
 
 #include "lilypond-version.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 #include "misc.hh"
 
 #include <ctype.h>

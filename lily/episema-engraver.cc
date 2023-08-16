@@ -18,7 +18,7 @@
 */
 
 #include "engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "note-column.hh"
 #include "pointer-group-interface.hh"
 #include "side-position-interface.hh"

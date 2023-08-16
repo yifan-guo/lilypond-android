@@ -22,10 +22,10 @@
 #include "directional-element-interface.hh"
 #include "font-interface.hh"
 #include "grob.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "staff-symbol.hh"
 #include "staff-symbol-referencer.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <algorithm> //  min, max
 #include <cctype>

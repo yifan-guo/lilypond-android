@@ -25,7 +25,7 @@
 #include "grob-properties.hh"
 #include "paper-score.hh"
 #include "translator-dispatch-list.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 void
 Engraver_group::override (SCM sev)

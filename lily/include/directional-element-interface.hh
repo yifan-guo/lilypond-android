@@ -21,7 +21,7 @@
 #define DIRECTIONAL_ELEMENT_HH
 
 #include "lily-proto.hh"
-#include "direction.hh"
+#include "../../flower/direction.hh"
 
 // what is the advantage not having these two as STATICs of GROB -- jcn
 void set_grob_direction (Grob *, Direction);

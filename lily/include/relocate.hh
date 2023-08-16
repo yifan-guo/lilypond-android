@@ -20,7 +20,7 @@
 #ifndef RELOCATE_HH
 #define RELOCATE_HH
 
-#include "std-string.hh"
+#include "../../flower/std-string.hh"
 
 void read_relocation_dir (const std::string &dirname);
 void read_relocation_file (const std::string &filename);

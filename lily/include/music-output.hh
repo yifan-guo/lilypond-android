@@ -20,11 +20,11 @@
 #ifndef MUSIC_OUTPUT_HH
 #define MUSIC_OUTPUT_HH
 
-#include "std-string.hh"
+#include "../../flower/std-string.hh"
 #include "lily-proto.hh"
 #include "protected-scm.hh"
 #include "smobs.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 class Music_output : public Smob<Music_output>
 {

@@ -20,7 +20,7 @@
 #ifndef LILY_VERSION_HH
 #define LILY_VERSION_HH
 
-#include "std-string.hh"
+#include "../../flower/std-string.hh"
 
 std::string version_string ();
 std::string gnu_lilypond_string ();

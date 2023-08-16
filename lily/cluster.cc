@@ -19,7 +19,7 @@
 */
 
 #include "cluster.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "lookup.hh"
 #include "output-def.hh"
@@ -27,7 +27,7 @@
 #include "pointer-group-interface.hh"
 #include "spanner.hh"
 #include "staff-symbol-referencer.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 using std::vector;

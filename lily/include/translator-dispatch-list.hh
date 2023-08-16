@@ -22,7 +22,7 @@
 
 #include "lily-proto.hh"
 #include "callback.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "smobs.hh"
 #include "translator.hh"
 

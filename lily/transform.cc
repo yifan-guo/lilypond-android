@@ -39,8 +39,8 @@
 
 #include "transform.hh"
 
-#include "offset.hh"
-#include "string-convert.hh"
+#include "../flower/offset.hh"
+#include "../flower/string-convert.hh"
 
 #include <string>
 

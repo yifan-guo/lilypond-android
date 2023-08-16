@@ -25,7 +25,7 @@
 #include "lookup.hh"
 #include "output-def.hh"
 #include "staff-symbol-referencer.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 
 using std::vector;
 

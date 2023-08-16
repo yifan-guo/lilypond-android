@@ -20,7 +20,7 @@
 #include "ligature-engraver.hh"
 
 #include "context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "note-head.hh"
 #include "rest.hh"
 #include "spanner.hh"

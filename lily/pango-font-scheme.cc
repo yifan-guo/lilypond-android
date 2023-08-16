@@ -21,7 +21,7 @@
 #include "lookup.hh"
 #include "dimensions.hh"
 #include "pango-font.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "stencil.hh"
 

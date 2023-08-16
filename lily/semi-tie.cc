@@ -24,7 +24,7 @@
 #include "grob.hh"
 #include "paper-column.hh"
 #include "tie.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "staff-symbol-referencer.hh"
 
 ADD_INTERFACE (Semi_tie,

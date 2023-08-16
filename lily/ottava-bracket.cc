@@ -23,7 +23,7 @@
 #include "font-interface.hh"
 #include "dimensions.hh"
 #include "output-def.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "paper-column.hh"
 #include "staff-symbol-referencer.hh"
 #include "note-column.hh"

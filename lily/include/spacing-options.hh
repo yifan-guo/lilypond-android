@@ -21,8 +21,8 @@
 #define SPACING_OPTIONS_HH
 
 #include "lily-proto.hh"
-#include "rational.hh"
-#include "std-vector.hh"
+#include "../../flower/rational.hh"
+#include "../../flower/std-vector.hh"
 
 /*
   Various options for spacing. Usually inited from SpacingSpanner, but sometimes

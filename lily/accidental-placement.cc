@@ -29,7 +29,7 @@
 #include "skyline.hh"
 #include "skyline-pair.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <functional>
 #include <memory>

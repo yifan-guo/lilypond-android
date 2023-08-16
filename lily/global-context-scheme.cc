@@ -17,16 +17,16 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "cpu-timer.hh"
+#include "../flower/cpu-timer.hh"
 #include "global-context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "music-iterator.hh"
 #include "music-output.hh"
 #include "music.hh"
 #include "output-def.hh"
 #include "translator-group.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 LY_DEFINE (ly_format_output, "ly:format-output",
            1, 0, 0, (SCM context),

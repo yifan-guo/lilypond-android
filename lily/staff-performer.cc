@@ -21,10 +21,10 @@
 #include "audio-item.hh"
 #include "audio-staff.hh"
 #include "context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "midi-cc-announcer.hh"
 #include "performer-group.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include "translator.icc"

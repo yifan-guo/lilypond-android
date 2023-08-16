@@ -19,7 +19,7 @@
 
 #include "page-turn-page-breaking.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "output-def.hh"
 #include "page-spacing.hh"
@@ -27,7 +27,7 @@
 #include "paper-score.hh"
 #include "paper-system.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 using std::vector;

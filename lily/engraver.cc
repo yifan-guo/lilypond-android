@@ -21,13 +21,13 @@
 
 #include "context.hh"
 #include "grob-properties.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
 #include "paper-column.hh"
 #include "score-engraver.hh"
 #include "spanner.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Engraver_group *
 Engraver::get_group () const

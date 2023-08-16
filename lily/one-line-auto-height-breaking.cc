@@ -20,7 +20,7 @@
 #include "one-line-auto-height-breaking.hh"
 
 #include "column-x-positions.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "output-def.hh"
 #include "page-spacing.hh"
 #include "paper-book.hh"

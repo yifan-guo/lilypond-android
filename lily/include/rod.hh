@@ -21,7 +21,7 @@
 #define ROD_HH
 
 #include "lily-proto.hh"
-#include "drul-array.hh"
+#include "../../flower/drul-array.hh"
 
 struct Rod
 {

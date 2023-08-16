@@ -21,17 +21,17 @@
 #include "config.hh"
 
 #include "dimensions.hh"
-#include "file-name.hh"
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "lily-guile.hh"
 #include "main.hh"
 #include "misc.hh"
 #include "program-option.hh"
 #include "relocate.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 #include "version.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #if GS_API
 #include <ghostscript/iapi.h>

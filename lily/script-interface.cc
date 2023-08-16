@@ -21,7 +21,7 @@
 
 #include "directional-element-interface.hh"
 #include "item.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "font-interface.hh"
 #include "side-position-interface.hh"
 #include "output-def.hh"

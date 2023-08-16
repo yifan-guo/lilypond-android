@@ -21,13 +21,13 @@
 
 #include "audio-column.hh"
 #include "duration.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "midi-stream.hh"
 #include "misc.hh"
 #include "program-option.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 using std::string;

@@ -22,16 +22,16 @@
 #include "audio-column.hh"
 #include "audio-item.hh"
 #include "audio-staff.hh"
-#include "file-name.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/international.hh"
 #include "lily-version.hh"
 #include "main.hh"
 #include "midi-chunk.hh"
 #include "midi-stream.hh"
 #include "output-def.hh"
 #include "score.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 
 #include <ctime>
 

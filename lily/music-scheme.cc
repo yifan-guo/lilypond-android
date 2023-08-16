@@ -23,7 +23,7 @@
 #include "input.hh"
 #include "lily-imports.hh"
 #include "program-option.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 LY_DEFINE (ly_music_length, "ly:music-length",
            1, 0, 0, (SCM mus),

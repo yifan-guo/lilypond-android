@@ -22,9 +22,9 @@
 #include <cstdio>
 
 #include "book.hh"
-#include "cpu-timer.hh"
+#include "../flower/cpu-timer.hh"
 #include "global-context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-parser.hh"
 #include "ly-module.hh"
 #include "main.hh"
@@ -32,7 +32,7 @@
 #include "output-def.hh"
 #include "paper-book.hh"
 #include "paper-score.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Input *
 Score::origin () const

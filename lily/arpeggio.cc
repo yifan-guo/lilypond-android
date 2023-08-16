@@ -22,14 +22,14 @@
 #include "bezier.hh"
 #include "font-interface.hh"
 #include "grob.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lookup.hh"
 #include "output-def.hh"
 #include "pointer-group-interface.hh"
 #include "staff-symbol-referencer.hh"
 #include "staff-symbol.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 static Stencil
 get_squiggle (Grob *me)

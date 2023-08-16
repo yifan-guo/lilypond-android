@@ -23,10 +23,10 @@
 #include "context.hh"
 #include "staff-symbol-referencer.hh"
 #include "engraver.hh"
-#include "direction.hh"
+#include "../flower/direction.hh"
 #include "side-position-interface.hh"
-#include "warn.hh"
-#include "international.hh"
+#include "../flower/warn.hh"
+#include "../flower/international.hh"
 
 #include "translator.icc"
 

@@ -20,7 +20,7 @@
 #ifndef SOURCE_FILE_HH
 #define SOURCE_FILE_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "lily-proto.hh"
 #include "smobs.hh"
 

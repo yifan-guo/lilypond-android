@@ -22,7 +22,7 @@
 #include "align-interface.hh"
 #include "axis-group-interface.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "main.hh"
 #include "misc.hh"
@@ -34,7 +34,7 @@
 #include "stream-event.hh"
 #include "system.hh"
 #include "unpure-pure-container.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include <cstring>

@@ -22,11 +22,11 @@
 #include "axis-group-interface.hh"
 #include "context.hh"
 #include "grob-array.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "stream-event.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

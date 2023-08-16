@@ -19,7 +19,7 @@
 
 #include "parse-scm.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-imports.hh"
 #include "lily-lexer.hh"
 #include "lily-parser.hh"

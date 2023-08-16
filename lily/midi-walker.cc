@@ -25,7 +25,7 @@
 #include "midi-item.hh"
 #include "midi-chunk.hh"
 #include "midi-stream.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Midi_note_event::Midi_note_event ()
 {

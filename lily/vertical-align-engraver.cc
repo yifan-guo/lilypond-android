@@ -22,7 +22,7 @@
 #include "align-interface.hh"
 #include "axis-group-interface.hh"
 #include "engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "spanner.hh"
 #include "pointer-group-interface.hh"
 #include "grob-array.hh"

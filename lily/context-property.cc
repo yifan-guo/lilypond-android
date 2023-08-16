@@ -21,13 +21,13 @@
 #include "engraver.hh"
 #include "global-context.hh"
 #include "grob-properties.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "main.hh"
 #include "smobs.hh"
 #include "spanner.hh"
 #include "unpure-pure-container.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 /*
   like execute_general_pushpop_property(), but typecheck

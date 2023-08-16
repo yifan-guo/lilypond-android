@@ -20,7 +20,7 @@
 #include "config.hh"
 
 #include "dimensions.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "output-def.hh"
 #include "modified-font-metric.hh"
 #include "pango-font.hh"

@@ -20,7 +20,7 @@
 #ifndef COLLISION_HH
 #define COLLISION_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "grob-interface.hh"
 #include "lily-proto.hh"
 

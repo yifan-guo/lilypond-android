@@ -17,9 +17,9 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "std-string.hh"
+#include "../flower/std-string.hh"
 #include "lily-guile.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 /* type predicates. */
 #include "global-context.hh"

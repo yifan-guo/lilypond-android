@@ -21,7 +21,7 @@
 #include "dispatcher.hh"
 #include "grob.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "listener.hh"
 #include "music-iterator.hh"
 #include "music.hh"

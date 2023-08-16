@@ -21,8 +21,8 @@
 #include "midi-chunk.hh"
 
 #include "midi-item.hh"
-#include "std-string.hh"
-#include "string-convert.hh"
+#include "../flower/std-string.hh"
+#include "../flower/string-convert.hh"
 
 using std::string;
 using std::vector;

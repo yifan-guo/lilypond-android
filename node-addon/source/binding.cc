@@ -1,8 +1,8 @@
 
 //#include <iostream>
 
-#include <v8.h>
-#include <node.h>
+#include "../android/third-party/libs/v8/include/v8.h"
+#include "../android/third-party/libs/node/src/node.h"
 #include <nan.h>
 
 #include "lilypond-ex.hh"
@@ -82,7 +82,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 	if (args.Length() >= 2)
 	{
 		auto options = args[1].As<v8::Object>();
-		auto maybeIncludeFolders = options->Get(v8str("includeFolders"));
+		auto maybeIncludeFolders = (*optionsGet).(v8str("includeFolders"));
 		auto maybeLog = options->Get(v8str("log"));
 		auto maybeSvg = options->Get(v8str("onSVG"));
 		auto maybeMidi = options->Get(v8str("onMIDI"));
