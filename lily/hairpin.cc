@@ -22,7 +22,7 @@
 #include "axis-group-interface.hh"
 #include "dimensions.hh"
 #include "directional-element-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "line-interface.hh"
 #include "output-def.hh"
 #include "paper-column.hh"
@@ -32,7 +32,7 @@
 #include "text-interface.hh"
 #include "note-column.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 MAKE_SCHEME_CALLBACK (Hairpin, pure_height, 3);
 SCM

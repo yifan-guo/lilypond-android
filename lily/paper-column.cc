@@ -34,10 +34,10 @@
 #include "skyline-pair.hh"
 #include "spaceable-grob.hh"
 #include "spring.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 #include "system.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 using std::vector;

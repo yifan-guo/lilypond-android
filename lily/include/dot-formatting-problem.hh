@@ -21,7 +21,7 @@
 #define DOT_FORMATTING_PROBLEM_HH
 
 #include "skyline.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 class Dot_formatting_problem
 {

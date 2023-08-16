@@ -23,7 +23,7 @@
 #include "arpeggio.hh"
 #include "directional-element-interface.hh"
 #include "side-position-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "grob.hh"
 #include "pointer-group-interface.hh"
 

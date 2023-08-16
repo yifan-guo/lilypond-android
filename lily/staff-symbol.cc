@@ -23,7 +23,7 @@
 #include "dimensions.hh"
 #include "output-def.hh"
 #include "paper-column.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "item.hh"
 #include "staff-symbol-referencer.hh"
 #include "spanner.hh"

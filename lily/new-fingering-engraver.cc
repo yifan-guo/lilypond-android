@@ -19,7 +19,7 @@
 
 #include "engraver.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "rhythmic-head.hh"
 #include "script-interface.hh"
@@ -27,7 +27,7 @@
 #include "side-position-interface.hh"
 #include "stem.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

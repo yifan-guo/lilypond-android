@@ -22,8 +22,8 @@
 #include "main.hh"
 #include "font-metric.hh"
 #include "input.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

@@ -19,13 +19,13 @@
 
 #include "coherent-ligature-engraver.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "kievan-ligature.hh"
 #include "paper-column.hh"
 #include "rhythmic-head.hh"
 #include "spanner.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

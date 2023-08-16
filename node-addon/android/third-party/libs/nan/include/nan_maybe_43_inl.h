@@ -136,7 +136,7 @@ inline MaybeLocal<v8::Value> Get(
   , v8::Local<v8::Value> key) {
   v8::Isolate *isolate = v8::Isolate::GetCurrent();
   v8::EscapableHandleScope scope(isolate);
-  return scope.Escape(obj->Get(isolate->GetCurrentContext(), key)
+  return scope.Escape(obj->Get( key)
                           .FromMaybe(v8::Local<v8::Value>()));
 }
 
@@ -144,7 +144,7 @@ inline
 MaybeLocal<v8::Value> Get(v8::Local<v8::Object> obj, uint32_t index) {
   v8::Isolate *isolate = v8::Isolate::GetCurrent();
   v8::EscapableHandleScope scope(isolate);
-  return scope.Escape(obj->Get(isolate->GetCurrentContext(), index)
+  return scope.Escape(obj->Get(index)
                           .FromMaybe(v8::Local<v8::Value>()));
 }
 
@@ -327,7 +327,7 @@ inline MaybeLocal<v8::Object> CloneElementAt(
   v8::Local<v8::Context> context = isolate->GetCurrentContext();
   v8::Local<v8::Value> elem;
   v8::Local<v8::Object> obj;
-  if (!array->Get(context, index).ToLocal(&elem)) {
+  if (!array->Get(index).ToLocal(&elem)) {
     return scope.Escape(obj);
   }
   if (!elem->ToObject(context).ToLocal(&obj)) {

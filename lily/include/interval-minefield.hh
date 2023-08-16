@@ -22,8 +22,8 @@
 #define INTERVAL_MINEFIELD_HH
 
 #include "lily-proto.hh"
-#include "std-vector.hh"
-#include "interval.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/interval.hh"
 
 class Interval_minefield
 {

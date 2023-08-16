@@ -23,7 +23,7 @@
 #include "pointer-group-interface.hh"
 #include "stencil.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

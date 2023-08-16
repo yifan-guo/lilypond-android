@@ -44,7 +44,7 @@
 #include "directional-element-interface.hh"
 #include "dot-column.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lookup.hh"
 #include "misc.hh"
 #include "note-head.hh"
@@ -56,7 +56,7 @@
 #include "side-position-interface.hh"
 #include "staff-symbol-referencer.hh"
 #include "stem-tremolo.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cmath> // rint
 

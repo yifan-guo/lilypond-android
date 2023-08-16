@@ -20,7 +20,7 @@
 #ifndef TIE_FORMATTING_PROBLEM_HH
 #define TIE_FORMATTING_PROBLEM_HH
 
-#include "drul-array.hh"
+#include "../../flower/drul-array.hh"
 #include "skyline.hh"
 #include "tie-configuration.hh"
 #include "tie-details.hh"

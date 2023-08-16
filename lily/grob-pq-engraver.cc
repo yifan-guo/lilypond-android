@@ -20,7 +20,7 @@
 #include "context.hh"
 #include "engraver.hh"
 #include "grob.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

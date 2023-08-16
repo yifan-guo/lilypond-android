@@ -20,9 +20,9 @@
 #include "performer.hh"
 
 #include "audio-item.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

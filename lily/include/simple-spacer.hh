@@ -20,7 +20,7 @@
 #ifndef SIMPLE_SPACER_HH
 #define SIMPLE_SPACER_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "lily-proto.hh"
 #include "spring.hh"
 #include "smobs.hh"

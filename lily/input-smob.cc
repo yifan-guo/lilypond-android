@@ -19,7 +19,7 @@
 
 #include "input.hh"
 #include "source-file.hh"
-#include "std-string.hh"
+#include "../flower/std-string.hh"
 
 using std::string;
 

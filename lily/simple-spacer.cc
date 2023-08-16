@@ -22,12 +22,12 @@
 
 #include "column-x-positions.hh"
 #include "dimensions.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "paper-column.hh"
 #include "simple-spacer.hh"
 #include "spaceable-grob.hh"
 #include "spring.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cstdio>
 

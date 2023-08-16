@@ -21,11 +21,11 @@
 #define SKYLINE_HH
 
 #include "lily-proto.hh"
-#include "axis.hh"
+#include "../../flower/axis.hh"
 #include "box.hh"
-#include "interval.hh"
-#include "direction.hh"
-#include "std-vector.hh"
+#include "../../flower/interval.hh"
+#include "../../flower/direction.hh"
+#include "../../flower/std-vector.hh"
 #include "smobs.hh"
 
 #include <vector>

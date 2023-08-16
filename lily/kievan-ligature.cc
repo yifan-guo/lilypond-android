@@ -19,9 +19,9 @@
 
 #include "kievan-ligature.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 MAKE_SCHEME_CALLBACK (Kievan_ligature, print, 1);
 SCM

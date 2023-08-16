@@ -22,7 +22,7 @@
 #include "context.hh"
 #include "directional-element-interface.hh"
 #include "duration.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "misc.hh"
 #include "rhythmic-head.hh"

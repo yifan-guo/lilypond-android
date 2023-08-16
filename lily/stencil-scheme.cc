@@ -22,7 +22,7 @@
 #include "font-metric.hh"
 #include "lookup.hh"
 #include "ly-scm-list.hh"
-#include "offset.hh"
+#include "../flower/offset.hh"
 
 using std::vector;
 

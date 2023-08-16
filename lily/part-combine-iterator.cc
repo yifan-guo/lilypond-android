@@ -23,7 +23,7 @@
 #include "music.hh"
 #include "music-sequence.hh"
 #include "simultaneous-music-iterator.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 class Part_combine_iterator final : public Simultaneous_music_iterator

@@ -24,8 +24,8 @@
 #include <FlexLexer.h>
 #endif
 
-#include "std-string.hh"
-#include "std-vector.hh"
+#include "../../flower/std-string.hh"
+#include "../../flower/std-vector.hh"
 #include "lily-proto.hh"
 
 /**

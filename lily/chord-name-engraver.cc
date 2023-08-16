@@ -28,7 +28,7 @@
 #include "protected-scm.hh"
 #include "stream-event.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

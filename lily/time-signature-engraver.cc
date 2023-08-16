@@ -20,11 +20,11 @@
 #include "engraver-group.hh"
 
 #include "item.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "misc.hh"
 #include "moment.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

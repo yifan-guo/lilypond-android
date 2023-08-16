@@ -21,9 +21,9 @@
 #include "lily-parser.hh"
 
 #include "book.hh"
-#include "file-name.hh"
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "lily-lexer.hh"
 #include "ly-module.hh"
 #include "main.hh"
@@ -33,7 +33,7 @@
 #include "score.hh"
 #include "source-file.hh"
 #include "sources.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "program-option.hh"
 
 using std::string;

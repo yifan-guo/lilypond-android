@@ -23,9 +23,9 @@
 #include "lily-proto.hh"
 
 #include "input.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "smobs.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 class Score : public Smob<Score>
 {

@@ -23,11 +23,11 @@
 #include "directional-element-interface.hh"
 #include "font-interface.hh"
 #include "grob.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "output-def.hh"
 #include "staff-symbol-referencer.hh"
 #include "stencil.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 

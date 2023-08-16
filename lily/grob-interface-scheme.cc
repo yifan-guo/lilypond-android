@@ -18,7 +18,7 @@
 */
 
 #include "lily-guile.hh"
-#include "std-string.hh"
+#include "../flower/std-string.hh"
 #include "protected-scm.hh"
 
 static Protected_scm all_ifaces;

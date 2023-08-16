@@ -129,7 +129,7 @@
 
 #include "page-breaking.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "line-interface.hh"
 #include "output-def.hh"
@@ -141,7 +141,7 @@
 #include "paper-system.hh"
 #include "text-interface.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::pair;
 using std::vector;

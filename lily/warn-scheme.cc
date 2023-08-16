@@ -22,8 +22,8 @@
 
 #include "lily-guile.hh"
 #include "program-option.hh"
-#include "international.hh"
-#include "warn.hh"
+#include "../flower/international.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 

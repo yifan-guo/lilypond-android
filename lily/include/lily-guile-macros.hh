@@ -20,7 +20,7 @@
 #ifndef LILY_GUILE_MACROS_HH
 #define LILY_GUILE_MACROS_HH
 
-#include "config.hh"
+//#include "config.hh"
 
 #if GUILEV2
 // if Guile's internal representation switches to utf8, this should be

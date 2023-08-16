@@ -20,7 +20,7 @@
 #ifndef LILY_GUILE_HH
 #define LILY_GUILE_HH
 
-#include "config.hh"
+//#include "config.hh"
 
 #if __MINGW32__
 #include "mingw-compatibility.hh"
@@ -41,10 +41,10 @@
 #define GUILE_ELLIPSIS
 #endif
 
-#include "guile-compatibility.hh"
-#include "interval.hh"
+#include "../../flower/guile-compatibility.hh"
+#include "../../flower/interval.hh"
 #include "lily-guile-macros.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 /** Conversion functions follow the GUILE naming convention, i.e.
     A ly_B2A (B b);  */

@@ -280,20 +280,20 @@ Factory<v8::String>::New() {
 Factory<v8::String>::return_t
 Factory<v8::String>::New(const char * value, int length) {
   return v8::String::NewFromUtf8(
-      v8::Isolate::GetCurrent(), value, v8::NewStringType::kNormal, length);
+      v8::Isolate::GetCurrent(), value, v8::String::NewStringType::kNormalString, length);
 }
 
 Factory<v8::String>::return_t
 Factory<v8::String>::New(std::string const& value) {
   assert(value.size() <= INT_MAX && "string too long");
   return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(),
-      value.data(), v8::NewStringType::kNormal, static_cast<int>(value.size()));
+      value.data(), v8::String::NewStringType::kNormalString, static_cast<int>(value.size()));
 }
 
 Factory<v8::String>::return_t
 Factory<v8::String>::New(const uint16_t * value, int length) {
   return v8::String::NewFromTwoByte(v8::Isolate::GetCurrent(), value,
-        v8::NewStringType::kNormal, length);
+        v8::String::NewStringType::kNormalString, length);
 }
 
 Factory<v8::String>::return_t

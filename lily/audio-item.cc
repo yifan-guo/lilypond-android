@@ -21,7 +21,7 @@
 
 #include "midi-item.hh"
 #include "audio-column.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 
 using std::string;
 

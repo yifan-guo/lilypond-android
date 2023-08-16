@@ -20,7 +20,7 @@
 #ifndef BEAMING_PATTERN_HH
 #define BEAMING_PATTERN_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "moment.hh"
 #include "lily-proto.hh"
 

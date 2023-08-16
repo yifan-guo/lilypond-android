@@ -39,11 +39,11 @@
 #include "stem.hh"
 #include "text-interface.hh"
 #include "tie.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "slur-scoring.hh"
 #include "separation-item.hh"
 #include "unpure-pure-container.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 
 using std::string;
 using std::vector;

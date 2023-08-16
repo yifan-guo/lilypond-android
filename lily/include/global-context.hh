@@ -21,7 +21,7 @@
 #define GLOBAL_CONTEXT_HH
 
 #include "context.hh"
-#include "pqueue.hh"
+#include "../../flower/pqueue.hh"
 
 struct Preinit_Global_context
 {

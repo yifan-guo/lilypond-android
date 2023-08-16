@@ -29,7 +29,7 @@
 #include "spanner.hh"
 #include "stream-event.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

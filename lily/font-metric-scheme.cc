@@ -19,7 +19,7 @@
 
 #include "font-metric.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "stencil.hh"
 #include "modified-font-metric.hh"
 

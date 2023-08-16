@@ -22,7 +22,7 @@
 #include "accidental-placement.hh"
 #include "axis-group-interface.hh"
 #include "directional-element-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "note-head.hh"
 #include "output-def.hh"
@@ -30,7 +30,7 @@
 #include "rest.hh"
 #include "staff-symbol-referencer.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cmath> // ceil
 

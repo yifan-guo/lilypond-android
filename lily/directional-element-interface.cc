@@ -18,7 +18,7 @@
 */
 
 #include "directional-element-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "grob.hh"
 
 Direction

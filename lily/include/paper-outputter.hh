@@ -20,10 +20,10 @@
 #ifndef PAPER_OUTPUTTER_HH
 #define PAPER_OUTPUTTER_HH
 
-#include "cpu-timer.hh"
+#include "../../flower/cpu-timer.hh"
 #include "lily-proto.hh"
-#include "std-vector.hh"
-#include "std-string.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/std-string.hh"
 #include "protected-scm.hh"
 #include "smobs.hh"
 

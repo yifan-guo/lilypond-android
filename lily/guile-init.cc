@@ -18,13 +18,13 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "cpu-timer.hh"
-#include "international.hh"
+#include "../flower/cpu-timer.hh"
+#include "../flower/international.hh"
 #include "lily-guile.hh"
 #include "lily-imports.hh"
 #include "main.hh"
 #include "smobs.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

@@ -26,7 +26,7 @@
 #include "rhythmic-head.hh"
 #include "staff-symbol-referencer.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cctype>
 

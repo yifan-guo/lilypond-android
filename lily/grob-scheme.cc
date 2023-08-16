@@ -25,7 +25,7 @@
 #include "paper-score.hh"
 #include "system.hh"
 #include "unpure-pure-container.hh"
-#include "warn.hh"              // error ()
+#include "../flower/warn.hh"              // error ()
 
 LY_DEFINE (ly_grob_property_data, "ly:grob-property-data",
            2, 0, 0, (SCM grob, SCM sym),

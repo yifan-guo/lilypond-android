@@ -24,7 +24,7 @@
 #include "staff-spacing.hh"
 #include "note-spacing.hh"
 #include "spacing-spanner.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "moment.hh"
 #include "spacing-options.hh"
 

@@ -21,7 +21,7 @@
 #include "context.hh"
 #include "dispatcher.hh"
 #include "listener.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "grob-properties.hh"
 #include "stream-event.hh"
 #include "translator.icc"

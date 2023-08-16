@@ -25,7 +25,7 @@
 #include "dispatcher.hh"
 #include "engraver.hh"
 #include "engraver-group.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "listener.hh"
 #include "ly-smob-list.hh"
 #include "main.hh"
@@ -35,7 +35,7 @@
 #include "performer-group.hh"
 #include "scheme-engraver.hh"
 #include "scm-hash.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

@@ -25,7 +25,7 @@
 #include "directional-element-interface.hh"
 #include "grob.hh"
 #include "grob-array.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "main.hh"
 #include "misc.hh"
@@ -37,9 +37,9 @@
 #include "staff-symbol-referencer.hh"
 #include "staff-symbol.hh"
 #include "stem.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "unpure-pure-container.hh"
 
 #include <algorithm>

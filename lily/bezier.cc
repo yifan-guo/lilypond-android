@@ -19,7 +19,7 @@
 
 #include "bezier.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

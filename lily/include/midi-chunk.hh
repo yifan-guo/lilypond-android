@@ -21,8 +21,8 @@
 #define MIDI_CHUNK_HH
 
 #include "lily-proto.hh"
-#include "virtual-methods.hh"
-#include "std-vector.hh"
+#include "../../flower/virtual-methods.hh"
+#include "../../flower/std-vector.hh"
 
 /**
    timed MIDI event

@@ -20,7 +20,7 @@
 #include "engraver.hh"
 #include "context.hh"
 #include "grob.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 class Default_bar_line_engraver : public Engraver
 {

@@ -21,7 +21,7 @@
 #include "axis-group-interface.hh"
 #include "grob-array.hh"
 #include "hara-kiri-group-spanner.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "page-layout-problem.hh"
 #include "paper-book.hh"
@@ -30,7 +30,7 @@
 #include "spanner.hh"
 #include "skyline-pair.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

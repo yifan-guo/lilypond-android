@@ -20,7 +20,7 @@
 #ifndef FILE_NAME_MAP_HH
 #define FILE_NAME_MAP_HH
 
-#include "std-string.hh"
+#include "../../flower/std-string.hh"
 
 std::string map_file_name (const std::string &s);
 

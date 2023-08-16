@@ -21,7 +21,7 @@
 #include "context.hh"
 #include "performer.hh"
 #include "performer-group.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 Performer_group *
 Performer::get_group () const

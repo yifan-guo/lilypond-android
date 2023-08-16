@@ -21,7 +21,7 @@
 #define MOMENT_HH
 
 #include "smobs.hh"
-#include "rational.hh"
+#include "../../flower/rational.hh"
 
 /**
    Musical timing (Main-timing, grace-timing) with glue for

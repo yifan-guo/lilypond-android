@@ -1,8 +1,8 @@
 
 //#include <iostream>
 
-#include <v8.h>
-#include <node.h>
+#include "../android/third-party/libs/v8/include/v8.h"
+#include "../android/third-party/libs/node/src/node.h"
 #include <nan.h>
 
 #include "lilypond-ex.hh"
@@ -14,13 +14,13 @@
 AsyncEngraver engraver;
 
 
-v8::Local<v8::String> v8str (const char* str)
+v8::MaybeLocal<v8::String> v8str (const char* str)
 {
 	return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(), str, v8::String::kNormalString);
 }
 
 
-v8::Local<v8::String> v8str (const std::string& str)
+v8::MaybeLocal<v8::String> v8str (const std::string& str)
 {
 	// maybe not necessary?
 	//char* buffer = new char[str.size() + 1];
@@ -30,7 +30,7 @@ v8::Local<v8::String> v8str (const std::string& str)
 }
 
 
-v8::Local<v8::String> v8str (const ByteBuffer& buffer)
+v8::MaybeLocal<v8::String> v8str (const ByteBuffer& buffer)
 {
 	return v8::String::NewFromUtf8(v8::Isolate::GetCurrent(), buffer.copy<char> (), v8::String::kNormalString);
 }
@@ -82,7 +82,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 	if (args.Length() >= 2)
 	{
 		auto options = args[1].As<v8::Object>();
-		auto maybeIncludeFolders = options->Get(v8str("includeFolders"));
+		auto maybeIncludeFolders = options->Get( v8str("includeFolders"));
 		auto maybeLog = options->Get(v8str("log"));
 		auto maybeSvg = options->Get(v8str("onSVG"));
 		auto maybeMidi = options->Get(v8str("onMIDI"));
@@ -104,7 +104,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 				auto context = Nan::New(*pcontext);
 
 				auto log = v8::Local<v8::Function>::Cast(Nan::New(*pLog));
-				v8::Local<v8::Value> args[] = {v8str(messages)};
+				v8::MaybeLocal<v8::String> args[] = {v8str(messages)};
 				log->CallAsFunction(context, context->Global(), 1, args).ToLocalChecked();
 			};
 		}
@@ -118,7 +118,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 				auto context = Nan::New(*pcontext);
 
 				auto onSVG = v8::Local<v8::Function>::Cast(Nan::New(*pSvg));
-				v8::Local<v8::Value> args[] = {v8str(filename), v8str(content)};
+				v8::MaybeLocal<v8::String> args[] = {v8str(filename), v8str(content)};
 				onSVG->CallAsFunction(context, context->Global(), 2, args).ToLocalChecked();
 			};
 		}
@@ -132,7 +132,7 @@ void engrave(const v8::FunctionCallbackInfo<v8::Value>& args)
 				auto context = Nan::New(*pcontext);
 
 				auto onMIDI = v8::Local<v8::Function>::Cast(Nan::New(*pMidi));
-				v8::Local<v8::Value> args[] = {v8str(filename), v8arraybuffer(data)};
+				v8::MaybeLocal<v8::String> args[] = {v8str(filename), v8arraybuffer(data)};
 				onMIDI->CallAsFunction(context, context->Global(), 2, args).ToLocalChecked();
 			};
 		}

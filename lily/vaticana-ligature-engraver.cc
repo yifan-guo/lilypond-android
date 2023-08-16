@@ -21,7 +21,7 @@
 
 #include "font-interface.hh"
 #include "gregorian-ligature.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "output-def.hh"
 #include "paper-column.hh"
 #include "separation-item.hh"
@@ -29,7 +29,7 @@
 #include "staff-symbol-referencer.hh"
 #include "stream-event.hh"
 #include "vaticana-ligature.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "dot-column.hh"
 #include "rhythmic-head.hh"
 #include "pitch.hh"

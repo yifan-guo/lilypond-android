@@ -23,7 +23,7 @@
 #include "item.hh"
 #include "note-head.hh"
 #include "stream-event.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 
 #include "translator.icc"
 

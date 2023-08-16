@@ -22,7 +22,7 @@
 
 #include "lily-proto.hh"
 #include "smobs.hh"
-#include "rational.hh"
+#include "../../flower/rational.hh"
 
 /*
   A "tonal" pitch.  This is a pitch used in diatonal western music

@@ -30,7 +30,7 @@
 #include "moment.hh"
 #include "grob-array.hh"
 #include "break-align-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

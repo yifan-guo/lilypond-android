@@ -19,7 +19,7 @@
 
 #include "context.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
 #include "simple-music-iterator.hh"
 

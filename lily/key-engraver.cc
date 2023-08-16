@@ -20,7 +20,7 @@
 #include "clef.hh"
 #include "context.hh"
 #include "engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "pitch.hh"
 #include "protected-scm.hh"

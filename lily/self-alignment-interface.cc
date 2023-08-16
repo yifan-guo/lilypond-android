@@ -24,7 +24,7 @@
 #include "paper-column.hh"
 #include "pointer-group-interface.hh"
 #include "stencil.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 MAKE_SCHEME_CALLBACK (Self_alignment_interface, y_aligned_on_self, 1);
 SCM

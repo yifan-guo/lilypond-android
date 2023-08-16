@@ -20,7 +20,7 @@
 #ifndef AUDIO_ELEMENT_HH
 #define AUDIO_ELEMENT_HH
 
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 class Audio_element
 {

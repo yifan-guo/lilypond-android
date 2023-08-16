@@ -32,7 +32,7 @@
 #include "note-column.hh"
 #include "beam.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

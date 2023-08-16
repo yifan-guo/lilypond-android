@@ -20,7 +20,7 @@
 
 #include "context.hh"
 #include "score-engraver.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "item.hh"
 #include "spanner.hh"
 

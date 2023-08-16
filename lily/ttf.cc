@@ -21,8 +21,8 @@
 
 #include FT_TRUETYPE_TABLES_H
 
-#include "international.hh"
-#include "warn.hh"
+#include "../flower/international.hh"
+#include "../flower/warn.hh"
 #include "lily-guile.hh"
 #include "main.hh"
 #include "open-type-font.hh"

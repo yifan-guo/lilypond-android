@@ -26,7 +26,7 @@
 #include "paper-book.hh"
 #include "score.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "performance.hh"
 #include "paper-score.hh"
 #include "page-marker.hh"

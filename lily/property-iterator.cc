@@ -21,7 +21,7 @@
 
 #include "context-def.hh"
 #include "global-context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
 
 bool check_grob (Music *mus, SCM sym);

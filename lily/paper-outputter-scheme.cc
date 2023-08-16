@@ -19,9 +19,9 @@
 
 #include "paper-outputter.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "stencil.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 

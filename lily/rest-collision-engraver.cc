@@ -19,7 +19,7 @@
 
 #include "duration.hh"
 #include "engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "moment.hh"
 #include "note-column.hh"
@@ -28,7 +28,7 @@
 #include "rest-collision.hh"
 #include "rhythmic-head.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

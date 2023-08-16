@@ -18,7 +18,7 @@
 */
 
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "music.hh"
 
 using std::string;

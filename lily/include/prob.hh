@@ -22,7 +22,7 @@
 
 #include "pitch.hh"
 #include "stencil.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 /*
   A formatted "system" (A block of titling also is a Property_object)

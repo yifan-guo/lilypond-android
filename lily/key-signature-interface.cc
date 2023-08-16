@@ -21,12 +21,12 @@
 
 #include "accidental-interface.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "lookup.hh"
 #include "output-def.hh"
 #include "staff-symbol-referencer.hh"
-#include "rational.hh"
+#include "../flower/rational.hh"
 #include "lily-imports.hh"
 
 using std::string;

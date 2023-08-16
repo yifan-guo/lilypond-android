@@ -26,7 +26,7 @@
 #include "pitch.hh"
 #include "rhythmic-head.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "context.hh"
 
 #include "translator.icc"

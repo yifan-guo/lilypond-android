@@ -25,13 +25,13 @@
 */
 
 #include "custos.hh"
-#include "direction.hh"
+#include "../flower/direction.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "note-head.hh"
 #include "staff-symbol-referencer.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cmath> // rint
 #include <cstdio>

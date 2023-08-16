@@ -19,7 +19,7 @@
 
 #include "music-sequence.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "program-option.hh"
 #include "duration.hh"
 #include "moment.hh"

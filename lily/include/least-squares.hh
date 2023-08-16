@@ -19,8 +19,8 @@
 
 #ifndef LEASTSQUARE_HH
 #define LEASTSQUARE_HH
-#include "std-vector.hh"
-#include "offset.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/offset.hh"
 
 /**
    Least squares minimisation in 2 variables.

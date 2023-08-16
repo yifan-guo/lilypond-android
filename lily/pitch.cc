@@ -21,8 +21,8 @@
 
 #include "main.hh"
 #include "scale.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 
 #include <cmath>
 

@@ -19,11 +19,11 @@
 
 #include "engraver.hh"
 #include "global-context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "side-position-interface.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

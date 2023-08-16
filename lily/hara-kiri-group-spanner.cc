@@ -24,7 +24,7 @@
 #include "pointer-group-interface.hh"
 #include "axis-group-interface.hh"
 #include "spanner.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

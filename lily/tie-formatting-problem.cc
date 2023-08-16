@@ -24,7 +24,7 @@
 #include "paper-column.hh"
 #include "bezier.hh"
 #include "directional-element-interface.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "misc.hh"
 #include "note-head.hh"
 #include "rhythmic-head.hh"
@@ -34,7 +34,7 @@
 #include "stem.hh"
 #include "tie-configuration.hh"
 #include "tie.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "pointer-group-interface.hh"
 #include "output-def.hh"
 

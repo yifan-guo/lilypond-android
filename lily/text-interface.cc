@@ -31,8 +31,8 @@
 #include "output-def.hh"
 #include "pango-font.hh"
 #include "program-option.hh"
-#include "international.hh"
-#include "warn.hh"
+#include "../flower/international.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include <unordered_map>

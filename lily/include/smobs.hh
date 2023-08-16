@@ -22,7 +22,7 @@
 
 #include "lily-guile.hh"
 #include "lily-proto.hh"
-#include "warn.hh"
+#include "../../flower/warn.hh"
 #include <string>
 
 /*

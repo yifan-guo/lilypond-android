@@ -21,7 +21,7 @@
 #ifndef MIDI_WALKER_HH
 #define MIDI_WALKER_HH
 
-#include "pqueue.hh"
+#include "../../flower/pqueue.hh"
 #include "lily-proto.hh"
 #include "moment.hh"
 

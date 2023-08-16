@@ -3,7 +3,9 @@ cmake_minimum_required(VERSION 3.4.1)
 
 
 set(SDK_DIR $ENV{HOME}/sdk)
-
+set(CMAKE_CXX_FLAGS "-fpermissive")
+set( CMAKE_CXX_STANDARD 14 )
+set( CMAKE_CXX_STANDARD_REQUIRED True )
 
 add_library(
 	native-lib

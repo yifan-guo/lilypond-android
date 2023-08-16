@@ -20,8 +20,8 @@
 #ifndef STEM_INFO_HH
 #define STEM_INFO_HH
 
-#include "real.hh"
-#include "direction.hh"
+#include "../../flower/real.hh"
+#include "../../flower/direction.hh"
 
 /*
   Parameters for a stem, (multiply with stemdirection, to get real values

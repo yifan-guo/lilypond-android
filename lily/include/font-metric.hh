@@ -24,7 +24,7 @@
 #include "freetype.hh"
 #include "lily-proto.hh"
 #include "smobs.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 #include <map>
 

@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "modified-font-metric.hh"
 #include "open-type-font.hh"
 #include "freetype.hh"

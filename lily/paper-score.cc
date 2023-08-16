@@ -21,7 +21,7 @@
 
 #include "all-font-metrics.hh"
 #include "book.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "misc.hh"
 #include "output-def.hh"
@@ -31,7 +31,7 @@
 #include "score.hh"
 #include "stencil.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "constrained-breaking.hh"
 
 using std::vector;

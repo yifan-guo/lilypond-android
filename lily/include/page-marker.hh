@@ -21,7 +21,7 @@
 #define PAGE_MARKER_HH
 
 #include "smobs.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 
 class Page_marker : public Smob<Page_marker>
 {

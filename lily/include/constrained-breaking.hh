@@ -21,7 +21,7 @@
 #define CONSTRAINED_BREAKING_HH
 
 #include "lily-guile.hh"
-#include "matrix.hh"
+#include "../../flower/matrix.hh"
 #include "prob.hh"
 
 class Paper_column;

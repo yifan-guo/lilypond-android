@@ -21,7 +21,7 @@
 
 #include "context.hh"
 #include "directional-element-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "note-column.hh"
 #include "paper-column.hh"
 #include "rhythmic-head.hh"
@@ -31,7 +31,7 @@
 #include "staff-symbol-referencer.hh"
 #include "stem.hh"
 #include "stream-event.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

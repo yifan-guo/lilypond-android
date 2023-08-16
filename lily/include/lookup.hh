@@ -22,7 +22,7 @@
 #define LOOKUP_HH
 
 #include "stencil.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 namespace Lookup
 {

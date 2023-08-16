@@ -17,8 +17,8 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "international.hh"
-#include "warn.hh"
+#include "../flower/international.hh"
+#include "../flower/warn.hh"
 #include "lily-guile.hh"
 
 #include <glib.h>

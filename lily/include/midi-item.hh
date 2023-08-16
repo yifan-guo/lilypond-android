@@ -21,7 +21,7 @@
 #define MIDI_ITEM_HH
 
 #include "audio-item.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 std::string int2midi_varint_string (int i);
 

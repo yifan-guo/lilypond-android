@@ -18,10 +18,10 @@
 */
 
 #include "moment.hh"
-#include "real.hh"
-#include "interval.hh"
+#include "../flower/real.hh"
+#include "../flower/interval.hh"
 
-#include "interval.tcc"
+#include "../flower/interval.tcc"
 
 using std::string;
 

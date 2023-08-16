@@ -18,7 +18,7 @@
 */
 
 #include "paper-column-engraver.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "accidental-placement.hh"
 #include "accidental-interface.hh"
 #include "arpeggio.hh"
@@ -30,7 +30,7 @@
 #include "separation-item.hh"
 #include "staff-spacing.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

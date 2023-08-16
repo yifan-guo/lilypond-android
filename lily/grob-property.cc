@@ -28,12 +28,12 @@
 #include "paper-score.hh"
 #include "output-def.hh"
 #include "spanner.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "program-option.hh"
 #include "profile.hh"
 #include "unpure-pure-container.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "protected-scm.hh"
 
 #include <cstring>

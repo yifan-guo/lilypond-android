@@ -21,7 +21,7 @@
 
 #include "output-def.hh"
 #include "skyline.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "paper-column.hh"
 #include "spanner.hh"
 #include "pointer-group-interface.hh"

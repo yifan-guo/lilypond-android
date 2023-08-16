@@ -21,7 +21,7 @@
 #define TRANSFORM_HH
 
 #include <pango/pango-matrix.h>
-#include "offset.hh"
+#include "../../flower/offset.hh"
 #include "smobs.hh"
 
 class Transform : public Simple_smob<Transform>

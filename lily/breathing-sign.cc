@@ -21,7 +21,7 @@
 #include "breathing-sign.hh"
 
 #include "dimensions.hh"
-#include "direction.hh"
+#include "../flower/direction.hh"
 #include "directional-element-interface.hh"
 #include "font-interface.hh"
 #include "grob.hh"

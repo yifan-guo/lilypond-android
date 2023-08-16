@@ -23,14 +23,14 @@
 
 /* TODO: autoconf support */
 
-#include "file-name.hh"
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "lily-guile.hh"
 #include "lily-version.hh"
 #include "main.hh"
 #include "version.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #if HAVE_GETTEXT
 #include <libintl.h>

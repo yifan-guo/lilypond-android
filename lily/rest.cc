@@ -22,7 +22,7 @@
 #include "directional-element-interface.hh"
 #include "dots.hh"
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "output-def.hh"
 #include "paper-score.hh"
 #include "staff-symbol-referencer.hh"

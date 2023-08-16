@@ -18,9 +18,9 @@
 */
 
 #include "ly-module.hh" // pulls in lily-guile.hh and guile-compatibility.hh
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "main.hh"
-#include "std-string.hh"
+#include "../flower/std-string.hh"
 
 /*
   If a variable is changed in SRC, then DEST doesn't see the

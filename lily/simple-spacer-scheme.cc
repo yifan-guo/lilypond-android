@@ -19,7 +19,7 @@
 
 #include "paper-column.hh"
 #include "spring.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "simple-spacer.hh"
 
 #include <cstdio>

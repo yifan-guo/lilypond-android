@@ -18,7 +18,7 @@
 */
 
 #include "paper-system.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 
 Prob *

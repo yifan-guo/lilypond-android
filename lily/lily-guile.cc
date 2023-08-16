@@ -21,16 +21,16 @@
 #include "lily-guile.hh"
 
 #include "dimensions.hh"
-#include "direction.hh"
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/direction.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "misc.hh"
-#include "offset.hh"
+#include "../flower/offset.hh"
 #include "pitch.hh"
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 #include "source-file.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include <cctype>

@@ -21,7 +21,7 @@
 
 #include "all-font-metrics.hh"
 #include "output-def.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "grob.hh"
 
 /* todo: split up this func, reuse in text_item?  */

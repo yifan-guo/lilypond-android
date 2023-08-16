@@ -22,7 +22,7 @@
 #include "slur-configuration.hh"
 
 #include "item.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "misc.hh"
 #include "pointer-group-interface.hh"
 #include "slur-scoring.hh"
@@ -31,7 +31,7 @@
 #include "staff-symbol-referencer.hh"
 #include "stem.hh"
 #include "tie.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cmath>
 #include <memory>

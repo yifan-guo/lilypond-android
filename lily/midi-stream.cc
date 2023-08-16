@@ -19,14 +19,14 @@
 
 #include "midi-stream.hh"
 
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "midi-chunk.hh"
 #include "misc.hh"
 #include "program-option.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 
 #include "buffer.hh"
 

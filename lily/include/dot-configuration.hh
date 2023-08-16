@@ -21,7 +21,7 @@
 #define DOT_CONFIGURATION_HH
 
 #include "lily-proto.hh"
-#include "direction.hh"
+#include "../../flower/direction.hh"
 #include "box.hh"
 
 #include <map>

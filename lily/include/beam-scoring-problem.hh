@@ -24,11 +24,11 @@
 #include <memory>
 
 #include "beam.hh"
-#include "interval.hh"
+#include "../../flower/interval.hh"
 #include "lily-guile.hh"
 #include "lily-proto.hh"
 #include "main.hh"  //  DEBUG_BEAM_SCORING
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "stem-info.hh"
 
 enum Scorers

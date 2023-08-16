@@ -21,7 +21,7 @@
 #define INTERVAL_HH
 
 // Needed because of extension definitions for POSIX functions.
-#include "config.hh"
+//#include "config.hh"
 
 #include "flower-proto.hh"
 #include "std-string.hh"

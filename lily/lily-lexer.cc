@@ -20,14 +20,14 @@
 #include "lily-lexer.hh"
 
 #include "context.hh" // for nested_property_alist
-#include "international.hh"
-#include "interval.hh"
+#include "../flower/international.hh"
+#include "../flower/interval.hh"
 #include "main.hh"
 #include "moment.hh"
 #include "parser.hh"
 #include "scm-hash.hh"
 #include "source-file.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "program-option.hh"
 #include "lily-parser.hh"
 #include "ly-module.hh"

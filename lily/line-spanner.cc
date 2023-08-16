@@ -32,7 +32,7 @@
 #include "staff-symbol-referencer.hh"
 #include "system.hh"
 #include "text-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 class Line_spanner
 {

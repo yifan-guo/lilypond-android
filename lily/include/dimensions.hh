@@ -21,8 +21,8 @@
 #ifndef DIMENSIONS_HH
 #define DIMENSIONS_HH
 
-#include "real.hh"
-#include "std-string.hh"
+#include "../../flower/real.hh"
+#include "../../flower/std-string.hh"
 
 const Real INCH_TO_PT = 72.270;
 const Real CM_TO_PT = (INCH_TO_PT / 2.54);

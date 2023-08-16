@@ -21,8 +21,8 @@
 
 #include "audio-item.hh"
 #include "input.hh"
-#include "international.hh"
-#include "libc-extension.hh"
+#include "../flower/international.hh"
+#include "../flower/libc-extension.hh"
 #include "midi-cc-announcer.hh"
 
 #include <cmath>

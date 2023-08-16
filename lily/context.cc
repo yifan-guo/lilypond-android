@@ -22,7 +22,7 @@
 #include "context-def.hh"
 #include "dispatcher.hh"
 #include "global-context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "listener.hh"
 #include "main.hh"
 #include "output-def.hh"
@@ -30,7 +30,7 @@
 #include "program-option.hh"
 #include "scm-hash.hh"
 #include "translator-group.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 using std::string;

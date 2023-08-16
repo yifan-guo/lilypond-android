@@ -21,7 +21,7 @@
 #define GREGORIAN_LIGATURE_HH
 
 class Grob;
-#include "std-string.hh"
+#include "../../flower/std-string.hh"
 #include "grob-interface.hh"
 
 class Gregorian_ligature

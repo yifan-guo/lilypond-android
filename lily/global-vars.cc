@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "file-path.hh"
+#include "../flower/file-path.hh"
 #include "main.hh"
 
 using std::string;

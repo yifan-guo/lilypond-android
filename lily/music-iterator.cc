@@ -19,12 +19,12 @@
 
 #include "music-iterator.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "music.hh"
 #include "context.hh"
 #include "event-iterator.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "ly-smob-list.hh"
 #include "music-wrapper.hh"
 #include "music-wrapper-iterator.hh"

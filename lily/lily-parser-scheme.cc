@@ -20,14 +20,14 @@
 #include "lily-parser.hh"
 
 #include "file-name-map.hh"
-#include "file-name.hh"
-#include "file-path.hh"
-#include "international.hh"
+#include "../flower/file-name.hh"
+#include "../flower/file-path.hh"
+#include "../flower/international.hh"
 #include "lily-lexer.hh"
 #include "main.hh"
 #include "program-option.hh"
 #include "sources.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "lily-imports.hh"
 
 #include <unistd.h>

@@ -22,7 +22,7 @@
 #include "note-spacing.hh"
 #include "paper-column.hh"
 #include "pointer-group-interface.hh"
-#include "pqueue.hh"
+#include "../flower/pqueue.hh"
 #include "spanner.hh"
 #include "staff-spacing.hh"
 #include "stream-event.hh"

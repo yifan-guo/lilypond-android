@@ -19,13 +19,13 @@
 
 #include "context.hh"
 #include "directional-element-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "note-column.hh"
 #include "pointer-group-interface.hh"
 #include "slur-engraver.hh"
 #include "slur.hh"
 #include "spanner.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

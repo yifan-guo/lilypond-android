@@ -19,7 +19,7 @@
 
 #include "lily-guile.hh"
 #include "ly-module.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "main.hh"
 #include "protected-scm.hh"
 #include "lily-imports.hh"

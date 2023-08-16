@@ -21,9 +21,9 @@
 #include "translator.hh"
 #include "lily-imports.hh"
 #include "ly-scm-list.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "scm-hash.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "protected-scm.hh"
 
 SCM

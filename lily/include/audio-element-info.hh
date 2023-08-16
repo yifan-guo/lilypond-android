@@ -21,7 +21,7 @@
 #define AUDIO_ITEM_INFO_HH
 
 #include "lily-proto.hh"
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 
 /**
    Data container for broadcasts

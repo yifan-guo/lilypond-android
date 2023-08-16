@@ -21,7 +21,7 @@
 #include "all-font-metrics.hh"
 #include "output-def.hh"
 #include "font-interface.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 #include "pango-font.hh"
 #include "main.hh"
 #include "lily-imports.hh"

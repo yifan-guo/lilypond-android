@@ -20,7 +20,7 @@
 #include "config.hh"
 
 #include "grob.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "staff-symbol.hh"
 #include "staff-symbol-referencer.hh"
 

@@ -17,7 +17,7 @@
   along with LilyPond.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "config.hh"
+//#include "config.hh"
 
 #if HAVE_FONTCONFIG
 

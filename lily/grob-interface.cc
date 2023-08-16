@@ -20,10 +20,10 @@
 #include "grob-interface.hh"
 
 #include "grob.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "protected-scm.hh"
-#include "string-convert.hh"
-#include "warn.hh"
+#include "../flower/string-convert.hh"
+#include "../flower/warn.hh"
 #include "misc.hh"
 
 using std::string;

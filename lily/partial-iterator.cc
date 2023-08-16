@@ -22,7 +22,7 @@
 #include "context.hh"
 #include "global-context.hh"
 #include "input.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "lily-guile-macros.hh"
 #include "moment.hh"
 #include "music.hh"

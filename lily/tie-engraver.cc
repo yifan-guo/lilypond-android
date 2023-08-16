@@ -20,7 +20,7 @@
 #include "engraver.hh"
 
 #include "context.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "note-head.hh"
 #include "pitch.hh"
@@ -30,7 +30,7 @@
 #include "stream-event.hh"
 #include "tie-column.hh"
 #include "tie.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "translator.icc"
 

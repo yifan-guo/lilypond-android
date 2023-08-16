@@ -19,7 +19,7 @@
 
 #include "constrained-breaking.hh"
 
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "output-def.hh"
 #include "page-layout-problem.hh"
@@ -27,7 +27,7 @@
 #include "paper-score.hh"
 #include "simple-spacer.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

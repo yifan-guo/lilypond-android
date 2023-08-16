@@ -21,9 +21,9 @@
 #define BOOK_HH
 
 #include "lily-proto.hh"
-#include "std-vector.hh"
-#include "std-string.hh"
-#include "virtual-methods.hh"
+#include "../../flower/std-vector.hh"
+#include "../../flower/std-string.hh"
+#include "../../flower/virtual-methods.hh"
 #include "smobs.hh"
 
 class Book : public Smob<Book>

@@ -25,7 +25,7 @@
 #include FT_FREETYPE_H
 
 #include "lily-proto.hh"
-#include "std-string.hh"
+#include "../../flower/std-string.hh"
 #include "box.hh"
 
 void init_freetype ();

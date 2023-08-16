@@ -20,7 +20,7 @@
 #include "clef.hh"
 
 #include "font-interface.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "item.hh"
 #include "stencil.hh"
 

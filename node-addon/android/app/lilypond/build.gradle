@@ -27,8 +27,8 @@ android {
             }
         }
         ndk {
-            // modify abiFilters to your taget device ABI, e.g. 'x86' for Android Emulator.
-            abiFilters "arm64-v8a"
+            // modify abiFilters to your target device ABI, e.g. 'x86' for Android Emulator.
+            abiFilters "x86_64"
         }
     }
 

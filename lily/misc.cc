@@ -19,8 +19,8 @@
 */
 
 #include "misc.hh"
-#include "offset.hh"
-#include "warn.hh"
+#include "../flower/offset.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 using std::vector;

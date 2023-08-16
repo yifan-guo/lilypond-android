@@ -20,7 +20,7 @@
 #include "spacing-spanner.hh"
 
 #include "spacing-options.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "main.hh"
 #include "moment.hh"
 #include "note-spacing.hh"
@@ -34,7 +34,7 @@
 #include "spacing-interface.hh"
 #include "staff-spacing.hh"
 #include "system.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include <cmath>
 #include <cstdio>

@@ -20,10 +20,10 @@
 #ifndef MUSIC_ITERATOR_HH
 #define MUSIC_ITERATOR_HH
 
-#include "std-vector.hh"
+#include "../../flower/std-vector.hh"
 #include "diagnostics.hh"
 #include "moment.hh"
-#include "virtual-methods.hh"
+#include "../../flower/virtual-methods.hh"
 #include "context-handle.hh"
 
 /**

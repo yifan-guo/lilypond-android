@@ -29,7 +29,7 @@
 #include "output-def.hh"
 #include "staff-symbol-referencer.hh"
 #include "stem.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::vector;
 

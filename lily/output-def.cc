@@ -18,19 +18,19 @@
 */
 
 #include "context-def.hh"
-#include "file-path.hh"
+#include "../flower/file-path.hh"
 #include "global-context.hh"
-#include "international.hh"
-#include "interval.hh"
+#include "../flower/international.hh"
+#include "../flower/interval.hh"
 #include "ly-module.hh"
 #include "main.hh"
 #include "output-def.hh"
 #include "scm-hash.hh"
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 #include "program-option.hh"
 
-#include "string-convert.hh"
+#include "../flower/string-convert.hh"
 
 using std::string;
 

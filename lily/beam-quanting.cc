@@ -24,15 +24,15 @@
 
 #include "align-interface.hh"
 #include "beam.hh"
-#include "direction.hh"
+#include "../flower/direction.hh"
 #include "directional-element-interface.hh"
 #include "grob.hh"
 #include "grob-array.hh"
 #include "item.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 #include "interval-minefield.hh"
 #include "least-squares.hh"
-#include "libc-extension.hh"
+#include "../flower/libc-extension.hh"
 #include "main.hh"
 #include "note-head.hh"
 #include "output-def.hh"
@@ -41,8 +41,8 @@
 #include "staff-symbol-referencer.hh"
 #include "stencil.hh"
 #include "stem.hh"
-#include "warn.hh"
-#include "string-convert.hh"
+#include "../flower/warn.hh"
+#include "../flower/string-convert.hh"
 
 #include <algorithm>
 #include <cmath>

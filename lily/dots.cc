@@ -24,7 +24,7 @@
 #include "font-interface.hh"
 #include "lookup.hh"
 #include "staff-symbol-referencer.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 
 using std::string;
 

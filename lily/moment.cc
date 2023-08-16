@@ -19,7 +19,7 @@
 
 #include "moment.hh"
 
-#include "warn.hh"
+#include "../flower/warn.hh"
 
 using std::string;
 

@@ -20,9 +20,9 @@
 #ifndef TIE_CONFIGURATION_HH
 #define TIE_CONFIGURATION_HH
 
-#include "direction.hh"
-#include "interval.hh"
-#include "std-vector.hh"
+#include "../../flower/direction.hh"
+#include "../../flower/interval.hh"
+#include "../../flower/std-vector.hh"
 #include "main.hh" // DEBUG_SLUR_SCORING
 
 class Tie_configuration

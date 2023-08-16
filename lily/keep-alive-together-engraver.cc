@@ -21,7 +21,7 @@
 #include "engraver.hh"
 #include "grob.hh"
 #include "grob-array.hh"
-#include "international.hh"
+#include "../flower/international.hh"
 
 #include "translator.icc"
 
