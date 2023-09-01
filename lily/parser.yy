@@ -135,7 +135,7 @@ FIXME:
 #include "scm-hash.hh"
 #include "score.hh"
 #include "text-interface.hh"
-#include "../flower/warn.hh"
+#include "warn.hh"
 #include "lily-imports.hh"
 
 void
